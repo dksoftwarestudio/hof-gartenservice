@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unternehmen eintragen – Reinigung Hof</title>
+
+<style>
+:root{
+  --blue:#1A53AD;
+  --blueLight:#EAF2FF;
+  --bg:#F5F5F5;
+  --text:#555555;
+  --textDark:#2F2F2F;
+  --muted:#666666;
+  --card:#FFFFFF;
+  --border:rgba(0,0,0,0.06);
+  --shadow:0 18px 45px rgba(0,0,0,0.07);
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.header{
+  background:#ffffff;
+  border-bottom:1px solid var(--border);
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.logo{
+  font-weight:700;
+  font-size:18px;
+  color:var(--textDark);
+}
+
+.back-link{
+  color:var(--blue);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+}
+
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:28px 20px 70px;
+}
+
+.hero{
+  background:var(--card);
+  border-radius:18px;
+  padding:42px 34px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  text-align:center;
+}
+
+.hero h1{
+  font-size:38px;
+  margin:0 0 14px;
+  line-height:1.1;
+  font-weight:600;
+  color:var(--textDark);
+}
+
+.hero p{
+  margin:0 auto;
+  max-width:700px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+.hero-image{
+  margin-top:18px;
+  height:230px;
+  border-radius:18px;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
+    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80")
+    center/cover no-repeat;
+  box-shadow:0 12px 30px rgba(0,0,0,0.06);
+  border:1px solid var(--border);
+}
+
+.section{
+  margin-top:22px;
+}
+
+.info-card,
+.pricing-card,
+.form-wrap{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px 24px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.05);
+}
+
+.info-card h2,
+.pricing-card h2,
+.form-wrap h2{
+  margin:0 0 10px;
+  color:var(--textDark);
+  font-size:24px;
+}
+
+.info-card p,
+.pricing-card p,
+.form-wrap p{
+  margin:0 0 16px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:18px;
+}
+
+.price-box{
+  background:#F7F9FC;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+}
+
+.price-box h3{
+  margin:0 0 8px;
+  color:var(--blue);
+  font-size:20px;
+}
+
+.price{
+  font-size:28px;
+  font-weight:700;
+  color:var(--textDark);
+  margin-bottom:10px;
+}
+
+.price-note{
+  font-size:13px;
+  color:#888;
+  margin-bottom:12px;
+}
+
+.price-box ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.pricing-hint{
+  margin-top:18px;
+  font-size:13px;
+  color:#7a7a7a;
+  line-height:1.6;
+}
+
+.form-card{
+  margin-top:14px;
+  background:#F7F9FC;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+  text-align:left;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.form-group.full{
+  grid-column:1 / -1;
+}
+
+.form-group label{
+  font-size:13px;
+  font-weight:700;
+  color:var(--textDark);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  color:var(--textDark);
+  font-size:14px;
+  font-family:Arial, sans-serif;
+}
+
+.form-group textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.btn-row{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+  margin-top:16px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  transition:0.2s ease;
+  border:none;
+  cursor:pointer;
+}
+
+.btn.primary{
+  background:var(--blue);
+  color:#fff;
+  box-shadow:0 10px 25px rgba(26,83,173,0.22);
+}
+
+.btn.primary:hover{
+  transform:translateY(-2px);
+}
+
+.form-note{
+  margin-top:12px;
+  font-size:12px;
+  color:#7a7a7a;
+  line-height:1.6;
+  text-align:center;
+}
+
+footer{
+  margin-top:30px;
+  text-align:center;
+  color:#9aa6b2;
+  font-size:13px;
+}
+
+footer a{
+  color:#9aa6b2;
+  text-decoration:none;
+  margin:0 6px;
+}
+
+footer a:hover{
+  color:var(--blue);
+}
+
+/* BUTTON TO TOP */
+#toTopBtn{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:12px;
+  background:var(--blue);
+  color:#fff;
+  font-size:22px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s ease;
+  z-index:999;
+}
+
+#toTopBtn:hover{
+  transform:translateY(-3px);
+}
+
+#toTopBtn.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+@media (max-width:700px){
+  .hero{
+    padding:34px 22px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero-image{
+    height:170px;
+  }
+
+  .pricing-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  #toTopBtn{
+    right:18px;
+    bottom:18px;
+    width:46px;
+    height:46px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">Reinigung Hof</div>
+  <a class="back-link" href="index.html">← Zurück zur Übersicht</a>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Unternehmen eintragen</h1>
+    <p>
+      Tragen Sie Ihr Unternehmen ein und erreichen Sie lokale Kunden in Hof direkt über diese Seite.
+      Ohne Vermittlung – Interessenten kontaktieren Sie direkt.
+    </p>
+  </div>
+
+  <div class="hero-image"></div>
+
+  <div class="section">
+    <div class="info-card">
+      <h2>Für wen ist diese Seite gedacht?</h2>
+      <p>
+        Diese Plattform richtet sich an lokale Reinigungsfirmen in Hof und Umgebung,
+        die online sichtbarer werden und neue Kunden direkt erreichen möchten.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="pricing-card">
+      <h2>Premium Platzierung – mehr Sichtbarkeit</h2>
+      <p>
+        Wählen Sie zwischen einem Standard-Eintrag und einer hervorgehobenen Premium-Platzierung.
+      </p>
+
+      <div class="pricing-grid">
+        <div class="price-box">
+          <h3>Standard</h3>
+          <div class="price">ab 20 €</div>
+          <div class="price-note">einfache Platzierung</div>
+          <ul>
+            <li>Eintrag in der Übersicht</li>
+            <li>Google-Profil oder Website</li>
+            <li>Kurze Beschreibung</li>
+          </ul>
+        </div>
+
+        <div class="price-box">
+          <h3>Premium</h3>
+          <div class="price">ab 50 €</div>
+          <div class="price-note">mehr Sichtbarkeit</div>
+          <ul>
+            <li>Hervorgehobene Platzierung oben</li>
+            <li>Größere Darstellung</li>
+            <li>Stärkerer Fokus auf Ihr Unternehmen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pricing-hint">
+        Die finalen Preise können je nach Umfang und Platzierung leicht variieren.
+        Details werden individuell nach Anfrage abgestimmt.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="form-wrap">
+      <h2>Anfrage senden</h2>
+      <p>
+        Senden Sie uns Ihre Anfrage. Wir melden uns schnellstmöglich bei Ihnen zurück.
+      </p>
+
+      <form class="form-card" action="https://formspree.io/f/mjgpagzy" method="POST">
+        <input type="hidden" name="_subject" value="Neue Anfrage über hof-reinigung.de">
+        <input type="hidden" name="_next" value="danke.html">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firma">Firmenname</label>
+            <input type="text" id="firma" name="Firmenname" placeholder="z. B. Muster Reinigung Hof" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="E-Mail" placeholder="ihre@email.de" required>
+          </div>
+
+          <div class="form-group">
+            <label for="googleprofil">Google-Profil Link</label>
+            <input type="url" id="googleprofil" name="Google-Profil" placeholder="https://...">
+          </div>
+
+          <div class="form-group">
+            <label for="paket">Paket</label>
+            <select id="paket" name="Paket">
+              <option value="Standard">Standard</option>
+              <option value="Premium">Premium</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="nachricht">Kurze Beschreibung</label>
+            <textarea id="nachricht" name="Nachricht" placeholder="Kurze Infos zu Ihrem Unternehmen, Leistungen oder Wünschen"></textarea>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn primary" type="submit">Anfrage senden</button>
+        </div>
+
+        <div class="form-note">
+          Ihre Anfrage wird direkt an DK Software Studio gesendet.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 hof-reinigung.de · by DK Software Studio<br>
+    <a href="impressum.html">Impressum</a> · 
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</div>
+
+<button id="toTopBtn" aria-label="Nach oben">↑</button>
+
+<script>
+const toTopBtn = document.getElementById("toTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    toTopBtn.classList.add("show");
+  } else {
+    toTopBtn.classList.remove("show");
+  }
+});
+
+toTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+</script>
+
+</body>
+</html>

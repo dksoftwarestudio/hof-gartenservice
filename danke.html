@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anfrage gesendet – Reinigung Hof</title>
+
+<style>
+:root{
+  --blue:#1A53AD;
+  --bg:#F5F5F5;
+  --text:#555555;
+  --textDark:#2F2F2F;
+  --muted:#666666;
+  --card:#FFFFFF;
+  --border:rgba(0,0,0,0.06);
+  --shadow:0 18px 45px rgba(0,0,0,0.07);
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.header{
+  background:#ffffff;
+  border-bottom:1px solid var(--border);
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:700;
+  font-size:18px;
+  color:var(--textDark);
+}
+
+.wrap{
+  max-width:700px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+
+/* Картинка как на страницах */
+.hero-image{
+  height:200px;
+  border-radius:18px;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+    url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1400&q=80")
+    center/cover no-repeat;
+  box-shadow:0 12px 30px rgba(0,0,0,0.06);
+  border:1px solid var(--border);
+  margin-bottom:20px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:36px 28px;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+
+.card h1{
+  margin:0 0 14px;
+  font-size:26px;
+  color:var(--textDark);
+}
+
+.card p{
+  margin:0 0 22px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  background:var(--blue);
+  color:#fff;
+  box-shadow:0 10px 25px rgba(26,83,173,0.22);
+  transition:0.2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+footer{
+  margin-top:30px;
+  text-align:center;
+  color:#9aa6b2;
+  font-size:13px;
+}
+
+footer a{
+  color:#9aa6b2;
+  text-decoration:none;
+  margin:0 6px;
+}
+
+footer a:hover{
+  color:var(--blue);
+}
+
+@media (max-width:700px){
+  .hero-image{
+    height:160px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">Reinigung Hof</div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero-image"></div>
+
+  <div class="card">
+    <h1>Vielen Dank!</h1>
+
+    <p>
+      Ihre Anfrage ist eingegangen.<br>
+      Wir melden uns schnellstmöglich bei Ihnen.
+    </p>
+
+    <a href="index.html" class="btn">Zurück zur Übersicht</a>
+  </div>
+
+  <footer>
+    © 2026 hof-reinigung.de · by DK Software Studio<br>
+    <a href="impressum.html">Impressum</a> · 
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+</div>
+
+</body>
+</html>
