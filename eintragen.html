@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unternehmen eintragen – Reinigung Hof</title>
+<title>Unternehmen eintragen – Gartenservice Hof</title>
 
 <style>
 :root{
@@ -19,6 +19,10 @@
 }
 
 *{box-sizing:border-box;}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -38,9 +42,22 @@ body{
 }
 
 .logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
   font-weight:700;
   font-size:18px;
   color:var(--textDark);
+  text-decoration:none;
+}
+
+.logo-mark{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  display:block;
+  object-fit:contain;
+  border-radius:50%;
 }
 
 .back-link{
@@ -88,7 +105,7 @@ body{
   overflow:hidden;
   background:
     linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
-    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80")
+    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80")
     center/cover no-repeat;
   box-shadow:0 12px 30px rgba(0,0,0,0.06);
   border:1px solid var(--border);
@@ -100,6 +117,7 @@ body{
 
 .info-card,
 .pricing-card,
+.benefits-card,
 .form-wrap{
   background:var(--card);
   border:1px solid var(--border);
@@ -110,6 +128,7 @@ body{
 
 .info-card h2,
 .pricing-card h2,
+.benefits-card h2,
 .form-wrap h2{
   margin:0 0 10px;
   color:var(--textDark);
@@ -118,6 +137,7 @@ body{
 
 .info-card p,
 .pricing-card p,
+.benefits-card p,
 .form-wrap p{
   margin:0 0 16px;
   color:var(--muted);
@@ -169,6 +189,60 @@ body{
   font-size:13px;
   color:#7a7a7a;
   line-height:1.6;
+}
+
+.compare-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:18px;
+}
+
+.compare-box{
+  border-radius:16px;
+  padding:20px;
+  border:1px solid var(--border);
+  background:#F7F9FC;
+}
+
+.compare-box h3{
+  margin:0 0 12px;
+  font-size:20px;
+  line-height:1.3;
+}
+
+.compare-box.weak h3{
+  color:#6B7280;
+}
+
+.compare-box.strong{
+  background:var(--blueLight);
+  border-color:rgba(26,83,173,0.14);
+}
+
+.compare-box.strong h3{
+  color:var(--blue);
+}
+
+.compare-box ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.benefits-note{
+  margin-top:18px;
+  padding:16px 18px;
+  border-radius:14px;
+  background:#F7F9FC;
+  border:1px solid var(--border);
+  color:var(--textDark);
+  line-height:1.7;
+}
+
+.benefits-note strong{
+  color:var(--textDark);
 }
 
 .form-card{
@@ -251,12 +325,50 @@ body{
   transform:translateY(-2px);
 }
 
+.btn.secondary{
+  background:#EEF2F8;
+  color:var(--textDark);
+}
+
+.btn.secondary:hover{
+  transform:translateY(-2px);
+}
+
+.btn.whatsapp{
+  background:#25D366;
+  color:#fff;
+  box-shadow:0 10px 25px rgba(37,211,102,0.22);
+}
+
+.btn.whatsapp:hover{
+  transform:translateY(-2px);
+  background:#1ebe5b;
+}
+
 .form-note{
   margin-top:12px;
   font-size:12px;
   color:#7a7a7a;
   line-height:1.6;
   text-align:center;
+}
+
+.form-status{
+  display:none;
+  margin-top:12px;
+  font-size:13px;
+  line-height:1.5;
+  text-align:center;
+}
+
+.form-status.success{
+  display:block;
+  color:#1A53AD;
+}
+
+.form-status.error{
+  display:block;
+  color:#b00020;
 }
 
 footer{
@@ -276,7 +388,17 @@ footer a:hover{
   color:var(--blue);
 }
 
-/* BUTTON TO TOP */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
 #toTopBtn{
   position:fixed;
   bottom:30px;
@@ -307,6 +429,11 @@ footer a:hover{
 }
 
 @media (max-width:700px){
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
   .hero{
     padding:34px 22px;
   }
@@ -319,12 +446,28 @@ footer a:hover{
     height:170px;
   }
 
-  .pricing-grid{
+  .pricing-grid,
+  .compare-grid{
     grid-template-columns:1fr;
   }
 
   .form-grid{
     grid-template-columns:1fr;
+  }
+
+  .logo-mark{
+    width:34px;
+    height:34px;
+    flex-basis:34px;
+  }
+
+  .btn-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn{
+    text-align:center;
   }
 
   #toTopBtn{
@@ -340,13 +483,16 @@ footer a:hover{
 <body>
 
 <div class="header">
-  <div class="logo">Reinigung Hof</div>
+  <a href="index.html" class="logo" aria-label="Gartenservice Hof">
+    <img src="Logo-gartenservice.png" alt="Gartenservice Hof Logo" class="logo-mark">
+    <span>Gartenservice Hof</span>
+  </a>
   <a class="back-link" href="index.html">← Zurück zur Übersicht</a>
 </div>
 
 <div class="wrap">
 
-  <div class="hero">
+  <div class="hero reveal">
     <h1>Unternehmen eintragen</h1>
     <p>
       Tragen Sie Ihr Unternehmen ein und erreichen Sie lokale Kunden in Hof direkt über diese Seite.
@@ -354,20 +500,20 @@ footer a:hover{
     </p>
   </div>
 
-  <div class="hero-image"></div>
+  <div class="hero-image reveal"></div>
 
   <div class="section">
-    <div class="info-card">
+    <div class="info-card reveal">
       <h2>Für wen ist diese Seite gedacht?</h2>
       <p>
-        Diese Plattform richtet sich an lokale Reinigungsfirmen in Hof und Umgebung,
+        Diese Plattform richtet sich an lokale Gartenservices in Hof und Umgebung,
         die online sichtbarer werden und neue Kunden direkt erreichen möchten.
       </p>
     </div>
   </div>
 
   <div class="section">
-    <div class="pricing-card">
+    <div class="pricing-card reveal">
       <h2>Premium Platzierung – mehr Sichtbarkeit</h2>
       <p>
         Wählen Sie zwischen einem Standard-Eintrag und einer hervorgehobenen Premium-Platzierung.
@@ -376,8 +522,8 @@ footer a:hover{
       <div class="pricing-grid">
         <div class="price-box">
           <h3>Standard</h3>
-          <div class="price">ab 20 €</div>
-          <div class="price-note">einfache Platzierung</div>
+          <div class="price">auf Anfrage</div>
+          <div class="price-note">individuelle Preisgestaltung</div>
           <ul>
             <li>Eintrag in der Übersicht</li>
             <li>Google-Profil oder Website</li>
@@ -387,8 +533,8 @@ footer a:hover{
 
         <div class="price-box">
           <h3>Premium</h3>
-          <div class="price">ab 50 €</div>
-          <div class="price-note">mehr Sichtbarkeit</div>
+          <div class="price">auf Anfrage</div>
+          <div class="price-note">abhängig von Platzierung &amp; Umfang</div>
           <ul>
             <li>Hervorgehobene Platzierung oben</li>
             <li>Größere Darstellung</li>
@@ -398,42 +544,78 @@ footer a:hover{
       </div>
 
       <div class="pricing-hint">
-        Die finalen Preise können je nach Umfang und Platzierung leicht variieren.
-        Details werden individuell nach Anfrage abgestimmt.
+        Erste Anfrage kostenlos und unverbindlich. Die Konditionen werden individuell nach Umfang und gewünschter Platzierung abgestimmt.
       </div>
     </div>
   </div>
 
   <div class="section">
-    <div class="form-wrap">
+    <div class="benefits-card reveal">
+      <h2>Warum lohnt sich ein Eintrag?</h2>
+      <p>
+        Ein guter Eintrag ist mehr als nur ein Name in einer Liste. Er erhöht Ihre Sichtbarkeit
+        und kann dazu beitragen, dass Interessenten schneller auf Ihr Unternehmen aufmerksam werden.
+      </p>
+
+      <div class="compare-grid">
+        <div class="compare-box weak">
+          <h3>Ohne Eintrag</h3>
+          <ul>
+            <li>Weniger Sichtbarkeit bei lokalen Interessenten</li>
+            <li>Kunden finden oft nur die bekanntesten Anbieter</li>
+            <li>Weniger Aufmerksamkeit für Ihr Unternehmen</li>
+            <li>Potenzielle Anfragen gehen an andere Firmen</li>
+          </ul>
+        </div>
+
+        <div class="compare-box strong">
+          <h3>Mit Eintrag auf hof-gartenservice.de</h3>
+          <ul>
+            <li>Mehr Präsenz auf einer lokalen Themenseite</li>
+            <li>Direkter Weg für Interessenten zu Ihrem Profil</li>
+            <li>Mehr Vertrauen durch klare Darstellung Ihres Unternehmens</li>
+            <li>Bessere Chance auf neue Anfragen aus der Region</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="benefits-note">
+        <strong>Kurz gesagt:</strong> Ihr Profil ist nicht einfach nur ein Eintrag,
+        sondern eine zusätzliche Möglichkeit, online gefunden zu werden und neue Kunden in Hof zu erreichen.
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="form-wrap reveal">
       <h2>Anfrage senden</h2>
       <p>
         Senden Sie uns Ihre Anfrage. Wir melden uns schnellstmöglich bei Ihnen zurück.
       </p>
 
-      <form class="form-card" action="https://formspree.io/f/mjgpagzy" method="POST">
-        <input type="hidden" name="_subject" value="Neue Anfrage über hof-reinigung.de">
-        <input type="hidden" name="_next" value="danke.html">
+      <form id="company-form" class="form-card" action="https://formspree.io/f/mjgpagzy" method="POST" autocomplete="off">
+        <input type="hidden" name="_subject" value="Neue Anfrage über hof-gartenservice.de">
+        <input type="hidden" name="_language" value="de">
 
         <div class="form-grid">
           <div class="form-group">
             <label for="firma">Firmenname</label>
-            <input type="text" id="firma" name="Firmenname" placeholder="z. B. Muster Reinigung Hof" required>
+            <input type="text" id="firma" name="Firmenname" placeholder="z. B. Muster Gartenservice Hof" required autocomplete="off">
           </div>
 
           <div class="form-group">
             <label for="email">E-Mail</label>
-            <input type="email" id="email" name="E-Mail" placeholder="ihre@email.de" required>
+            <input type="email" id="email" name="E-Mail" placeholder="ihre@email.de" required autocomplete="off">
           </div>
 
           <div class="form-group">
             <label for="googleprofil">Google-Profil Link</label>
-            <input type="url" id="googleprofil" name="Google-Profil" placeholder="https://...">
+            <input type="url" id="googleprofil" name="Google-Profil" placeholder="https://..." autocomplete="off">
           </div>
 
           <div class="form-group">
             <label for="paket">Paket</label>
-            <select id="paket" name="Paket">
+            <select id="paket" name="Paket" autocomplete="off">
               <option value="Standard">Standard</option>
               <option value="Premium">Premium</option>
             </select>
@@ -441,13 +623,22 @@ footer a:hover{
 
           <div class="form-group full">
             <label for="nachricht">Kurze Beschreibung</label>
-            <textarea id="nachricht" name="Nachricht" placeholder="Kurze Infos zu Ihrem Unternehmen, Leistungen oder Wünschen"></textarea>
+            <textarea id="nachricht" name="Nachricht" placeholder="Kurze Infos zu Ihrem Unternehmen, Leistungen oder Wünschen" autocomplete="off"></textarea>
           </div>
         </div>
 
         <div class="btn-row">
           <button class="btn primary" type="submit">Anfrage senden</button>
+
+          <a class="btn whatsapp"
+             href="https://wa.me/491624012037?text=Hallo,%20ich%20möchte%20mein%20Unternehmen%20bei%20hof-gartenservice.de%20eintragen."
+             target="_blank"
+             rel="noopener">
+            WhatsApp
+          </a>
         </div>
+
+        <div id="company-form-status" class="form-status" aria-live="polite"></div>
 
         <div class="form-note">
           Ihre Anfrage wird direkt an DK Software Studio gesendet.
@@ -457,7 +648,9 @@ footer a:hover{
   </div>
 
   <footer>
-    © 2026 hof-reinigung.de · by DK Software Studio<br>
+    © 2026 hof-gartenservice.de · by 
+    <a href="https://dksoftwarestudio.com" target="_blank" rel="noopener">DK Software Studio</a><br>
+    <a href="kontakt.html">Kontakt</a> · 
     <a href="impressum.html">Impressum</a> · 
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
@@ -467,6 +660,22 @@ footer a:hover{
 <button id="toTopBtn" aria-label="Nach oben">↑</button>
 
 <script>
+const reveals = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 80) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
 const toTopBtn = document.getElementById("toTopBtn");
 
 window.addEventListener("scroll", () => {
@@ -483,6 +692,41 @@ toTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+const companyForm = document.querySelector('.form-card');
+const companyFormStatus = document.getElementById('company-form-status');
+
+if (companyForm) {
+  companyForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    companyFormStatus.className = 'form-status';
+    companyFormStatus.textContent = '';
+
+    const formData = new FormData(companyForm);
+
+    try {
+      const response = await fetch(companyForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        companyForm.reset();
+        window.location.href = 'danke.html';
+      } else {
+        companyFormStatus.className = 'form-status error';
+        companyFormStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
+      }
+    } catch (error) {
+      companyFormStatus.className = 'form-status error';
+      companyFormStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
+    }
+  });
+}
 </script>
 
 </body>
