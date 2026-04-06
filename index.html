@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reinigung in Hof</title>
+<title>Gartenservice in Hof – Anbieter finden | hof-gartenservice.de</title>
 
 <style>
 :root{
@@ -42,9 +42,22 @@ body{
 }
 
 .logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
   font-weight:700;
   font-size:18px;
   color:var(--textDark);
+  text-decoration:none;
+}
+
+.logo-mark{
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
+  display:block;
+  object-fit:contain;
+  border-radius:50%;
 }
 
 .header-right{
@@ -96,6 +109,15 @@ body{
   letter-spacing:0.2px;
 }
 
+.hero-lead{
+  margin:18px auto 0;
+  max-width:720px;
+  color:var(--textDark);
+  font-size:17px;
+  line-height:1.6;
+  font-weight:600;
+}
+
 .section{
   margin-top:22px;
 }
@@ -140,7 +162,7 @@ body{
   height:220px;
   background:
     linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-    url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80")
+    url("https://images.unsplash.com/photo-1599685315640-9ceab2f92f70?auto=format&fit=crop&w=1400&q=80")
     center/cover no-repeat;
 }
 
@@ -236,6 +258,17 @@ body{
   transform:translateY(-2px);
 }
 
+.btn.whatsapp{
+  background:#25D366;
+  color:#fff;
+  box-shadow:0 10px 25px rgba(37,211,102,0.22);
+}
+
+.btn.whatsapp:hover{
+  transform:translateY(-2px);
+  background:#1ebe5b;
+}
+
 .btn.small{
   padding:8px 14px;
   font-size:13px;
@@ -244,6 +277,7 @@ body{
 .reveal{
   opacity:0;
   transform:translateY(30px);
+  transition:opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.active{
@@ -277,24 +311,160 @@ body{
   gap:16px;
 }
 
-.col-box{
+/* REQUEST BOARD */
+.request-board{
+  margin-top:22px;
+}
+
+.request-board-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px 24px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.05);
+}
+
+.request-head h2{
+  margin:0 0 10px;
+  color:var(--textDark);
+  font-size:28px;
+}
+
+.request-head p{
+  margin:0 0 20px;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:760px;
+}
+
+.request-layout{
+  display:grid;
+  grid-template-columns:1.35fr 0.9fr;
+  gap:18px;
+  align-items:start;
+}
+
+.request-form-wrap,
+.request-list-card{
   background:#F7F9FC;
   border:1px solid var(--border);
-  border-radius:14px;
-  padding:18px;
+  border-radius:16px;
+  padding:20px;
 }
 
-.col-box h4{
-  margin:0 0 10px;
-  color:var(--blue);
-  font-size:17px;
+.request-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
 }
 
-.col-box ul{
-  margin:0;
-  padding-left:18px;
+.request-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.request-group.full{
+  grid-column:1 / -1;
+}
+
+.request-group label{
+  font-size:13px;
+  font-weight:700;
+  color:var(--textDark);
+}
+
+.request-group input,
+.request-group select,
+.request-group textarea{
+  width:100%;
+  padding:12px 14px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  background:#fff;
+  color:var(--textDark);
+  font-size:14px;
+  font-family:Arial, sans-serif;
+}
+
+.request-group textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.btn-row.left{
+  justify-content:flex-start;
+}
+
+.request-note{
+  margin-top:12px;
+  font-size:12px;
+  color:#7a7a7a;
+  line-height:1.6;
+}
+
+.request-status{
+  display:none;
+  margin-top:12px;
+  font-size:13px;
+  line-height:1.5;
+}
+
+.request-status.success{
+  display:block;
+  color:#1A53AD;
+}
+
+.request-status.error{
+  display:block;
+  color:#b00020;
+}
+
+.request-list-card h3{
+  margin:0 0 8px;
+  font-size:22px;
+  color:var(--textDark);
+}
+
+.request-list-intro{
+  margin:0 0 16px;
   color:var(--muted);
-  line-height:1.8;
+  line-height:1.6;
+}
+
+.request-item{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:12px;
+}
+
+.request-item:last-child{
+  margin-bottom:0;
+}
+
+.request-badge{
+  display:inline-block;
+  margin-bottom:10px;
+  padding:4px 10px;
+  border-radius:999px;
+  background:var(--blueLight);
+  color:var(--blue);
+  font-size:12px;
+  font-weight:700;
+}
+
+.request-item h4{
+  margin:0 0 8px;
+  color:var(--textDark);
+  font-size:18px;
+}
+
+.request-item p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
 }
 
 #toTopBtn{
@@ -324,6 +494,83 @@ body{
 #toTopBtn.show{
   opacity:1;
   pointer-events:auto;
+}
+
+/* COOKIE BANNER */
+.cookie-banner{
+  position:fixed;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  max-width:760px;
+  margin:0 auto;
+  background:#ffffff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.12);
+  padding:18px 18px 16px;
+  z-index:2000;
+  display:none;
+}
+
+.cookie-banner.show{
+  display:block;
+}
+
+.cookie-banner h3{
+  margin:0 0 8px;
+  font-size:18px;
+  color:var(--textDark);
+}
+
+.cookie-banner p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+  font-size:14px;
+}
+
+.cookie-banner p a{
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:700;
+}
+
+.cookie-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.cookie-btn{
+  appearance:none;
+  border:none;
+  cursor:pointer;
+  border-radius:10px;
+  padding:11px 18px;
+  font-size:14px;
+  font-weight:700;
+  transition:0.2s ease;
+}
+
+.cookie-btn.accept{
+  background:var(--blue);
+  color:#fff;
+  box-shadow:0 10px 25px rgba(26,83,173,0.22);
+}
+
+.cookie-btn.accept:hover{
+  transform:translateY(-2px);
+}
+
+.cookie-btn.reject{
+  background:#EEF2F8;
+  color:var(--textDark);
+}
+
+.cookie-btn.reject:hover{
+  transform:translateY(-2px);
 }
 
 footer{
@@ -364,6 +611,10 @@ footer a:hover{
     font-size:30px;
   }
 
+  .hero-lead{
+    font-size:16px;
+  }
+
   .premium-top{
     height:180px;
   }
@@ -376,6 +627,18 @@ footer a:hover{
     grid-template-columns:1fr;
   }
 
+  .request-layout{
+    grid-template-columns:1fr;
+  }
+
+  .request-grid{
+    grid-template-columns:1fr;
+  }
+
+  .request-head h2{
+    font-size:24px;
+  }
+
   .btn-row{
     flex-direction:column;
     align-items:stretch;
@@ -383,6 +646,24 @@ footer a:hover{
 
   .btn{
     text-align:center;
+  }
+
+  .logo-mark{
+    width:34px;
+    height:34px;
+    flex-basis:34px;
+  }
+
+  .cookie-banner{
+    left:12px;
+    right:12px;
+    bottom:12px;
+    padding:16px 14px 14px;
+  }
+
+  .cookie-actions{
+    flex-direction:column;
+    align-items:stretch;
   }
 
   #toTopBtn{
@@ -398,7 +679,10 @@ footer a:hover{
 <body>
 
 <div class="header">
-  <div class="logo">Reinigung Hof</div>
+  <a href="index.html" class="logo" aria-label="Gartenservice Hof">
+    <img src="Logo-gartenservice.png" alt="Gartenservice Hof Logo" class="logo-mark">
+    <span>Gartenservice Hof</span>
+  </a>
 
   <div class="header-right">
     <div class="header-note">Anbieter im Überblick</div>
@@ -409,15 +693,29 @@ footer a:hover{
 <div class="wrap">
 
   <div class="hero reveal">
-    <h1>Reinigungsfirmen in Hof</h1>
+    <h1>Gartenservice in Hof (Saale)</h1>
 
     <p>
-      Finden Sie lokale Reinigungsfirmen in Hof schnell und einfach.
-      Direktkontakt ohne Vermittlung – klar, transparent und zuverlässig.
+      Finden Sie einen zuverlässigen Gartenservice in Hof (Saale) schnell und unkompliziert.
+      Auf hof-gartenservice.de entdecken Sie lokale Anbieter für Gartenpflege, Gartenarbeiten und Hausservice.
     </p>
 
     <div class="hero-meta">
       Lokale Anbieter · Direktkontakt · Ohne Vermittlung
+    </div>
+
+    <div class="hero-lead">
+      Gepflegt. Sauber. Zuverlässig.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="info-card reveal">
+      <h3>Gartenservice in Hof finden</h3>
+      <p>
+        Auf hof-gartenservice.de finden Sie schnell passende Anbieter für Gartenservice in Hof und Umgebung.
+        Egal ob Rasenpflege, Hecken schneiden, Laubentsorgung oder Gartenreinigung – hier finden Sie lokale Dienstleister direkt ohne Vermittlung.
+      </p>
     </div>
   </div>
 
@@ -436,24 +734,24 @@ footer a:hover{
         <div class="card-inner">
           <div class="badge">Empfohlen</div>
 
-          <h2 class="premium-title">Gebäude- &amp; Objektservice Bilusiak – Hof</h2>
+          <h2 class="premium-title">Gartenservice Grün &amp; Hof – Hof</h2>
 
           <p class="desc">
-            Professionelle Reinigung und Objektservice in Hof und Umgebung.
-            Zuverlässiger Service für Wohnungen, Gebäude und gewerbliche Objekte.
+            Zuverlässiger Gartenservice in Hof und Umgebung.
+            Unterstützung bei Gartenpflege, Rückschnitt und sauberen Außenanlagen für privat und gewerblich.
           </p>
 
           <div class="meta">
-            <span>Gebäudereinigung</span>
-            <span>Objektservice</span>
-            <span>Hausmeisterservice</span>
+            <span>Gartenpflege</span>
+            <span>Heckenschnitt</span>
+            <span>Privat &amp; Gewerbe</span>
           </div>
 
           <div class="rating-line">⭐ 5.0 · Google Bewertung · Verifizierter Anbieter</div>
 
           <div class="btn-row">
             <a class="btn primary"
-               href="https://www.google.com/search?q=Geb%C3%A4ude-+%26+Objektservice+Bilusiak+Hof"
+               href="#"
                target="_blank"
                rel="noopener">
               Google-Profil ansehen
@@ -471,15 +769,15 @@ footer a:hover{
 
       <div class="card reveal">
         <div class="card-inner">
-          <h3 class="standard-title">Sauber Team Hof</h3>
+          <h3 class="standard-title">Rasen &amp; Pflege Hof</h3>
 
           <p class="desc">
-            Reinigungsservice für private Haushalte und kleine Gewerbeobjekte.
+            Gartenservice für private Gärten und kleinere Außenflächen in Hof.
           </p>
 
           <div class="meta">
-            <span>Haushalt</span>
-            <span>Treppenhaus</span>
+            <span>Rasenpflege</span>
+            <span>Gartenpflege</span>
           </div>
 
           <div class="btn-row">
@@ -491,15 +789,15 @@ footer a:hover{
 
       <div class="card reveal">
         <div class="card-inner">
-          <h3 class="standard-title">Fenster &amp; Glanz Hof</h3>
+          <h3 class="standard-title">Hecke &amp; Schnitt Hof</h3>
 
           <p class="desc">
-            Lokaler Anbieter für Fensterreinigung und regelmäßige Unterhaltsreinigung.
+            Lokaler Anbieter für Heckenschnitt, Rückschnitt und saubere Außenbereiche.
           </p>
 
           <div class="meta">
-            <span>Fenster</span>
-            <span>Unterhaltsreinigung</span>
+            <span>Heckenschnitt</span>
+            <span>Rückschnitt</span>
           </div>
 
           <div class="btn-row">
@@ -512,49 +810,223 @@ footer a:hover{
     </div>
   </div>
 
+  <section id="request" class="request-board reveal">
+    <div class="request-board-card">
+      <div class="request-head">
+        <h2>Kostenlose Anfrage stellen</h2>
+        <p>
+          Sie suchen einen Gartenservice in Hof? Senden Sie Ihre Anfrage direkt über diese Seite.
+          Ohne Vermittlung – lokale Firmen können sich bei Ihnen melden.
+        </p>
+      </div>
+
+      <div class="request-layout">
+        <div class="request-form-wrap">
+          <form class="request-form" action="https://formspree.io/f/mjgpagzy" method="POST" autocomplete="off">
+            <input type="hidden" name="_subject" value="Neue Kundenanfrage über hof-gartenservice.de">
+            <input type="hidden" name="_language" value="de">
+
+            <div class="request-grid">
+              <div class="request-group">
+                <label for="kunde-name">Name</label>
+                <input type="text" id="kunde-name" name="Name" placeholder="Ihr Name" required autocomplete="off">
+              </div>
+
+              <div class="request-group">
+                <label for="kunde-email">E-Mail</label>
+                <input type="email" id="kunde-email" name="E-Mail" placeholder="ihre@email.de" required autocomplete="off">
+              </div>
+
+              <div class="request-group">
+                <label for="kunde-ort">Ort</label>
+                <input type="text" id="kunde-ort" name="Ort" placeholder="z. B. Hof" value="Hof" required autocomplete="off">
+              </div>
+
+              <div class="request-group">
+                <label for="kunde-art">Art der Anfrage</label>
+                <select id="kunde-art" name="Art der Anfrage" autocomplete="off">
+                  <option value="Gartenpflege">Gartenpflege</option>
+                  <option value="Rasenpflege">Rasenpflege</option>
+                  <option value="Heckenschnitt">Heckenschnitt</option>
+                  <option value="Rückschnitt">Rückschnitt</option>
+                  <option value="Laubentsorgung">Laubentsorgung</option>
+                  <option value="Sonstiges">Sonstiges</option>
+                </select>
+              </div>
+
+              <div class="request-group full">
+                <label for="kunde-anfrage">Ihre Anfrage</label>
+                <textarea id="kunde-anfrage" name="Anfrage" placeholder="Beschreiben Sie kurz, welche Arbeiten im Garten anstehen und wann Sie Unterstützung brauchen." required autocomplete="off"></textarea>
+              </div>
+            </div>
+
+            <div class="btn-row left">
+              <button class="btn primary" type="submit">Anfrage senden</button>
+              <a class="btn whatsapp"
+                 href="https://wa.me/491624012037?text=Hallo,%20ich%20interessiere%20mich%20für%20einen%20Gartenservice%20in%20Hof."
+                 target="_blank"
+                 rel="noopener">
+                WhatsApp
+              </a>
+            </div>
+
+            <div id="request-status" class="request-status" aria-live="polite"></div>
+
+            <div class="request-note">
+              Ihre Anfrage wird zentral über diese Plattform erfasst und an passende Anbieter in Hof weitergeleitet.<br><br>
+              <strong>Betreiber:</strong> DK Software Studio<br>
+              <strong>Kontakt:</strong>
+              <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="request-list-wrap">
+          <div class="request-list-card">
+            <h3>Aktuelle Anfragen</h3>
+            <p class="request-list-intro">
+              Beispiele für aktuelle Gesuche auf der Plattform.
+            </p>
+
+            <div class="request-item">
+              <div class="request-badge">Neu</div>
+              <h4>Rasenpflege gesucht</h4>
+              <p>Kleiner Garten in Hof, regelmäßige Pflege und Rasenschnitt gewünscht.</p>
+            </div>
+
+            <div class="request-item">
+              <div class="request-badge">Neu</div>
+              <h4>Heckenschnitt</h4>
+              <p>Hecke in Hof zurückschneiden, Termin in den nächsten Tagen flexibel möglich.</p>
+            </div>
+
+            <div class="request-item">
+              <div class="request-badge">Neu</div>
+              <h4>Gartenpflege angefragt</h4>
+              <p>Privater Garten in Hof sucht Unterstützung bei Pflege und Aufräumarbeiten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="section">
     <div class="info-card reveal">
-      <h3>Warum eine Reinigungsfirma beauftragen?</h3>
+      <h3>Warum einen Gartenservice beauftragen?</h3>
       <p>
         Professionelle Anbieter bieten in der Regel mehr Planungssicherheit,
-        klare Leistungen und eine bessere Absicherung als private Angebote ohne Rechnung.
+        klare Leistungen und eine zuverlässige Pflege von Garten und Außenbereich.
       </p>
 
       <div class="columns">
         <div class="col-box">
           <h4>Vorteile professioneller Anbieter</h4>
           <ul>
-            <li>Rechnung und klare Leistungen</li>
-            <li>Mehr Sicherheit bei Schäden</li>
-            <li>Zuverlässigere Terminplanung</li>
+            <li>Klare Leistungen und Planung</li>
+            <li>Zuverlässige Terminabsprachen</li>
+            <li>Saubere und regelmäßige Pflege</li>
             <li>Transparente Kommunikation</li>
           </ul>
         </div>
 
         <div class="col-box">
-          <h4>Private Angebote</h4>
+          <h4>Einzelne private Angebote</h4>
           <ul>
-            <li>Oft keine Rechnung</li>
-            <li>Unklare Absicherung</li>
-            <li>Schwankende Qualität möglich</li>
-            <li>Kurzfristige Änderungen eher möglich</li>
+            <li>Oft keine klare Struktur</li>
+            <li>Unterschiedliche Verfügbarkeit</li>
+            <li>Qualität kann schwanken</li>
+            <li>Kurzfristige Änderungen möglich</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="section">
+    <div class="info-card reveal" style="text-align:center;">
+      <h3>Für Anbieter</h3>
+
+      <p style="max-width:560px;margin:0 auto 14px;">
+        Sie möchten neue Kunden in Hof gewinnen?
+        Tragen Sie Ihr Unternehmen ein und werden Sie sichtbar für lokale Anfragen auf dieser Plattform.
+      </p>
+
+      <div class="btn-row" style="justify-content:center;">
+        <a href="eintragen.html" class="btn primary">Jetzt eintragen</a>
+      </div>
+
+      <p style="margin-top:12px;font-size:13px;color:#777;">
+        Einfache Anmeldung · Direkter Kontakt zu lokalen Kunden
+      </p>
+    </div>
+  </div>
+
   <footer>
-    © 2026 hof-reinigung.de · by DK Software Studio<br>
+    © 2026 hof-gartenservice.de · by 
+    <a href="https://dksoftwarestudio.com" target="_blank" rel="noopener">DK Software Studio</a><br>
+    <a href="kontakt.html">Kontakt</a> ·
     <a href="impressum.html">Impressum</a> · 
     <a href="datenschutz.html">Datenschutz</a>
   </footer>
 
 </div>
 
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Hinweis">
+  <h3>Cookie-Einstellungen</h3>
+  <p>
+    Diese Website verwendet optionale Analyse-Cookies, um die Nutzung der Seite zu verstehen und zu verbessern.
+    Sie können zustimmen oder ablehnen. Weitere Informationen finden Sie in der
+    <a href="datenschutz.html">Datenschutzerklärung</a>.
+  </p>
+  <div class="cookie-actions">
+    <button id="acceptCookies" class="cookie-btn accept" type="button">Akzeptieren</button>
+    <button id="rejectCookies" class="cookie-btn reject" type="button">Ablehnen</button>
+  </div>
+</div>
+
 <button id="toTopBtn" aria-label="Nach oben">↑</button>
 
 <script>
+const GA_ID = 'G-GZ2FXMBG67';
+const COOKIE_KEY = 'hof_gartenservice_cookie_choice';
+
+function loadGoogleAnalytics() {
+  if (window.gaLoaded) return;
+  window.gaLoaded = true;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID, { anonymize_ip: true });
+}
+
+const cookieBanner = document.getElementById('cookieBanner');
+const savedCookieChoice = localStorage.getItem(COOKIE_KEY);
+
+if (savedCookieChoice === 'accepted') {
+  loadGoogleAnalytics();
+} else if (!savedCookieChoice) {
+  cookieBanner.classList.add('show');
+}
+
+document.getElementById('acceptCookies').addEventListener('click', () => {
+  localStorage.setItem(COOKIE_KEY, 'accepted');
+  cookieBanner.classList.remove('show');
+  loadGoogleAnalytics();
+});
+
+document.getElementById('rejectCookies').addEventListener('click', () => {
+  localStorage.setItem(COOKIE_KEY, 'rejected');
+  cookieBanner.classList.remove('show');
+});
+
 const reveals = document.querySelectorAll('.reveal');
 
 function revealOnScroll() {
@@ -587,6 +1059,42 @@ toTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+const requestForm = document.querySelector('.request-form');
+const requestStatus = document.getElementById('request-status');
+
+if (requestForm) {
+  requestForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    requestStatus.className = 'request-status';
+    requestStatus.textContent = '';
+
+    const formData = new FormData(requestForm);
+
+    try {
+      const response = await fetch(requestForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        requestForm.reset();
+        document.getElementById('kunde-ort').value = 'Hof';
+        window.location.href = 'danke.html';
+      } else {
+        requestStatus.className = 'request-status error';
+        requestStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
+      }
+    } catch (error) {
+      requestStatus.className = 'request-status error';
+      requestStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
+    }
+  });
+}
 </script>
 
 </body>
