@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gartenservice in Hof finden | hof-gartenservice.de</title>
+<meta name="description" content="Gartenservice in Hof finden – regionale Anbieter für Gartenpflege, Rasen, Heckenschnitt und Außenbereiche. Kostenlos anfragen und passende Betriebe aus Hof erhalten.">
 
 <style>
 :root{
@@ -29,16 +30,6 @@ body{
   font-family:Arial, sans-serif;
   background:var(--bg);
   color:var(--text);
-}
-
-.header{
-  background:#ffffff;
-  border-bottom:1px solid var(--border);
-  padding:16px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
 }
 
 .logo{
@@ -88,10 +79,10 @@ body{
 }
 
 .hero{
-  background:var(--card);
+  background:linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
   border-radius:18px;
   padding:42px 34px;
-  box-shadow:var(--shadow);
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
   border:1px solid var(--border);
   text-align:center;
 }
@@ -128,6 +119,22 @@ body{
   font-weight:600;
 }
 
+.hero-cta{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.hero-note{
+  margin:16px auto 0;
+  max-width:720px;
+  font-size:14px;
+  line-height:1.6;
+  color:#7a7a7a;
+}
+
 .section{
   margin-top:22px;
 }
@@ -149,17 +156,17 @@ body{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:18px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.05);
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
   transition:transform 0.25s ease, box-shadow 0.25s ease, opacity 0.6s ease;
 }
 
 .card:hover{
   transform:translateY(-3px);
-  box-shadow:0 18px 38px rgba(0,0,0,0.08);
+  box-shadow:0 14px 28px rgba(0,0,0,0.06);
 }
 
 .card-inner{
-  padding:24px;
+  padding:20px;
 }
 
 .premium-card{
@@ -169,7 +176,7 @@ body{
 }
 
 .premium-top{
-  height:220px;
+  height:170px;
   background:
     linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
     url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1400&q=80")
@@ -192,16 +199,19 @@ body{
 .standard-title{
   margin:0 0 8px;
   color:var(--textDark);
-  font-size:28px;
   font-weight:700;
 }
 
+.premium-title{
+  font-size:24px;
+}
+
 .standard-title{
-  font-size:22px;
+  font-size:20px;
 }
 
 .desc{
-  margin:0 0 16px;
+  margin:0 0 14px;
   color:var(--muted);
   line-height:1.7;
   font-size:15px;
@@ -216,11 +226,11 @@ body{
 
 .meta span{
   display:inline-block;
-  padding:8px 12px;
+  padding:6px 10px;
   border-radius:999px;
   background:#F7F9FC;
   color:#5b6570;
-  font-size:13px;
+  font-size:12px;
   border:1px solid var(--border);
 }
 
@@ -297,13 +307,14 @@ body{
 }
 
 .info-card{
-  background:var(--card);
+  background:linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
   border:1px solid var(--border);
   border-radius:18px;
   padding:26px 24px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.05);
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
 }
 
+.info-card h2,
 .info-card h3{
   margin:0 0 10px;
   font-size:22px;
@@ -342,6 +353,45 @@ body{
   line-height:1.8;
 }
 
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;
+}
+
+.step-box{
+  background:#F7F9FC;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px;
+}
+
+.step-number{
+  display:inline-flex;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  align-items:center;
+  justify-content:center;
+  background:rgba(26,83,173,0.10);
+  color:var(--blue);
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.step-box h4{
+  margin:0 0 8px;
+  color:var(--textDark);
+  font-size:17px;
+}
+
+.step-box p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+}
+
 /* MORE SERVICES */
 .services-grid{
   display:grid;
@@ -353,15 +403,15 @@ body{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:18px;
-  padding:22px 18px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.05);
+  padding:18px 16px;
+  box-shadow:none;
   text-align:center;
   transition:transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-card:hover{
   transform:translateY(-3px);
-  box-shadow:0 18px 38px rgba(0,0,0,0.08);
+  box-shadow:0 14px 28px rgba(0,0,0,0.06);
 }
 
 .service-card.current{
@@ -370,11 +420,11 @@ body{
 }
 
 .service-icon{
-  width:110px;
-  height:110px;
+  width:76px;
+  height:76px;
   object-fit:contain;
   display:block;
-  margin:0 auto 16px;
+  margin:0 auto 14px;
 }
 
 .service-title{
@@ -385,7 +435,7 @@ body{
 }
 
 .service-text{
-  margin:0 0 16px;
+  margin:0 0 14px;
   font-size:14px;
   line-height:1.6;
   color:var(--muted);
@@ -411,7 +461,7 @@ body{
   border:1px solid var(--border);
   border-radius:18px;
   padding:28px 24px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.05);
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
 }
 
 .request-head h2{
@@ -475,6 +525,15 @@ body{
   color:var(--textDark);
   font-size:14px;
   font-family:Arial, sans-serif;
+  transition:border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.request-group input:focus,
+.request-group select:focus,
+.request-group textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(26,83,173,0.15);
+  outline:none;
 }
 
 .request-group textarea{
@@ -484,6 +543,13 @@ body{
 
 .btn-row.left{
   justify-content:flex-start;
+}
+
+.form-trust{
+  margin-top:12px;
+  font-size:12px;
+  color:#7a7a7a;
+  line-height:1.6;
 }
 
 .request-note{
@@ -682,15 +748,23 @@ footer a:hover{
 
 @media (max-width:700px){
   .header{
-    flex-direction:column;
-    align-items:flex-start;
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .logo{
+    justify-content:center;
   }
 
   .header-right{
-    width:100%;
-    justify-content:space-between;
-    flex-wrap:wrap;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     gap:10px;
+  }
+
+  .header-note{
+    justify-self:auto;
   }
 
   .hero{
@@ -706,14 +780,11 @@ footer a:hover{
   }
 
   .premium-top{
-    height:180px;
+    height:160px;
   }
 
-  .premium-title{
-    font-size:24px;
-  }
-
-  .columns{
+  .columns,
+  .steps{
     grid-template-columns:1fr;
   }
 
@@ -733,7 +804,8 @@ footer a:hover{
     font-size:24px;
   }
 
-  .btn-row{
+  .btn-row,
+  .hero-cta{
     flex-direction:column;
     align-items:stretch;
   }
@@ -774,7 +846,7 @@ footer a:hover{
 
 <div class="header">
   <a href="index.html" class="logo" aria-label="Gartenservice Hof">
-    <img src="logo-gartenservice.png" alt="Gartenservice Hof Logo" class="logo-mark">
+    <img src="logo-gartenservice.png" alt="Gartenservice Hof Logo" class="logo-mark" loading="lazy">
     <span>Gartenservice Hof</span>
   </a>
 
@@ -787,28 +859,210 @@ footer a:hover{
 <div class="wrap">
 
   <div class="hero reveal">
-    <h1>Gartenservice in Hof (Saale) finden</h1>
+    <h1>Gartenservice in Hof finden – schnell &amp; regional</h1>
 
     <p>
       hof-gartenservice.de ist eine regionale Plattform für Stadt und Landkreis Hof.
-      Hier finden Privatkunden passende Anbieter für Gartenpflege, Rückschnitt und Außenbereiche aus der Region – direkt, einfach und ohne überladene Vermittlungsportale.
+      Hier finden Sie lokale Anbieter für Gartenpflege, Rückschnitt und Außenbereiche direkt – ohne überladene Vermittlungsportale und ohne unnötige Umwege.
     </p>
 
     <div class="hero-meta">
-      Region Hof (Saale) · Lokale Anbieter · Direkte Anfrage
+      Nur Anbieter aus Hof und Umgebung · Direkte Anfrage · Keine Massenvermittlung
     </div>
 
     <div class="hero-lead">
       Regional. Klar. Direkt.
     </div>
+
+    <div class="hero-cta">
+      <a href="#request" class="btn primary">Kostenlose Anfrage stellen</a>
+      <a href="eintragen.html" class="btn secondary">Als Betrieb eintragen</a>
+    </div>
+
+    <div class="hero-note">
+      Kostenlos &amp; unverbindlich · Nur lokale Anbieter aus Hof und Umgebung
+    </div>
   </div>
 
   <div class="section">
     <div class="info-card reveal">
-      <h3>Für Privatkunden aus Hof und Umgebung</h3>
+      <h2>Für Privatkunden aus Hof und Umgebung</h2>
       <p>
         Sie suchen Unterstützung bei Gartenpflege, Rasen, Hecken oder saisonalen Gartenarbeiten?
         Auf hof-gartenservice.de finden Sie regionale Anbieter aus Hof und Umgebung – kostenlos, unverbindlich und direkt.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="info-card reveal">
+      <h2>So funktioniert’s</h2>
+
+      <div class="steps">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <h4>Anfrage stellen</h4>
+          <p>Beschreiben Sie kurz, welche Gartenarbeiten Sie in Hof oder Umgebung benötigen.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <h4>Lokale Betriebe melden sich</h4>
+          <p>Passende Gartenservice-Anbieter aus Hof und Umgebung können direkt auf Ihre Anfrage reagieren.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <h4>Passenden Anbieter wählen</h4>
+          <p>Sie vergleichen die Rückmeldungen und entscheiden selbst, welcher Betrieb am besten passt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="request" class="request-board reveal">
+    <div class="request-board-card">
+      <div class="request-head">
+        <h2>Kostenlose Anfrage stellen</h2>
+        <p>
+          Sie suchen einen Gartenservice in Hof oder Umgebung?
+          Senden Sie Ihre Anfrage direkt über diese Plattform – passende lokale Anbieter können sich bei Ihnen melden.
+        </p>
+      </div>
+
+      <div class="request-layout">
+        <div class="request-form-wrap">
+          <form class="request-form" action="https://formspree.io/f/mjgpagzy" method="POST" autocomplete="off">
+            <input type="hidden" name="_subject" value="Neue Kundenanfrage über hof-gartenservice.de">
+            <input type="hidden" name="_language" value="de">
+
+            <div class="request-grid">
+              <div class="request-group">
+                <label for="kunde-name">Name</label>
+                <input type="text" id="kunde-name" name="Name" placeholder="Ihr Name" required autocomplete="off">
+              </div>
+
+              <div class="request-group">
+                <label for="kunde-email">E-Mail</label>
+                <input type="email" id="kunde-email" name="E-Mail" placeholder="ihre@email.de" required autocomplete="off">
+              </div>
+
+              <div class="request-group">
+                <label for="kunde-ort">Ort</label>
+                <input type="text" id="kunde-ort" name="Ort" placeholder="z. B. Hof" value="Hof" required autocomplete="off">
+              </div>
+
+              <div class="request-group">
+                <label for="kunde-art">Art der Anfrage</label>
+                <select id="kunde-art" name="Art der Anfrage" autocomplete="off">
+                  <option value="Gartenpflege">Gartenpflege</option>
+                  <option value="Rasenpflege">Rasenpflege</option>
+                  <option value="Heckenschnitt">Heckenschnitt</option>
+                  <option value="Rückschnitt">Rückschnitt</option>
+                  <option value="Laubentsorgung">Laubentsorgung</option>
+                  <option value="Sonstiges">Sonstiges</option>
+                </select>
+              </div>
+
+              <div class="request-group full">
+                <label for="kunde-anfrage">Ihre Anfrage</label>
+                <textarea id="kunde-anfrage" name="Anfrage" placeholder="Zum Beispiel: Heckenschnitt und Rasenpflege für ein Einfamilienhaus in Hof. Termin möglichst in den nächsten 7 Tagen." required autocomplete="off"></textarea>
+              </div>
+            </div>
+
+            <div class="btn-row left">
+              <button class="btn primary" type="submit">Anfrage senden</button>
+              <a class="btn whatsapp"
+                 href="https://wa.me/491624012037?text=Hallo,%20ich%20interessiere%20mich%20für%20einen%20Gartenservice%20in%20Hof."
+                 target="_blank"
+                 rel="noopener">
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="form-trust">
+              Kostenlos &amp; unverbindlich · Ihre Anfrage wird an passende Anbieter aus Hof und Umgebung weitergeleitet.
+            </div>
+
+            <div id="request-status" class="request-status" aria-live="polite"></div>
+
+            <div class="request-note">
+              Ihre Anfrage wird zentral über diese Plattform erfasst und an passende Anbieter in Hof weitergeleitet.<br><br>
+              <strong>Betreiber:</strong> DK Software Studio<br>
+              <strong>Kontakt:</strong>
+              <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="request-list-wrap">
+          <div class="request-list-card">
+            <h3>Aktuelle Anfragen</h3>
+            <p class="request-list-intro">
+              Beispiele für aktuelle Gesuche auf der Plattform.
+            </p>
+
+            <div class="request-item">
+              <div class="request-badge">Neu</div>
+              <h4>Rasenpflege gesucht</h4>
+              <p>Kleiner Garten in Hof, regelmäßige Pflege und Rasenschnitt gewünscht.</p>
+            </div>
+
+            <div class="request-item">
+              <div class="request-badge">Neu</div>
+              <h4>Heckenschnitt</h4>
+              <p>Hecke in Hof zurückschneiden, Termin in den nächsten Tagen flexibel möglich.</p>
+            </div>
+
+            <div class="request-item">
+              <div class="request-badge">Neu</div>
+              <h4>Gartenpflege angefragt</h4>
+              <p>Privater Garten in Hof sucht Unterstützung bei Pflege und Aufräumarbeiten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section">
+    <div class="info-card reveal">
+      <h2>Warum einen Gartenservice in Hof beauftragen?</h2>
+      <p>
+        Professionelle Anbieter bieten in der Regel mehr Planungssicherheit,
+        klare Leistungen und eine zuverlässige Pflege von Garten und Außenbereich als private Einzelangebote ohne feste Struktur.
+      </p>
+
+      <div class="columns">
+        <div class="col-box">
+          <h4>Vorteile professioneller Anbieter</h4>
+          <ul>
+            <li>Klare Leistungen und Planung</li>
+            <li>Zuverlässige Terminabsprachen</li>
+            <li>Saubere und regelmäßige Pflege</li>
+            <li>Transparente Kommunikation</li>
+          </ul>
+        </div>
+
+        <div class="col-box">
+          <h4>Private Angebote</h4>
+          <ul>
+            <li>Oft keine klare Struktur</li>
+            <li>Unterschiedliche Verfügbarkeit</li>
+            <li>Qualität kann schwanken</li>
+            <li>Kurzfristige Änderungen möglich</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="info-card reveal">
+      <h2>Über dieses Projekt</h2>
+      <p>
+        hof-gartenservice.de ist ein regionales Projekt von DK Software Studio aus Hof.
+        Ziel ist es, Privatkunden und lokale Gartenservice-Betriebe in Hof und Umgebung einfach und direkt zusammenzubringen.
       </p>
     </div>
   </div>
@@ -904,151 +1158,16 @@ footer a:hover{
     </div>
   </div>
 
-  <section id="request" class="request-board reveal">
-    <div class="request-board-card">
-      <div class="request-head">
-        <h2>Kostenlose Anfrage stellen</h2>
-        <p>
-          Sie suchen einen Gartenservice in Hof oder Umgebung?
-          Senden Sie Ihre Anfrage direkt über diese Plattform – passende lokale Anbieter können sich bei Ihnen melden.
-        </p>
-      </div>
-
-      <div class="request-layout">
-        <div class="request-form-wrap">
-          <form class="request-form" action="https://formspree.io/f/mjgpagzy" method="POST" autocomplete="off">
-            <input type="hidden" name="_subject" value="Neue Kundenanfrage über hof-gartenservice.de">
-            <input type="hidden" name="_language" value="de">
-
-            <div class="request-grid">
-              <div class="request-group">
-                <label for="kunde-name">Name</label>
-                <input type="text" id="kunde-name" name="Name" placeholder="Ihr Name" required autocomplete="off">
-              </div>
-
-              <div class="request-group">
-                <label for="kunde-email">E-Mail</label>
-                <input type="email" id="kunde-email" name="E-Mail" placeholder="ihre@email.de" required autocomplete="off">
-              </div>
-
-              <div class="request-group">
-                <label for="kunde-ort">Ort</label>
-                <input type="text" id="kunde-ort" name="Ort" placeholder="z. B. Hof" value="Hof" required autocomplete="off">
-              </div>
-
-              <div class="request-group">
-                <label for="kunde-art">Art der Anfrage</label>
-                <select id="kunde-art" name="Art der Anfrage" autocomplete="off">
-                  <option value="Gartenpflege">Gartenpflege</option>
-                  <option value="Rasenpflege">Rasenpflege</option>
-                  <option value="Heckenschnitt">Heckenschnitt</option>
-                  <option value="Rückschnitt">Rückschnitt</option>
-                  <option value="Laubentsorgung">Laubentsorgung</option>
-                  <option value="Sonstiges">Sonstiges</option>
-                </select>
-              </div>
-
-              <div class="request-group full">
-                <label for="kunde-anfrage">Ihre Anfrage</label>
-                <textarea id="kunde-anfrage" name="Anfrage" placeholder="Beschreiben Sie kurz, welche Arbeiten im Garten anstehen und wann Sie Unterstützung brauchen." required autocomplete="off"></textarea>
-              </div>
-            </div>
-
-            <div class="btn-row left">
-              <button class="btn primary" type="submit">Anfrage senden</button>
-              <a class="btn whatsapp"
-                 href="https://wa.me/491624012037?text=Hallo,%20ich%20interessiere%20mich%20für%20einen%20Gartenservice%20in%20Hof."
-                 target="_blank"
-                 rel="noopener">
-                WhatsApp
-              </a>
-            </div>
-
-            <div id="request-status" class="request-status" aria-live="polite"></div>
-
-            <div class="request-note">
-              Ihre Anfrage wird zentral über diese Plattform erfasst und an passende Anbieter in Hof weitergeleitet.<br><br>
-              <strong>Betreiber:</strong> DK Software Studio<br>
-              <strong>Kontakt:</strong>
-              <a href="mailto:dksoftware.studio@gmail.com">dksoftware.studio@gmail.com</a>
-            </div>
-          </form>
-        </div>
-
-        <div class="request-list-wrap">
-          <div class="request-list-card">
-            <h3>Aktuelle Anfragen</h3>
-            <p class="request-list-intro">
-              Beispiele für aktuelle Gesuche auf der Plattform.
-            </p>
-
-            <div class="request-item">
-              <div class="request-badge">Neu</div>
-              <h4>Rasenpflege gesucht</h4>
-              <p>Kleiner Garten in Hof, regelmäßige Pflege und Rasenschnitt gewünscht.</p>
-            </div>
-
-            <div class="request-item">
-              <div class="request-badge">Neu</div>
-              <h4>Heckenschnitt</h4>
-              <p>Hecke in Hof zurückschneiden, Termin in den nächsten Tagen flexibel möglich.</p>
-            </div>
-
-            <div class="request-item">
-              <div class="request-badge">Neu</div>
-              <h4>Gartenpflege angefragt</h4>
-              <p>Privater Garten in Hof sucht Unterstützung bei Pflege und Aufräumarbeiten.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div class="section">
     <div class="info-card reveal">
-      <h3>Warum einen Gartenservice in Hof beauftragen?</h3>
+      <h2>Weitere lokale Projekte aus Hof (Saale)</h2>
       <p>
-        Professionelle Anbieter bieten in der Regel mehr Planungssicherheit,
-        klare Leistungen und eine zuverlässige Pflege von Garten und Außenbereich als private Einzelangebote ohne feste Struktur.
-      </p>
-
-      <div class="columns">
-
-        <div class="col-box">
-          <h4>Vorteile professioneller Anbieter</h4>
-          <ul>
-            <li>Klare Leistungen und Planung</li>
-            <li>Zuverlässige Terminabsprachen</li>
-            <li>Saubere und regelmäßige Pflege</li>
-            <li>Transparente Kommunikation</li>
-          </ul>
-        </div>
-
-        <div class="col-box">
-          <h4>Private Angebote</h4>
-          <ul>
-            <li>Oft keine klare Struktur</li>
-            <li>Unterschiedliche Verfügbarkeit</li>
-            <li>Qualität kann schwanken</li>
-            <li>Kurzfristige Änderungen möglich</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="info-card reveal">
-      <h3>Weitere Services in Hof</h3>
-      <p>
-        Entdecken Sie weitere lokale Dienstleistungen in Hof (Saale).
+        Entdecken Sie weitere lokale Dienstleistungen in Hof und Umgebung.
       </p>
 
       <div class="services-grid">
         <div class="service-card">
-          <img src="logo-reinigung.png" alt="Reinigung Hof" class="service-icon">
+          <img src="logo-reinigung.png" alt="Reinigung Hof" class="service-icon" loading="lazy">
           <h4 class="service-title">Reinigung Hof</h4>
           <p class="service-text">
             Regionale Plattform für Reinigungsfirmen in Hof und Umgebung.
@@ -1057,7 +1176,7 @@ footer a:hover{
         </div>
 
         <div class="service-card current">
-          <img src="logo-gartenservice.png" alt="Gartenservice Hof" class="service-icon">
+          <img src="logo-gartenservice.png" alt="Gartenservice Hof" class="service-icon" loading="lazy">
           <h4 class="service-title">Gartenservice Hof</h4>
           <p class="service-text">
             Regionale Plattform für Gartenpflege, Rückschnitt und Außenbereiche.
@@ -1066,7 +1185,7 @@ footer a:hover{
         </div>
 
         <div class="service-card">
-          <img src="logo-handwerker.png" alt="Handwerker Hof" class="service-icon">
+          <img src="logo-handwerker.png" alt="Handwerker Hof" class="service-icon" loading="lazy">
           <h4 class="service-title">Handwerker Hof</h4>
           <p class="service-text">
             Lokale Hilfe für Reparaturen, Renovierung und Hausservice.
@@ -1079,12 +1198,30 @@ footer a:hover{
 
   <div class="section">
     <div class="info-card reveal" style="text-align:center;">
-      <h3>Für Gartenservice-Betriebe aus Hof (Saale)</h3>
+      <h2>Für Gartenservice-Betriebe aus Hof (Saale)</h2>
 
       <p style="max-width:560px;margin:0 auto 14px;">
         Sie sind Gartenservice oder Dienstleister und möchten neue Anfragen aus Hof und Umgebung erhalten?
         Tragen Sie Ihr Unternehmen ein und werden Sie sichtbar für regionale Kundenanfragen auf dieser Plattform.
       </p>
+
+      <div class="columns" style="margin:0 auto 18px;max-width:720px;text-align:left;">
+        <div class="col-box">
+          <h4>Warum sich eintragen?</h4>
+          <ul>
+            <li>Lokale Anfragen aus Hof und Umgebung</li>
+            <li>Direkter Kontakt zu Interessenten</li>
+          </ul>
+        </div>
+
+        <div class="col-box">
+          <h4>Aktuell in der Aufbauphase</h4>
+          <ul>
+            <li>Keine Vermittlungsgebühren</li>
+            <li>Aktuell kostenlos für Betriebe</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="btn-row" style="justify-content:center;">
         <a href="eintragen.html" class="btn primary">Jetzt als Betrieb eintragen</a>
