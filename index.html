@@ -1232,6 +1232,63 @@ footer a:hover{
     </p>
   </div>
 </div>
+  <div class="section">
+  <div class="feedback-card reveal">
+    <div class="feedback-head">
+      <h2>Feedback zur Seite</h2>
+      <p>
+        Wie gefällt Ihnen diese Seite? Ihre Rückmeldung hilft uns, hof-gartenservice.de Schritt für Schritt besser zu machen.
+      </p>
+    </div>
+
+    <div class="feedback-form-wrap">
+      <form id="feedbackForm" action="https://formspree.io/f/mjgpagzy" method="POST" autocomplete="off">
+        <input type="hidden" name="_subject" value="Neues Feedback über hof-gartenservice.de">
+        <input type="hidden" name="_language" value="de">
+        <input type="hidden" name="Seite" value="hof-gartenservice.de">
+        <input type="hidden" name="Bewertung" id="feedbackRating" value="">
+
+        <label style="font-size:13px;font-weight:700;color:var(--textDark);display:block;margin-bottom:8px;">
+          Wie bewerten Sie die Seite von 0 bis 10?
+        </label>
+
+        <div class="rating-scale">
+          <button type="button" class="rating-btn" data-value="0">0</button>
+          <button type="button" class="rating-btn" data-value="1">1</button>
+          <button type="button" class="rating-btn" data-value="2">2</button>
+          <button type="button" class="rating-btn" data-value="3">3</button>
+          <button type="button" class="rating-btn" data-value="4">4</button>
+          <button type="button" class="rating-btn" data-value="5">5</button>
+          <button type="button" class="rating-btn" data-value="6">6</button>
+          <button type="button" class="rating-btn" data-value="7">7</button>
+          <button type="button" class="rating-btn" data-value="8">8</button>
+          <button type="button" class="rating-btn" data-value="9">9</button>
+          <button type="button" class="rating-btn" data-value="10">10</button>
+        </div>
+
+        <div class="rating-labels">
+          <span>0 = gar nicht hilfreich</span>
+          <span>10 = sehr gut</span>
+        </div>
+
+        <div class="request-group full">
+          <label for="feedbackComment">Kommentar</label>
+          <textarea id="feedbackComment" name="Kommentar" placeholder="Was gefällt Ihnen? Was könnte besser sein?"></textarea>
+        </div>
+
+        <div class="btn-row left">
+          <button class="btn primary" type="submit">Feedback senden</button>
+        </div>
+
+        <div id="feedbackStatus" class="feedback-status" aria-live="polite"></div>
+
+        <div class="feedback-note">
+          Das Feedback wird direkt an DK Software Studio gesendet.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <footer>
   © 2026 hof-gartenservice.de · regionales Projekt aus Hof (Saale) · by 
