@@ -392,6 +392,79 @@ body{
   font-size:14px;
 }
 
+/* FEEDBACK */
+.feedback-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:28px 24px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
+}
+
+.feedback-head h2{
+  margin:0 0 10px;
+  color:var(--textDark);
+  font-size:28px;
+}
+
+.feedback-head p{
+  margin:0 0 20px;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:760px;
+}
+
+.rating-scale{
+  display:grid;
+  grid-template-columns:repeat(11, 1fr);
+  gap:8px;
+  margin:16px 0 18px;
+}
+
+.rating-btn{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--textDark);
+  border-radius:10px;
+  min-height:44px;
+  font-size:14px;
+  font-weight:700;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+.rating-btn:hover{
+  border-color:rgba(26,83,173,0.35);
+  transform:translateY(-1px);
+}
+
+.rating-btn.active{
+  background:var(--blue);
+  color:#fff;
+  border-color:var(--blue);
+  box-shadow:0 10px 20px rgba(26,83,173,0.18);
+}
+
+.rating-labels{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:12px;
+  color:#7a7a7a;
+  margin:-4px 0 14px;
+}
+
+.feedback-form-wrap textarea{
+  min-height:120px;
+}
+
+.feedback-note{
+  margin-top:12px;
+  font-size:12px;
+  color:#7a7a7a;
+  line-height:1.6;
+}
+
 /* MORE SERVICES */
 .services-grid{
   display:grid;
@@ -485,7 +558,8 @@ body{
 }
 
 .request-form-wrap,
-.request-list-card{
+.request-list-card,
+.feedback-form-wrap{
   background:#F7F9FC;
   border:1px solid var(--border);
   border-radius:16px;
@@ -559,19 +633,22 @@ body{
   line-height:1.6;
 }
 
-.request-status{
+.request-status,
+.feedback-status{
   display:none;
   margin-top:12px;
   font-size:13px;
   line-height:1.5;
 }
 
-.request-status.success{
+.request-status.success,
+.feedback-status.success{
   display:block;
   color:#1A53AD;
 }
 
-.request-status.error{
+.request-status.error,
+.feedback-status.error{
   display:block;
   color:#b00020;
 }
@@ -652,7 +729,6 @@ body{
   pointer-events:auto;
 }
 
-/* COOKIE BANNER */
 .cookie-banner{
   position:fixed;
   left:20px;
@@ -666,11 +742,17 @@ body{
   box-shadow:0 18px 45px rgba(0,0,0,0.12);
   padding:18px 18px 16px;
   z-index:2000;
+
   display:none;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.3s ease;
 }
 
 .cookie-banner.show{
   display:block;
+  opacity:1;
+  transform:translateY(0);
 }
 
 .cookie-banner h3{
@@ -800,7 +882,8 @@ footer a:hover{
     grid-template-columns:1fr;
   }
 
-  .request-head h2{
+  .request-head h2,
+  .feedback-head h2{
     font-size:24px;
   }
 
@@ -830,6 +913,10 @@ footer a:hover{
   .cookie-actions{
     flex-direction:column;
     align-items:stretch;
+  }
+
+  .rating-scale{
+    grid-template-columns:repeat(6, 1fr);
   }
 
   #toTopBtn{
@@ -1232,6 +1319,7 @@ footer a:hover{
     </p>
   </div>
 </div>
+
   <div class="section">
   <div class="feedback-card reveal">
     <div class="feedback-head">
@@ -1315,6 +1403,61 @@ footer a:hover{
 
 <button id="toTopBtn" aria-label="Nach oben">↑</button>
 
+<script>
+const feedbackForm = document.getElementById('feedbackForm');
+const feedbackStatus = document.getElementById('feedbackStatus');
+const feedbackRatingInput = document.getElementById('feedbackRating');
+const ratingButtons = document.querySelectorAll('.rating-btn');
+
+ratingButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    ratingButtons.forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    feedbackRatingInput.value = btn.dataset.value;
+  });
+});
+
+if (feedbackForm) {
+  feedbackForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    feedbackStatus.className = 'feedback-status';
+    feedbackStatus.textContent = '';
+
+    if (!feedbackRatingInput.value) {
+      feedbackStatus.className = 'feedback-status error';
+      feedbackStatus.textContent = 'Bitte wählen Sie zuerst eine Bewertung von 0 bis 10.';
+      return;
+    }
+
+    const formData = new FormData(feedbackForm);
+
+    try {
+      const response = await fetch(feedbackForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        feedbackForm.reset();
+        feedbackRatingInput.value = '';
+        ratingButtons.forEach((b) => b.classList.remove('active'));
+        feedbackStatus.className = 'feedback-status success';
+        feedbackStatus.textContent = 'Vielen Dank für Ihr Feedback.';
+      } else {
+        feedbackStatus.className = 'feedback-status error';
+        feedbackStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten.';
+      }
+    } catch (error) {
+      feedbackStatus.className = 'feedback-status error';
+      feedbackStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten.';
+    }
+  });
+}
+</script>
 <script>
 const GA_ID = 'G-ZY5RZ1P98T';
 const COOKIE_KEY = 'hof_gartenservice_cookie_choice';
