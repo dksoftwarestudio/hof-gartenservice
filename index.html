@@ -1186,7 +1186,7 @@ footer a:hover{
 
         <div class="btn-row">
           <a class="btn primary"
-             href="#"
+             href="eintragen.html"
              target="_blank"
              rel="noopener">
             Google-Profil ansehen
@@ -1483,22 +1483,31 @@ const savedCookieChoice = localStorage.getItem(COOKIE_KEY);
 
 if (savedCookieChoice === 'accepted') {
   loadGoogleAnalytics();
-} else if (!savedCookieChoice) {
+} else if (!savedCookieChoice && cookieBanner) {
   cookieBanner.classList.add('show');
 }
 
-document.getElementById('acceptCookies').addEventListener('click', () => {
-  localStorage.setItem(COOKIE_KEY, 'accepted');
-  cookieBanner.classList.remove('show');
-  loadGoogleAnalytics();
-});
+const acceptBtn = document.getElementById('acceptCookies');
+const rejectBtn = document.getElementById('rejectCookies');
 
-document.getElementById('rejectCookies').addEventListener('click', () => {
-  localStorage.setItem(COOKIE_KEY, 'rejected');
-  cookieBanner.classList.remove('show');
-});
+if (acceptBtn && rejectBtn && cookieBanner) {
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'accepted');
+    cookieBanner.classList.remove('show');
+    loadGoogleAnalytics();
+  });
+
+  rejectBtn.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, 'rejected');
+    cookieBanner.classList.remove('show');
+  });
+}
 
 const reveals = document.querySelectorAll('.reveal');
+if (reveals.length > 0) {
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+}
 
 function revealOnScroll() {
   reveals.forEach((el) => {
@@ -1511,8 +1520,6 @@ function revealOnScroll() {
   });
 }
 
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
 
 const toTopBtn = document.getElementById("toTopBtn");
 
