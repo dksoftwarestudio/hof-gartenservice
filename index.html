@@ -829,15 +829,21 @@ footer a:hover{
 }
 
 @media (max-width:700px){
- .header{
-  grid-template-columns:auto 1fr auto auto;
-}
+  .header{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 
-.header-right{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+  .logo{
+    justify-content:center;
+  }
+
+  .header-right{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
 
   .header-note{
     justify-self:auto;
