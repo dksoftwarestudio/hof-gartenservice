@@ -526,44 +526,66 @@ footer a:hover{
   color:var(--blue);
 }
 
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:opacity 0.6s ease, transform 0.6s ease;
+/* Animationen beim Scrollen */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform; /* Verbessert die Render-Leistung */
 }
 
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-#toTopBtn{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  width:50px;
-  height:50px;
-  border:none;
-  border-radius:12px;
-  background:var(--blue);
-  color:#fff;
-  font-size:22px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-  opacity:0;
-  pointer-events:none;
-  transition:0.3s ease;
-  z-index:999;
+/* "Nach oben" Button */
+#toTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  
+  /* Initialzustand (unsichtbar) */
+  opacity: 0;
+  visibility: hidden; /* Besser als nur pointer-events:none */
+  transform: scale(0.8); /* Kleiner Effekt beim Erscheinen */
+  transition: all 0.3s ease;
+  z-index: 999;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#toTopBtn:hover{
-  transform:translateY(-3px);
+#toTopBtn:hover {
+  background: var(--textDark); /* Visuelles Feedback beim Drüberfahren */
+  transform: translateY(-5px) scale(1.05);
 }
 
-#toTopBtn.show{
-  opacity:1;
-  pointer-events:auto;
+#toTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Mobile Optimierung für den Button */
+@media (max-width: 600px) {
+  #toTopBtn {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+  }
 }
 
 @media (max-width:700px) {
