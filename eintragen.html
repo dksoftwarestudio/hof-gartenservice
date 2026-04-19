@@ -566,55 +566,74 @@ footer a:hover{
   pointer-events:auto;
 }
 
-@media (max-width:700px){
-  .header{
-    flex-direction:column;
-    align-items:flex-start;
+@media (max-width:700px) {
+  /* Layout-Anpassungen */
+  .wrap {
+    padding: 20px 15px 50px;
   }
 
-  .hero{
-    padding:34px 22px;
-  }
-
-  .hero h1{
-    font-size:30px;
-  }
-
-  .hero-image{
-    height:170px;
-  }
-
-  .pricing-grid,
-  .compare-grid,
+  /* Grid-Systeme auf einspaltig umstellen */
+  .usp-grid,
   .trust-row,
-  .advantage-grid{
-    grid-template-columns:1fr;
+  .advantage-grid,
+  .compare-grid,
+  .pricing-grid,
+  .steps,
+  .columns,
+  .services-grid,
+  .form-grid {
+    grid-template-columns: 1fr !important;
   }
 
-  .form-grid{
-    grid-template-columns:1fr;
+  /* Abstände und Polsterung */
+  .hero {
+    padding: 30px 20px;
   }
 
-  .logo-mark{
-    width:34px;
-    height:34px;
-    flex-basis:34px;
+  .hero h1 {
+    font-size: 28px;
   }
 
-  .btn-row{
-    flex-direction:column;
-    align-items:stretch;
+  .info-card, .pricing-card, .benefits-card, .form-wrap, .preview-card, .advantage-card {
+    padding: 22px 18px;
   }
 
-  .btn{
-    text-align:center;
+  /* Button-Anpassungen für mobile Griffigkeit */
+  .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
   }
 
-  #toTopBtn{
-    right:18px;
-    bottom:18px;
-    width:46px;
-    height:46px;
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  /* Header & Logo */
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Preview-Karte */
+  .preview-top {
+    height: 150px;
+  }
+
+  /* "Nach oben" Button Position */
+  #toTopBtn {
+    right: 15px;
+    bottom: 15px;
+    width: 44px;
+    height: 44px;
   }
 }
 </style>
