@@ -124,7 +124,7 @@ body{
   overflow:hidden;
   background:
     linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
-    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80")
+    url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80")
     center/cover no-repeat;
   box-shadow:0 12px 30px rgba(0,0,0,0.06);
   border:1px solid var(--border);
@@ -138,7 +138,8 @@ body{
 .pricing-card,
 .benefits-card,
 .form-wrap,
-.preview-card{
+.preview-card,
+.advantage-card{
   background:var(--card);
   border:1px solid var(--border);
   border-radius:18px;
@@ -150,7 +151,8 @@ body{
 .pricing-card h2,
 .benefits-card h2,
 .form-wrap h2,
-.preview-card h2{
+.preview-card h2,
+.advantage-card h2{
   margin:0 0 10px;
   color:var(--textDark);
   font-size:24px;
@@ -160,7 +162,8 @@ body{
 .pricing-card p,
 .benefits-card p,
 .form-wrap p,
-.preview-card p{
+.preview-card p,
+.advantage-card p{
   margin:0 0 16px;
   color:var(--muted);
   line-height:1.7;
@@ -261,6 +264,34 @@ body{
   border:1px solid var(--border);
   color:var(--textDark);
   line-height:1.7;
+}
+
+.advantage-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:18px;
+}
+
+.advantage-box{
+  background:#F7F9FC;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+}
+
+.advantage-box h3{
+  margin:0 0 10px;
+  font-size:20px;
+  line-height:1.3;
+  color:var(--textDark);
+}
+
+.advantage-box ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  line-height:1.8;
 }
 
 .preview-example{
@@ -555,7 +586,8 @@ footer a:hover{
 
   .pricing-grid,
   .compare-grid,
-  .trust-row{
+  .trust-row,
+  .advantage-grid{
     grid-template-columns:1fr;
   }
 
@@ -604,13 +636,13 @@ footer a:hover{
     <h1>Jetzt als Gartenservice in Hof eintragen</h1>
     <p>
       Tragen Sie Ihr Unternehmen ein und erreichen Sie lokale Kunden in Hof direkt über diese Seite.
-      Ohne Vermittlungsgebühren – Interessenten kontaktieren Sie direkt.
+      Keine bundesweite Massenplattform, kein unnötiger Umweg – Interessenten finden Sie direkt.
     </p>
 
     <div class="hero-points">
-      <span class="hero-point">Lokal sichtbar in Hof</span>
+      <span class="hero-point">Lokale Anfragen</span>
+      <span class="hero-point">Weniger Konkurrenz</span>
       <span class="hero-point">Direkter Kontakt</span>
-      <span class="hero-point">Unverbindliche Anfrage</span>
     </div>
   </div>
 
@@ -618,10 +650,10 @@ footer a:hover{
 
   <div class="section">
     <div class="info-card reveal">
-      <h2>Für wen ist diese Seite gedacht?</h2>
+      <h2>Warum sich ein Eintrag lohnt</h2>
       <p>
-        Diese Plattform richtet sich an lokale Gartenservice-Betriebe in Hof und Umgebung,
-        die online sichtbarer werden und neue Kunden direkt erreichen möchten.
+        Viele Betriebe sind zwar online sichtbar, werden aber zwischen großen Verzeichnissen und vielen Mitbewerbern schnell übersehen.
+        Diese Seite richtet sich gezielt an Interessenten aus Hof und Umgebung, die aktiv nach einem passenden Gartenservice suchen.
       </p>
 
       <div class="trust-row">
@@ -631,11 +663,42 @@ footer a:hover{
         </div>
         <div class="trust-box">
           <strong>Direkt</strong>
-          <span>Keine Vermittlungsgebühren</span>
+          <span>Interessenten gelangen ohne Umwege zu Ihrem Eintrag</span>
         </div>
         <div class="trust-box">
-          <strong>Unabhängig</strong>
-          <span>Projekt von DK Software Studio</span>
+          <strong>Klar</strong>
+          <span>Ihr Unternehmen wird übersichtlich und verständlich dargestellt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="advantage-card reveal">
+      <h2>Warum nicht nur Gelbe Seiten oder große Portale?</h2>
+      <p>
+        Große Verzeichnisse haben Reichweite, aber oft auch viel Konkurrenz. Auf einer regionalen Themenseite ist Ihr Betrieb gezielter sichtbar.
+      </p>
+
+      <div class="advantage-grid">
+        <div class="advantage-box">
+          <h3>Große Verzeichnisse</h3>
+          <ul>
+            <li>Viele Einträge nebeneinander</li>
+            <li>Höhere Konkurrenz um Aufmerksamkeit</li>
+            <li>Weniger klarer regionaler Fokus</li>
+            <li>Ihr Profil geht schneller unter</li>
+          </ul>
+        </div>
+
+        <div class="advantage-box">
+          <h3>hof-gartenservice.de</h3>
+          <ul>
+            <li>Gezielter Fokus auf Hof und Umgebung</li>
+            <li>Mehr Sichtbarkeit auf einer regionalen Spezialseite</li>
+            <li>Direkter Kontakt für Interessenten</li>
+            <li>Bessere Chance auf lokale Anfragen</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -657,6 +720,7 @@ footer a:hover{
             <li>Eintrag in der Übersicht</li>
             <li>Google-Profil oder Website</li>
             <li>Kurze Beschreibung</li>
+            <li>Direkter Kontakt für Interessenten</li>
           </ul>
         </div>
 
@@ -667,23 +731,24 @@ footer a:hover{
           <ul>
             <li>Hervorgehobene Platzierung oben</li>
             <li>Größere Darstellung</li>
-            <li>Stärkerer Fokus auf Ihr Unternehmen</li>
+            <li>Mehr Aufmerksamkeit für Ihren Betrieb</li>
+            <li>Stärkerer Fokus auf Ihr Profil</li>
           </ul>
         </div>
       </div>
 
       <div class="pricing-hint">
-        Erste Anfrage kostenlos und unverbindlich. Die Konditionen werden individuell nach Umfang und gewünschter Platzierung abgestimmt.
+        Erste Anfrage kostenlos und unverbindlich. Die Konditionen werden individuell nach gewünschter Platzierung und Umfang abgestimmt.
       </div>
     </div>
   </div>
 
   <div class="section">
     <div class="benefits-card reveal">
-      <h2>Warum lohnt sich ein Eintrag?</h2>
+      <h2>Was bringt ein guter Eintrag konkret?</h2>
       <p>
-        Ein guter Eintrag ist mehr als nur ein Name in einer Liste. Er erhöht Ihre Sichtbarkeit
-        und kann dazu beitragen, dass Interessenten schneller auf Ihr Unternehmen aufmerksam werden.
+        Ein guter Eintrag ist mehr als nur ein Name in einer Liste. Er sorgt dafür, dass Ihr Betrieb seriöser wirkt,
+        leichter gefunden wird und Interessenten schneller verstehen, was Sie anbieten.
       </p>
 
       <div class="compare-grid">
@@ -692,7 +757,7 @@ footer a:hover{
           <ul>
             <li>Weniger Sichtbarkeit bei lokalen Interessenten</li>
             <li>Kunden finden oft nur die bekanntesten Anbieter</li>
-            <li>Weniger Aufmerksamkeit für Ihr Unternehmen</li>
+            <li>Weniger Aufmerksamkeit für Ihren Betrieb</li>
             <li>Potenzielle Anfragen gehen an andere Firmen</li>
           </ul>
         </div>
@@ -702,15 +767,15 @@ footer a:hover{
           <ul>
             <li>Mehr Präsenz auf einer lokalen Themenseite</li>
             <li>Direkter Weg für Interessenten zu Ihrem Profil</li>
-            <li>Mehr Vertrauen durch klare Darstellung Ihres Unternehmens</li>
+            <li>Mehr Vertrauen durch klare Darstellung Ihres Betriebs</li>
             <li>Bessere Chance auf neue Anfragen aus der Region</li>
           </ul>
         </div>
       </div>
 
       <div class="benefits-note">
-        <strong>Kurz gesagt:</strong> Ihr Profil ist nicht einfach nur ein Eintrag,
-        sondern eine zusätzliche Möglichkeit, online gefunden zu werden und neue Kunden in Hof zu erreichen.
+        <strong>Kurz gesagt:</strong> Ihr Profil ist eine zusätzliche Möglichkeit, online gefunden zu werden
+        und neue Kunden in Hof zu erreichen – besonders dann, wenn Interessenten lokal und gezielt suchen.
       </div>
     </div>
   </div>
@@ -755,7 +820,7 @@ footer a:hover{
       </p>
 
       <form id="company-form" class="form-card" action="https://formspree.io/f/mjgpagzy" method="POST" autocomplete="off">
-        <input type="hidden" name="_subject" value="Neue Anfrage über hof-gartenservice.de">
+        <input type="hidden" name="_subject" value="Neue Unternehmensanfrage über hof-gartenservice.de">
         <input type="hidden" name="_language" value="de">
 
         <div class="form-grid">
