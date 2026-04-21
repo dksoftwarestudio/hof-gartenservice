@@ -59,6 +59,20 @@ body{
   display:grid;
   grid-template-columns:auto 1fr auto;
   align-items:center;
+  gap:16px;
+}
+
+.header-note{
+  font-size:13px;
+  color:#7a7a7a;
+  text-align:center;
+  padding:0 10px;
+}
+
+.header-right{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
 }
 
 .logo{
@@ -1029,33 +1043,33 @@ footer a:hover{
 
 @media (max-width:700px){
   .header{
-    grid-template-columns:1fr;
-    text-align:center;
-    padding:14px 14px 18px;
-    gap:8px;
-  }
+  grid-template-columns:1fr;
+  text-align:center;
+  padding:14px 14px 18px;
+  gap:8px;
+}
 
-  .logo{
-    justify-content:center;
-  }
+.logo{
+  justify-content:center;
+}
 
-  .header-note{
-    padding:0;
-    margin-top:-2px;
-    font-size:12px;
-    line-height:1.4;
-  }
+.header-note{
+  padding:0;
+  margin-top:-2px;
+  font-size:12px;
+  line-height:1.4;
+}
 
-  .header-right{
-    justify-content:center;
-    margin-top:2px;
-  }
+.header-right{
+  justify-content:center;
+  margin-top:2px;
+}
 
-  .header-right .btn{
-    width:100%;
-    max-width:320px;
-    text-align:center;
-  }
+.header-right .btn{
+  width:100%;
+  max-width:320px;
+  text-align:center;
+}
 
   .logo-mark{
     width:34px;
@@ -1098,8 +1112,11 @@ footer a:hover{
     <span>hof-gartenservice.de</span>
   </a>
 
+  <div class="header-note">
+    Regionale Plattform für Gartenservice in Hof (Saale)
+  </div>
+
   <div class="header-right">
-    <div class="header-note">Regionale Plattform für Gartenservice in Hof (Saale)</div>
     <a href="eintragen.html" class="btn secondary small">Unternehmen eintragen</a>
   </div>
 </div>
