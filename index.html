@@ -1045,38 +1045,107 @@ footer a:hover{
 
 @media (max-width:700px){
   .header{
-  grid-template-columns:1fr;
-  text-align:center;
-  padding:14px 14px 18px;
-  gap:8px;
-}
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:14px 14px 18px;
+    gap:8px;
+  }
 
-.logo{
-  justify-content:center;
-}
+  .logo{
+    justify-content:center;
+  }
 
-.header-note{
-  padding:0;
-  margin-top:-2px;
-  font-size:12px;
-  line-height:1.4;
-}
+  .header-note{
+    padding:0;
+    margin-top:-2px;
+    font-size:12px;
+    line-height:1.4;
+  }
 
-.header-right{
-  justify-content:center;
-  margin-top:2px;
-}
+  .header-right{
+    justify-content:center;
+    margin-top:2px;
+  }
 
-.header-right .btn{
-  width:100%;
-  max-width:320px;
-  text-align:center;
-}
+  .header-right .btn{
+    width:100%;
+    max-width:320px;
+    text-align:center;
+  }
 
   .logo-mark{
     width:34px;
     height:34px;
     flex-basis:34px;
+  }
+
+  .wrap{
+    padding:22px 14px 60px;
+  }
+
+  .page-layout{
+    display:block;
+  }
+
+  .main-content{
+    width:100%;
+    max-width:100%;
+  }
+
+  .hero,
+  .info-card,
+  .request-board-card,
+  .feedback-card,
+  .card{
+    width:100%;
+    max-width:100%;
+    margin:0 auto;
+    border-radius:18px;
+  }
+
+  .usp-grid,
+  .trust-row,
+  .advantage-grid,
+  .compare-grid,
+  .pricing-grid,
+  .steps,
+  .columns,
+  .services-grid,
+  .request-layout,
+  .request-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .usp-card,
+  .trust-box,
+  .advantage-box,
+  .compare-box,
+  .price-box,
+  .step-box,
+  .col-box,
+  .service-card,
+  .request-form-wrap,
+  .request-list-card,
+  .feedback-form-wrap{
+    padding:18px 16px;
+  }
+
+  .usp-card h3{
+    font-size:20px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .request-list-wrap{
+    min-width:0;
+  }
+
+  .request-item{
+    overflow-wrap:break-word;
+    word-break:break-word;
   }
 
   .cookie-banner{
