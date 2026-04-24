@@ -589,88 +589,95 @@ footer a:hover{
   display:block;
 }
 
-@media (max-width:700px) {
-  /* Layout-Anpassungen */
-  .wrap {
-    padding: 20px 15px 50px;
+@media (max-width:700px){
+  .header{
+    grid-template-columns:auto auto;
+    align-items:center;
+    justify-content:space-between;
+    text-align:left;
+    padding:14px 18px;
+    gap:12px;
   }
 
-  /* Grid-Systeme auf einspaltig umstellen */
-  .usp-grid,
-  .trust-row,
-  .advantage-grid,
-  .compare-grid,
-  .pricing-grid,
-  .steps,
-  .columns,
-  .services-grid,
-  .form-grid {
-    grid-template-columns: 1fr !important;
+  .logo{
+    justify-content:flex-start;
+    gap:10px;
   }
 
-  /* Abstände und Polsterung */
-  .hero {
-    padding: 30px 20px;
+  .logo span{
+    font-size:18px;
+    white-space:nowrap;
   }
 
-  .hero h1 {
-    font-size: 28px;
+  .header-note{
+    display:none;
   }
 
-  .info-card,
-  .pricing-card,
-  .benefits-card,
-  .form-wrap,
-  .preview-card,
-  .advantage-card {
-    padding: 22px 18px;
+  .header-right{
+    justify-content:flex-end;
+    margin-top:0;
   }
 
-  /* Button-Anpassungen für mobile Griffigkeit */
-  .btn-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
+  .header-right .btn{
+    width:auto;
+    max-width:none;
+    text-align:center;
+    white-space:nowrap;
+    padding:8px 12px;
+    font-size:13px;
   }
 
-  .btn {
-    width: 100%;
-    text-align: center;
-    padding: 14px 20px;
+  .logo-mark{
+    width:34px;
+    height:34px;
+    flex-basis:34px;
   }
 
-  /* Header & Logo */
-  .header {
-    flex-direction: column;
-    text-align: center;
-    padding: 12px;
+  .premium-top-split{
+    display:block;
+    min-height:auto;
   }
 
-  .logo-mark {
-    width: 34px;
-    height: 34px;
+  .premium-map{
+    display:none;
   }
 
-  /* Preview-Karte mit Karte ausblenden */
-  .preview-split {
-    display: block;
+  .premium-photo{
+    width:100%;
   }
 
-  .preview-map {
-    display: none;
+  .provider-photo{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+    border-top-left-radius:18px;
+    border-top-right-radius:18px;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
   }
 
-  .preview-photo-img {
-    min-height: 150px;
-    border-top-right-radius: 18px;
+  .cookie-banner{
+    left:12px;
+    right:12px;
+    bottom:12px;
+    padding:16px 14px 14px;
   }
 
-  /* "Nach oben" Button Position */
-  #toTopBtn {
-    right: 15px;
-    bottom: 15px;
-    width: 44px;
-    height: 44px;
+  .cookie-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .rating-scale{
+    grid-template-columns:repeat(6, 1fr);
+  }
+
+  #toTopBtn{
+    right:18px;
+    bottom:18px;
+    width:46px;
+    height:46px;
   }
 }
 </style>
