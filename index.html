@@ -952,19 +952,29 @@ footer a:hover{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:14px 18px;
-    gap:12px;
+    padding:14px 14px;
+    gap:8px;
   }
 
   .logo{
     justify-content:flex-start;
-    gap:10px;
+    gap:8px;
     min-width:0;
+    flex:1;
+    overflow:hidden;
   }
 
   .logo span{
-    font-size:18px;
+    font-size:17px;
     white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .logo-mark{
+    width:32px;
+    height:32px;
+    flex:0 0 32px;
   }
 
   .header-note{
@@ -979,19 +989,12 @@ footer a:hover{
     flex-shrink:0;
   }
 
-  .header-right .btn,
-  .back-link{
+  .header-right .btn{
     width:auto;
     max-width:none;
-    text-align:right;
+    padding:9px 12px;
+    font-size:13px;
     white-space:nowrap;
-    font-size:14px;
-  }
-
-  .logo-mark{
-    width:34px;
-    height:34px;
-    flex:0 0 34px;
   }
 
   .wrap{
