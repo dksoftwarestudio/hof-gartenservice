@@ -1059,9 +1059,10 @@ footer a:hover{
 
 @media (max-width:700px){
   .header{
-    display:flex;
+    grid-template-columns:auto auto;
     justify-content:space-between;
     align-items:center;
+    text-align:left;
     padding:14px 18px;
     gap:12px;
   }
@@ -1069,7 +1070,6 @@ footer a:hover{
   .logo{
     justify-content:flex-start;
     gap:10px;
-    min-width:0;
   }
 
   .logo span{
@@ -1082,14 +1082,15 @@ footer a:hover{
   }
 
   .header-right{
-    display:flex;
     justify-content:flex-end;
-    align-items:center;
     margin-top:0;
   }
 
-  .header-right .btn{
+  .header-right .btn,
+  .back-link{
     width:auto;
+    max-width:none;
+    text-align:right;
     white-space:nowrap;
     font-size:14px;
   }
@@ -1097,10 +1098,9 @@ footer a:hover{
   .logo-mark{
     width:34px;
     height:34px;
-    flex:0 0 34px;
+    flex-basis:34px;
   }
 
-  /* карточка */
   .premium-top-split{
     display:block;
     min-height:auto;
