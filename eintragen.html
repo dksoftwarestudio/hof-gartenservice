@@ -52,9 +52,9 @@ body{
 }
 
 .logo-mark{
-  width:50px;
-  height:50px;
-  flex:0 0 50px;
+  width:38px;
+  height:38px;
+  flex:0 0 38px;
   display:block;
   object-fit:contain;
   border-radius:50%;
@@ -124,7 +124,7 @@ body{
   overflow:hidden;
   background:
     linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
-     url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80")
+    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80")
     center/cover no-repeat;
   box-shadow:0 12px 30px rgba(0,0,0,0.06);
   border:1px solid var(--border);
@@ -302,12 +302,38 @@ body{
   overflow:hidden;
 }
 
-.preview-top{
-  height:180px;
-  background:
-    linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.20)),
-    url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=1400&q=80")
-    center/cover no-repeat;
+.preview-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:220px;
+}
+
+.preview-photo{
+  min-width:0;
+}
+
+.preview-photo-img{
+  width:100%;
+  height:100%;
+  min-height:220px;
+  display:block;
+  object-fit:cover;
+  object-position:center 30%;
+  border-top-left-radius:18px;
+}
+
+.preview-map{
+  min-width:0;
+  background:#f3f6fb;
+}
+
+.preview-map iframe{
+  width:100%;
+  height:100%;
+  min-height:220px;
+  border:0;
+  display:block;
+  border-top-right-radius:18px;
 }
 
 .preview-inner{
@@ -354,7 +380,6 @@ body{
   color:#5b6570;
   font-size:12px;
 }
-
 .trust-row{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -452,6 +477,13 @@ body{
   border:none;
   cursor:pointer;
 }
+  .btn:focus-visible,
+.back-link:focus-visible,
+.logo:focus-visible{
+  outline:3px solid rgba(26,83,173,0.22);
+  outline-offset:3px;
+  border-radius:10px;
+}
 
 .btn.primary{
   background:var(--blue);
@@ -526,66 +558,35 @@ footer a:hover{
   color:var(--blue);
 }
 
-/* Animationen beim Scrollen */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform; /* Verbessert die Render-Leistung */
+#toTopBtn{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:12px;
+  background:var(--blue);
+  color:#fff;
+  font-size:22px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  opacity:0;
+  pointer-events:none;
+  transition:0.3s ease;
+  z-index:999;
+  display:none;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+#toTopBtn:hover{
+  transform:translateY(-3px);
 }
 
-/* "Nach oben" Button */
-#toTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 12px;
-  background: var(--blue);
-  color: #fff;
-  font-size: 22px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  
-  /* Initialzustand (unsichtbar) */
-  opacity: 0;
-  visibility: hidden; /* Besser als nur pointer-events:none */
-  transform: scale(0.8); /* Kleiner Effekt beim Erscheinen */
-  transition: all 0.3s ease;
-  z-index: 999;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#toTopBtn:hover {
-  background: var(--textDark); /* Visuelles Feedback beim Drüberfahren */
-  transform: translateY(-5px) scale(1.05);
-}
-
-#toTopBtn.show {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}
-
-/* Mobile Optimierung für den Button */
-@media (max-width: 600px) {
-  #toTopBtn {
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-  }
+#toTopBtn.show{
+  opacity:1;
+  pointer-events:auto;
+  display:block;
 }
 
 @media (max-width:700px) {
@@ -616,7 +617,12 @@ footer a:hover{
     font-size: 28px;
   }
 
-  .info-card, .pricing-card, .benefits-card, .form-wrap, .preview-card, .advantage-card {
+  .info-card,
+  .pricing-card,
+  .benefits-card,
+  .form-wrap,
+  .preview-card,
+  .advantage-card {
     padding: 22px 18px;
   }
 
@@ -645,9 +651,18 @@ footer a:hover{
     height: 34px;
   }
 
-  /* Preview-Karte */
-  .preview-top {
-    height: 150px;
+  /* Preview-Karte mit Karte ausblenden */
+  .preview-split {
+    display: block;
+  }
+
+  .preview-map {
+    display: none;
+  }
+
+  .preview-photo-img {
+    min-height: 150px;
+    border-top-right-radius: 18px;
   }
 
   /* "Nach oben" Button Position */
@@ -660,8 +675,6 @@ footer a:hover{
 }
 </style>
 </head>
-
-<body>
 
 <div class="header">
   <a href="index.html" class="logo" aria-label="Gartenservice Hof">
