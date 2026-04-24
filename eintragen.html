@@ -591,22 +591,36 @@ footer a:hover{
 
 @media (max-width:700px){
   .header{
-    grid-template-columns:auto auto;
-    align-items:center;
+    display:flex;
     justify-content:space-between;
-    text-align:left;
-    padding:14px 18px;
-    gap:12px;
-  }
-
-  .logo{
-    justify-content:flex-start;
+    align-items:center;
+    padding:14px 16px;
     gap:10px;
   }
 
+  .logo{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:8px;
+    min-width:0;
+  }
+
   .logo span{
-    font-size:18px;
+    font-size:16px;
     white-space:nowrap;
+  }
+
+  .logo-mark{
+    width:32px;
+    height:32px;
+    flex:0 0 32px;
+  }
+
+  .back-link{
+    font-size:13px;
+    white-space:nowrap;
+    flex-shrink:0;
   }
 
   .header-note{
@@ -614,7 +628,10 @@ footer a:hover{
   }
 
   .header-right{
+    display:flex;
     justify-content:flex-end;
+    align-items:center;
+    flex-shrink:0;
     margin-top:0;
   }
 
@@ -627,50 +644,46 @@ footer a:hover{
     font-size:13px;
   }
 
-  .logo-mark{
-    width:34px;
-    height:34px;
-    flex-basis:34px;
+  .wrap{
+    padding:20px 14px 50px;
   }
 
-  .premium-top-split{
+  .hero{
+    padding:26px 18px;
+  }
+
+  .hero h1{
+    font-size:26px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .pricing-grid,
+  .compare-grid,
+  .advantage-grid,
+  .trust-row,
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .preview-split{
     display:block;
     min-height:auto;
   }
 
-  .premium-map{
+  .preview-map{
     display:none;
   }
 
-  .premium-photo{
-    width:100%;
-  }
-
-  .provider-photo{
+  .preview-photo-img{
     width:100%;
     height:220px;
+    min-height:220px;
     object-fit:cover;
-    display:block;
     border-top-left-radius:18px;
     border-top-right-radius:18px;
-    border-bottom-left-radius:0;
-    border-bottom-right-radius:0;
-  }
-
-  .cookie-banner{
-    left:12px;
-    right:12px;
-    bottom:12px;
-    padding:16px 14px 14px;
-  }
-
-  .cookie-actions{
-    flex-direction:column;
-    align-items:stretch;
-  }
-
-  .rating-scale{
-    grid-template-columns:repeat(6, 1fr);
   }
 
   #toTopBtn{
