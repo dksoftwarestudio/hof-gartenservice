@@ -1,1063 +1,187 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unternehmen eintragen – Gartenservice Hof</title>
-
-<style>
-:root{
-  --blue:#1A53AD;
-  --blueLight:#EAF2FF;
-  --bg:#F5F5F5;
-  --text:#555555;
-  --textDark:#2F2F2F;
-  --muted:#666666;
-  --card:#FFFFFF;
-  --border:rgba(0,0,0,0.06);
-  --shadow:0 18px 45px rgba(0,0,0,0.07);
-}
-
-*{box-sizing:border-box;}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-
-.header{
-  background:#ffffff;
-  border-bottom:1px solid var(--border);
-  padding:16px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:700;
-  font-size:18px;
-  color:var(--textDark);
-  text-decoration:none;
-}
-
-.logo-mark{
-  width:38px;
-  height:38px;
-  flex:0 0 38px;
-  display:block;
-  object-fit:contain;
-  border-radius:50%;
-}
-
-.back-link{
-  color:var(--blue);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:700;
-}
-
-.wrap{
-  max-width:900px;
-  margin:0 auto;
-  padding:28px 20px 70px;
-}
-
-.hero{
-  background:var(--card);
-  border-radius:18px;
-  padding:42px 34px;
-  box-shadow:var(--shadow);
-  border:1px solid var(--border);
-  text-align:center;
-}
-
-.hero h1{
-  font-size:38px;
-  margin:0 0 14px;
-  line-height:1.1;
-  font-weight:600;
-  color:var(--textDark);
-}
-
-.hero p{
-  margin:0 auto;
-  max-width:700px;
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.7;
-}
-
-.hero-points{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:18px;
-}
-
-.hero-point{
-  display:inline-block;
-  padding:8px 14px;
-  border-radius:999px;
-  background:#F7F9FC;
-  border:1px solid var(--border);
-  color:var(--textDark);
-  font-size:13px;
-  font-weight:700;
-}
-
-.hero-image{
-  margin-top:18px;
-  height:230px;
-  border-radius:18px;
-  overflow:hidden;
-  background:
-    linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12)),
-    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80")
-    center/cover no-repeat;
-  box-shadow:0 12px 30px rgba(0,0,0,0.06);
-  border:1px solid var(--border);
-}
-
-.section{
-  margin-top:22px;
-}
-
-.info-card,
-.pricing-card,
-.benefits-card,
-.form-wrap,
-.preview-card,
-.advantage-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:28px 24px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.05);
-}
-
-.info-card h2,
-.pricing-card h2,
-.benefits-card h2,
-.form-wrap h2,
-.preview-card h2,
-.advantage-card h2{
-  margin:0 0 10px;
-  color:var(--textDark);
-  font-size:24px;
-}
-
-.info-card p,
-.pricing-card p,
-.benefits-card p,
-.form-wrap p,
-.preview-card p,
-.advantage-card p{
-  margin:0 0 16px;
-  color:var(--muted);
-  line-height:1.7;
-}
-
-.pricing-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:18px;
-}
-
-.price-box{
-  background:#F7F9FC;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-}
-
-.price-box h3{
-  margin:0 0 8px;
-  color:var(--blue);
-  font-size:20px;
-}
-
-.price{
-  font-size:28px;
-  font-weight:700;
-  color:var(--textDark);
-  margin-bottom:10px;
-}
-
-.price-note{
-  font-size:13px;
-  color:#888;
-  margin-bottom:12px;
-}
-
-.price-box ul{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
-  line-height:1.8;
-}
-
-.pricing-hint{
-  margin-top:18px;
-  font-size:13px;
-  color:#7a7a7a;
-  line-height:1.6;
-}
-
-.compare-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:18px;
-}
-
-.compare-box{
-  border-radius:16px;
-  padding:20px;
-  border:1px solid var(--border);
-  background:#F7F9FC;
-}
-
-.compare-box h3{
-  margin:0 0 12px;
-  font-size:20px;
-  line-height:1.3;
-}
-
-.compare-box.weak h3{
-  color:#6B7280;
-}
-
-.compare-box.strong{
-  background:var(--blueLight);
-  border-color:rgba(26,83,173,0.14);
-}
-
-.compare-box.strong h3{
-  color:var(--blue);
-}
-
-.compare-box ul{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
-  line-height:1.8;
-}
-
-.benefits-note{
-  margin-top:18px;
-  padding:16px 18px;
-  border-radius:14px;
-  background:#F7F9FC;
-  border:1px solid var(--border);
-  color:var(--textDark);
-  line-height:1.7;
-}
-
-.advantage-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:18px;
-}
-
-.advantage-box{
-  background:#F7F9FC;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-}
-
-.advantage-box h3{
-  margin:0 0 10px;
-  font-size:20px;
-  line-height:1.3;
-  color:var(--textDark);
-}
-
-.advantage-box ul{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
-  line-height:1.8;
-}
-
-.preview-example{
-  margin-top:18px;
-  background:#F7F9FC;
-  border:1px solid var(--border);
-  border-radius:18px;
-  overflow:hidden;
-}
-
-.preview-split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:220px;
-}
-
-.preview-photo{
-  min-width:0;
-}
-
-.preview-photo-img{
-  width:100%;
-  height:100%;
-  min-height:220px;
-  display:block;
-  object-fit:cover;
-  object-position:center 30%;
-  border-top-left-radius:18px;
-}
-
-.preview-map{
-  min-width:0;
-  background:#f3f6fb;
-}
-
-.preview-map iframe{
-  width:100%;
-  height:100%;
-  min-height:220px;
-  border:0;
-  display:block;
-  border-top-right-radius:18px;
-}
-
-.preview-inner{
-  padding:20px;
-}
-
-.preview-badge{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:999px;
-  background:rgba(26,83,173,0.08);
-  color:var(--blue);
-  font-size:12px;
-  font-weight:700;
-  margin-bottom:12px;
-}
-
-.preview-title{
-  margin:0 0 10px;
-  color:var(--textDark);
-  font-size:22px;
-  font-weight:700;
-}
-
-.preview-desc{
-  margin:0 0 14px;
-  color:var(--muted);
-  line-height:1.7;
-}
-
-.preview-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-bottom:16px;
-}
-
-.preview-meta span{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid var(--border);
-  color:#5b6570;
-  font-size:12px;
-}
-.trust-row{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:16px;
-  margin-top:18px;
-}
-
-.trust-box{
-  background:#F7F9FC;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:18px;
-  text-align:center;
-}
-
-.trust-box strong{
-  display:block;
-  color:var(--textDark);
-  font-size:15px;
-  margin-bottom:6px;
-}
-
-.trust-box span{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.6;
-}
-
-.form-card{
-  margin-top:14px;
-  background:#F7F9FC;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:20px;
-  text-align:left;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-
-.form-group.full{
-  grid-column:1 / -1;
-}
-
-.form-group label{
-  font-size:13px;
-  font-weight:700;
-  color:var(--textDark);
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-  width:100%;
-  padding:12px 14px;
-  border:1px solid var(--border);
-  border-radius:10px;
-  background:#fff;
-  color:var(--textDark);
-  font-size:14px;
-  font-family:Arial, sans-serif;
-}
-
-.form-group textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-.btn-row{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-  margin-top:16px;
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 20px;
-  border-radius:10px;
-  text-decoration:none;
-  font-size:14px;
-  font-weight:700;
-  transition:0.2s ease;
-  border:none;
-  cursor:pointer;
-}
-  .btn:focus-visible,
-.back-link:focus-visible,
-.logo:focus-visible{
-  outline:3px solid rgba(26,83,173,0.22);
-  outline-offset:3px;
-  border-radius:10px;
-}
-
-.btn.primary{
-  background:var(--blue);
-  color:#fff;
-  box-shadow:0 10px 25px rgba(26,83,173,0.22);
-}
-
-.btn.primary:hover{
-  transform:translateY(-2px);
-}
-
-.btn.secondary{
-  background:#EEF2F8;
-  color:var(--textDark);
-}
-
-.btn.secondary:hover{
-  transform:translateY(-2px);
-}
-
-.btn.whatsapp{
-  background:#25D366;
-  color:#fff;
-  box-shadow:0 10px 25px rgba(37,211,102,0.22);
-}
-
-.btn.whatsapp:hover{
-  transform:translateY(-2px);
-  background:#1ebe5b;
-}
-
-.form-note{
-  margin-top:12px;
-  font-size:12px;
-  color:#7a7a7a;
-  line-height:1.6;
-  text-align:center;
-}
-
-.form-status{
-  display:none;
-  margin-top:12px;
-  font-size:13px;
-  line-height:1.5;
-  text-align:center;
-}
-
-.form-status.success{
-  display:block;
-  color:#1A53AD;
-}
-
-.form-status.error{
-  display:block;
-  color:#b00020;
-}
-
-footer{
-  margin-top:30px;
-  text-align:center;
-  color:#9aa6b2;
-  font-size:13px;
-}
-
-footer a{
-  color:#9aa6b2;
-  text-decoration:none;
-  margin:0 6px;
-}
-
-footer a:hover{
-  color:var(--blue);
-}
-
-#toTopBtn{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  width:50px;
-  height:50px;
-  border:none;
-  border-radius:12px;
-  background:var(--blue);
-  color:#fff;
-  font-size:22px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 10px 25px rgba(0,0,0,0.15);
-  opacity:0;
-  pointer-events:none;
-  transition:0.3s ease;
-  z-index:999;
-  display:none;
-}
-
-#toTopBtn:hover{
-  transform:translateY(-3px);
-}
-
-#toTopBtn.show{
-  opacity:1;
-  pointer-events:auto;
-  display:block;
-}
-
-@media (max-width:700px){
-  .header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 16px;
-    gap:10px;
-  }
-
-  .logo{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-    gap:8px;
-    min-width:0;
-  }
-
-  .logo span{
-    font-size:16px;
-    white-space:nowrap;
-  }
-
-  .logo-mark{
-    width:32px;
-    height:32px;
-    flex:0 0 32px;
-  }
-
-  .back-link{
-    font-size:13px;
-    white-space:nowrap;
-    flex-shrink:0;
-  }
-
-  .header-note{
-    display:none;
-  }
-
-  .header-right{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    flex-shrink:0;
-    margin-top:0;
-  }
-
-  .header-right .btn{
-    width:auto;
-    max-width:none;
-    text-align:center;
-    white-space:nowrap;
-    padding:8px 12px;
-    font-size:13px;
-  }
-
-  .wrap{
-    padding:20px 14px 50px;
-  }
-
-  .hero{
-    padding:26px 18px;
-  }
-
-  .hero h1{
-    font-size:26px;
-  }
-
-  .hero p{
-    font-size:15px;
-  }
-
-  .pricing-grid,
-  .compare-grid,
-  .advantage-grid,
-  .trust-row,
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .preview-split{
-    display:block;
-    min-height:auto;
-  }
-
-  .preview-map{
-    display:none;
-  }
-
-  .preview-photo-img{
-    width:100%;
-    height:220px;
-    min-height:220px;
-    object-fit:cover;
-    border-top-left-radius:18px;
-    border-top-right-radius:18px;
-  }
-
-  #toTopBtn{
-    right:18px;
-    bottom:18px;
-    width:46px;
-    height:46px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Als Gartenservice eintragen – hof-gartenservice.de</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <style>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+                        url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .tail-container {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 
-<body>
+<body class="bg-gray-50 font-sans">
 
-<div class="header">
-  <a href="index.html" class="logo" aria-label="Gartenservice Hof">
-    <img src="logo-gartenservice.png" alt="Gartenservice Hof Logo" class="logo-mark">
-    <span>hof-gartenservice.de</span>
-  </a>
-  <a class="back-link" href="index.html">← Zurück zur Übersicht</a>
-</div>
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="tail-container px-6 py-4">
 
-<div class="wrap">
+    <div class="flex items-center justify-between gap-6">
 
-  <div class="hero reveal">
-    <h1>Jetzt als Gartenservice in Hof eintragen</h1>
-    <p>
-      Tragen Sie Ihr Unternehmen ein und erreichen Sie lokale Kunden in Hof direkt über diese Seite.
-      Keine bundesweite Massenplattform, kein unnötiger Umweg – Interessenten finden Sie direkt.
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <img src="logo-gartenservice.png" 
+             alt="hof-gartenservice Logo"
+             class="w-12 h-12 rounded-xl object-cover">
+        <div>
+          <span class="text-2xl font-bold text-gray-800">hof-gartenservice.de</span>
+          <p class="text-xs text-gray-500 -mt-1">Hof (Saale)</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-green-600 transition">Start</a>
+        <a href="index.html#firmen" class="hover:text-green-600 transition">Gartenservice finden</a>
+        <a href="eintragen.html" class="text-green-600 font-semibold">Als Firma eintragen</a>
+        <a href="kontakt.html" class="hover:text-green-600 transition">Kontakt</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a href="https://wa.me/491624012037" target="_blank" 
+           class="flex items-center gap-2 bg-emerald-500 text-white px-5 py-2.5 rounded-2xl font-medium hover:bg-emerald-600 transition">
+          <i class="fab fa-whatsapp text-xl"></i>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="index.html#anfrage" 
+           class="bg-green-600 text-white px-6 py-2.5 rounded-2xl font-medium hover:bg-green-700 transition">
+          Anfrage stellen
+        </a>
+      </div>
+
+    </div>
+
+    <div class="md:hidden grid grid-cols-2 gap-3 mt-4">
+      <a href="https://wa.me/491624012037" target="_blank"
+         class="text-center bg-emerald-500 text-white py-3 rounded-2xl font-medium">
+        WhatsApp
+      </a>
+
+      <a href="index.html#anfrage"
+         class="text-center bg-green-600 text-white py-3 rounded-2xl font-medium">
+        Anfrage
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<section class="hero-bg h-screen flex items-center text-white">
+  <div class="tail-container px-6 max-w-4xl">
+
+    <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+      Als Gartenservice in Hof eintragen
+    </h2>
+
+    <p class="text-xl md:text-2xl mb-10 text-gray-100 max-w-2xl">
+      Erhalten Sie direkte Anfragen von Kunden aus Hof und Umgebung.<br>
+      Lokal • Weniger Konkurrenz • Direkter Kontakt
     </p>
 
-    <div class="hero-points">
-      <span class="hero-point">Lokale Anfragen</span>
-      <span class="hero-point">Weniger Konkurrenz</span>
-      <span class="hero-point">Direkter Kontakt</span>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#formular" 
+         class="bg-green-500 hover:bg-green-600 text-white text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
+        Jetzt eintragen
+      </a>
+
+      <a href="index.html" 
+         class="border-2 border-white hover:bg-white hover:text-green-700 text-white text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
+        Zurück zur Startseite
+      </a>
     </div>
+
   </div>
+</section>
 
-  <div class="hero-image reveal"></div>
-
-  <div class="section">
-    <div class="info-card reveal">
-      <h2>Warum sich ein Eintrag lohnt</h2>
-      <p>
-        Viele Betriebe sind zwar online sichtbar, werden aber zwischen großen Verzeichnissen und vielen Mitbewerbern schnell übersehen.
-        Diese Seite richtet sich gezielt an Interessenten aus Hof und Umgebung, die aktiv nach einem passenden Gartenservice suchen.
-      </p>
-
-      <div class="trust-row">
-        <div class="trust-box">
-          <strong>Regional</strong>
-          <span>Fokus auf Hof und Umgebung</span>
-        </div>
-        <div class="trust-box">
-          <strong>Direkt</strong>
-          <span>Interessenten gelangen ohne Umwege zu Ihrem Eintrag</span>
-        </div>
-        <div class="trust-box">
-          <strong>Klar</strong>
-          <span>Ihr Unternehmen wird übersichtlich und verständlich dargestellt</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="advantage-card reveal">
-      <h2>Warum nicht nur Gelbe Seiten oder große Portale?</h2>
-      <p>
-        Große Verzeichnisse haben Reichweite, aber oft auch viel Konkurrenz. Auf einer regionalen Themenseite ist Ihr Betrieb gezielter sichtbar.
-      </p>
-
-      <div class="advantage-grid">
-        <div class="advantage-box">
-          <h3>Große Verzeichnisse</h3>
-          <ul>
-            <li>Viele Einträge nebeneinander</li>
-            <li>Höhere Konkurrenz um Aufmerksamkeit</li>
-            <li>Weniger klarer regionaler Fokus</li>
-            <li>Ihr Profil geht schneller unter</li>
-          </ul>
-        </div>
-
-        <div class="advantage-box">
-          <h3>hof-gartenservice.de</h3>
-          <ul>
-            <li>Gezielter Fokus auf Hof und Umgebung</li>
-            <li>Mehr Sichtbarkeit auf einer regionalen Spezialseite</li>
-            <li>Direkter Kontakt für Interessenten</li>
-            <li>Bessere Chance auf lokale Anfragen</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="pricing-card reveal">
-      <h2>Standard oder Premium</h2>
-      <p>
-        Wählen Sie zwischen einem normalen Eintrag und einer hervorgehobenen Premium-Platzierung.
-      </p>
-
-      <div class="pricing-grid">
-        <div class="price-box">
-          <h3>Standard</h3>
-          <div class="price">auf Anfrage</div>
-          <div class="price-note">individuelle Preisgestaltung</div>
-          <ul>
-            <li>Eintrag in der Übersicht</li>
-            <li>Google-Profil oder Website</li>
-            <li>Kurze Beschreibung</li>
-            <li>Direkter Kontakt für Interessenten</li>
-          </ul>
-        </div>
-
-        <div class="price-box">
-          <h3>Premium</h3>
-          <div class="price">auf Anfrage</div>
-          <div class="price-note">abhängig von Platzierung &amp; Umfang</div>
-          <ul>
-            <li>Hervorgehobene Platzierung oben</li>
-            <li>Größere Darstellung</li>
-            <li>Mehr Aufmerksamkeit für Ihren Betrieb</li>
-            <li>Stärkerer Fokus auf Ihr Profil</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="pricing-hint">
-        Erste Anfrage kostenlos und unverbindlich. Die Konditionen werden individuell nach gewünschter Platzierung und Umfang abgestimmt.
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="benefits-card reveal">
-      <h2>Was bringt ein guter Eintrag konkret?</h2>
-      <p>
-        Ein guter Eintrag ist mehr als nur ein Name in einer Liste. Er sorgt dafür, dass Ihr Betrieb seriöser wirkt,
-        leichter gefunden wird und Interessenten schneller verstehen, was Sie anbieten.
-      </p>
-
-      <div class="compare-grid">
-        <div class="compare-box weak">
-          <h3>Ohne Eintrag</h3>
-          <ul>
-            <li>Weniger Sichtbarkeit bei lokalen Interessenten</li>
-            <li>Kunden finden oft nur die bekanntesten Anbieter</li>
-            <li>Weniger Aufmerksamkeit für Ihren Betrieb</li>
-            <li>Potenzielle Anfragen gehen an andere Firmen</li>
-          </ul>
-        </div>
-
-        <div class="compare-box strong">
-          <h3>Mit Eintrag auf hof-gartenservice.de</h3>
-          <ul>
-            <li>Mehr Präsenz auf einer lokalen Themenseite</li>
-            <li>Direkter Weg für Interessenten zu Ihrem Profil</li>
-            <li>Mehr Vertrauen durch klare Darstellung Ihres Betriebs</li>
-            <li>Bessere Chance auf neue Anfragen aus der Region</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="benefits-note">
-        <strong>Kurz gesagt:</strong> Ihr Profil ist eine zusätzliche Möglichkeit, online gefunden zu werden
-        und neue Kunden in Hof zu erreichen – besonders dann, wenn Interessenten lokal und gezielt suchen.
-      </div>
-    </div>
-  </div>
-
- <div class="section">
-  <div class="preview-card reveal">
-    <h2>So kann Ihr Eintrag aussehen</h2>
-    <p>
-      So könnte ein hervorgehobenes Unternehmensprofil auf der Seite dargestellt werden.
+<section class="py-20 bg-white">
+  <div class="tail-container px-6">
+    <h3 class="text-4xl font-bold text-center mb-4">Warum sich ein Eintrag lohnt</h3>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+      Keine große Massenplattform – nur gezielte lokale Anfragen aus Hof (Saale)
     </p>
 
-    <div class="preview-example">
-      <div class="preview-split">
-        <div class="preview-photo">
-          <img
-            src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1400&q=80"
-            alt="Beispiel Gartenservice"
-            class="preview-photo-img">
-        </div>
-
-        <div class="preview-map">
-          <iframe
-            src="https://www.google.com/maps?q=Hof,+Germany&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🎯</div>
+        <h4 class="font-semibold text-xl mb-3">Lokale Sichtbarkeit</h4>
+        <p class="text-gray-600">Ihr Betrieb wird gezielt Kunden aus Hof und Umgebung angezeigt.</p>
       </div>
 
-      <div class="preview-inner">
-        <div class="preview-badge">Empfohlen</div>
+      <div class="text-center">
+        <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">📲</div>
+        <h4 class="font-semibold text-xl mb-3">Direkte Anfragen</h4>
+        <p class="text-gray-600">Kunden kontaktieren Sie direkt – ohne Vermittlungsgebühren.</p>
+      </div>
 
-        <h3 class="preview-title">Muster Gartenservice Hof</h3>
-
-        <p class="preview-desc">
-          Zuverlässiger Gartenservice in Hof und Umgebung.
-          Unterstützung bei Gartenpflege, Rückschnitt und gepflegten Außenbereichen für Privat- und Gewerbekunden.
-        </p>
-
-        <div class="preview-meta">
-          <span>Gartenpflege</span>
-          <span>Heckenschnitt</span>
-          <span>Privat &amp; Gewerbe</span>
-        </div>
-
-        <div class="btn-row" style="margin-top:16px;">
-          <a class="btn primary" href="javascript:void(0)">Kontakt per E-Mail</a>
-          <a class="btn secondary" href="javascript:void(0)">📞 Anrufen</a>
-          <a class="btn whatsapp" href="javascript:void(0)">WhatsApp</a>
-          <a class="btn secondary" href="javascript:void(0)">Standort öffnen</a>
-        </div>
-
-        <div style="margin:10px 0 6px; font-size:14px; color:#555;">
-          ✔ Versichert · ✔ Antwort &lt; 24h · ✔ Flexible Termine
-        </div>
-
-        <p style="margin-top:10px; font-size:12px; color:#777;">
-          Beispielhafte Darstellung eines Profils
-        </p>
+      <div class="text-center">
+        <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">📍</div>
+        <h4 class="font-semibold text-xl mb-3">Weniger Konkurrenz</h4>
+        <p class="text-gray-600">Regionale Plattform statt bundesweiter Verzeichnisse.</p>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-  <div class="section">
-    <div class="form-wrap reveal">
-      <h2>Anfrage senden</h2>
-      <p>
-        Senden Sie uns Ihre Anfrage. Wir melden uns schnellstmöglich bei Ihnen zurück.
+<section id="formular" class="py-20 bg-gray-100">
+  <div class="tail-container px-6 max-w-3xl">
+    <div class="bg-white rounded-3xl shadow-sm p-10 md:p-14">
+
+      <h3 class="text-4xl font-bold text-center mb-3">Unternehmen eintragen</h3>
+      <p class="text-center text-gray-600 mb-12">
+        Füllen Sie das Formular aus – wir melden uns schnellstmöglich bei Ihnen.
       </p>
 
-      <form id="company-form" class="form-card" action="https://formspree.io/f/mjgpagzy" method="POST" autocomplete="off">
+      <form id="company-form" action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-8">
         <input type="hidden" name="_subject" value="Neue Unternehmensanfrage über hof-gartenservice.de">
-        <input type="hidden" name="_language" value="de">
 
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="firma">Firmenname</label>
-            <input type="text" id="firma" name="Firmenname" placeholder="z. B. Muster Gartenservice Hof" required autocomplete="off">
-          </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <input type="text" name="Firmenname" required placeholder="Firmenname"
+                 class="w-full px-5 py-4 border rounded-2xl focus:ring-2 focus:ring-green-500">
 
-          <div class="form-group">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="E-Mail" placeholder="ihre@email.de" required autocomplete="off">
-          </div>
-
-          <div class="form-group">
-            <label for="googleprofil">Google-Profil Link</label>
-            <input type="url" id="googleprofil" name="Google-Profil" placeholder="https://..." autocomplete="off">
-          </div>
-
-          <div class="form-group">
-            <label for="paket">Paket</label>
-            <select id="paket" name="Paket" autocomplete="off">
-              <option value="Standard">Standard</option>
-              <option value="Premium">Premium</option>
-            </select>
-          </div>
-
-          <div class="form-group full">
-            <label for="nachricht">Kurze Beschreibung</label>
-            <textarea id="nachricht" name="Nachricht" placeholder="Kurze Infos zu Ihrem Unternehmen, Leistungen oder Wünschen" autocomplete="off"></textarea>
-          </div>
+          <input type="email" name="E-Mail" required placeholder="E-Mail"
+                 class="w-full px-5 py-4 border rounded-2xl focus:ring-2 focus:ring-green-500">
         </div>
 
-        <div class="btn-row">
-          <button class="btn primary" type="submit">Anfrage senden</button>
+        <textarea name="Nachricht" rows="5"
+                  class="w-full px-5 py-4 border rounded-2xl focus:ring-2 focus:ring-green-500"
+                  placeholder="Beschreiben Sie Ihren Gartenservice..."></textarea>
 
-          <a class="btn whatsapp"
-             href="https://wa.me/491624012037?text=Hallo,%20ich%20m%C3%B6chte%20mein%20Unternehmen%20bei%20hof-gartenservice.de%20eintragen."
-             target="_blank"
-             rel="noopener">
-            WhatsApp
-          </a>
-        </div>
-
-        <div id="company-form-status" class="form-status" aria-live="polite"></div>
-
-        <div class="form-note">
-          Ihre Anfrage wird direkt an DK Software Studio gesendet.
-        </div>
+        <button type="submit"
+                class="w-full bg-green-600 text-white py-5 rounded-3xl text-xl font-semibold hover:bg-green-700 transition">
+          Anfrage absenden
+        </button>
       </form>
+
     </div>
   </div>
+</section>
 
-  <footer>
-    © 2026 hof-gartenservice.de · by
-    <a href="https://dksoftwarestudio.com" target="_blank" rel="noopener">DK Software Studio</a><br>
-    <a href="kontakt.html">Kontakt</a> ·
-    <a href="impressum.html">Impressum</a> ·
-    <a href="datenschutz.html">Datenschutz</a>
-  </footer>
+<section class="py-20 bg-green-600 text-white text-center">
+  <div class="tail-container px-6">
+    <h3 class="text-4xl font-bold mb-6">Noch Fragen?</h3>
+    <a href="https://wa.me/491624012037"
+       class="inline-block bg-white text-green-700 px-10 py-5 rounded-3xl text-xl font-semibold">
+       WhatsApp schreiben
+    </a>
+  </div>
+</section>
 
-</div>
-
-<button id="toTopBtn" aria-label="Nach oben">↑</button>
-
-<script>
-const reveals = document.querySelectorAll('.reveal');
-
-function revealOnScroll() {
-  reveals.forEach((el) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-
-    if (elementTop < windowHeight - 80) {
-      el.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
-
-const toTopBtn = document.getElementById("toTopBtn");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    toTopBtn.classList.add("show");
-  } else {
-    toTopBtn.classList.remove("show");
-  }
-});
-
-toTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
-
-const companyForm = document.getElementById('company-form');
-const companyFormStatus = document.getElementById('company-form-status');
-
-if (companyForm) {
-  companyForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
-
-    companyFormStatus.className = 'form-status';
-    companyFormStatus.textContent = '';
-
-    const formData = new FormData(companyForm);
-
-    try {
-      const response = await fetch(companyForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        companyForm.reset();
-        window.location.href = 'danke.html';
-      } else {
-        companyFormStatus.className = 'form-status error';
-        companyFormStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
-      }
-    } catch (error) {
-      companyFormStatus.className = 'form-status error';
-      companyFormStatus.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
-    }
-  });
-}
-</script>
+<footer class="bg-gray-900 text-gray-400 py-16 text-center">
+  <div class="tail-container px-6">
+    <p>© 2026 hof-gartenservice.de – Ein regionales Projekt</p>
+  </div>
+</footer>
 
 </body>
 </html>
