@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Als Gartenservice eintragen – hof-gartenservice.de</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
     .hero-bg {
       background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
-                        url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80');
+                        url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1400&q=80');
       background-size: cover;
       background-position: center;
     }
@@ -25,6 +26,7 @@
 
 <body class="bg-gray-50 font-sans">
 
+<!-- HEADER -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <div class="tail-container px-6 py-4">
 
@@ -77,6 +79,7 @@
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero-bg h-screen flex items-center text-white">
   <div class="tail-container px-6 max-w-4xl">
 
@@ -104,18 +107,21 @@
   </div>
 </section>
 
+<!-- VORTEILE -->
 <section class="py-20 bg-white">
   <div class="tail-container px-6">
+
     <h3 class="text-4xl font-bold text-center mb-4">Warum sich ein Eintrag lohnt</h3>
     <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
       Keine große Massenplattform – nur gezielte lokale Anfragen aus Hof (Saale)
     </p>
 
     <div class="grid md:grid-cols-3 gap-8">
+
       <div class="text-center">
-        <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🎯</div>
+        <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🌿</div>
         <h4 class="font-semibold text-xl mb-3">Lokale Sichtbarkeit</h4>
-        <p class="text-gray-600">Ihr Betrieb wird gezielt Kunden aus Hof und Umgebung angezeigt.</p>
+        <p class="text-gray-600">Ihr Gartenservice wird gezielt Kunden aus Hof angezeigt.</p>
       </div>
 
       <div class="text-center">
@@ -127,14 +133,17 @@
       <div class="text-center">
         <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">📍</div>
         <h4 class="font-semibold text-xl mb-3">Weniger Konkurrenz</h4>
-        <p class="text-gray-600">Regionale Plattform statt bundesweiter Verzeichnisse.</p>
+        <p class="text-gray-600">Regionale Plattform statt großer Portale.</p>
       </div>
+
     </div>
   </div>
 </section>
 
+<!-- FORMULAR -->
 <section id="formular" class="py-20 bg-gray-100">
   <div class="tail-container px-6 max-w-3xl">
+
     <div class="bg-white rounded-3xl shadow-sm p-10 md:p-14">
 
       <h3 class="text-4xl font-bold text-center mb-3">Unternehmen eintragen</h3>
@@ -143,43 +152,54 @@
       </p>
 
       <form id="company-form" action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-8">
-        <input type="hidden" name="_subject" value="Neue Unternehmensanfrage über hof-gartenservice.de">
+
+        <input type="hidden" name="_subject" value="Neue Anfrage hof-gartenservice.de">
 
         <div class="grid md:grid-cols-2 gap-6">
-          <input type="text" name="Firmenname" required placeholder="Firmenname"
-                 class="w-full px-5 py-4 border rounded-2xl focus:ring-2 focus:ring-green-500">
 
-          <input type="email" name="E-Mail" required placeholder="E-Mail"
-                 class="w-full px-5 py-4 border rounded-2xl focus:ring-2 focus:ring-green-500">
+          <input type="text" name="Firmenname" required
+                 class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:ring-1 focus:ring-green-500"
+                 placeholder="Firmenname">
+
+          <input type="email" name="E-Mail" required
+                 class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:ring-1 focus:ring-green-500"
+                 placeholder="E-Mail">
+
         </div>
 
         <textarea name="Nachricht" rows="5"
-                  class="w-full px-5 py-4 border rounded-2xl focus:ring-2 focus:ring-green-500"
-                  placeholder="Beschreiben Sie Ihren Gartenservice..."></textarea>
+                  class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:ring-1 focus:ring-green-500"
+                  placeholder="Welche Leistungen bieten Sie an? (Rasenpflege, Heckenschnitt, Gartenbau usw.)"></textarea>
 
         <button type="submit"
-                class="w-full bg-green-600 text-white py-5 rounded-3xl text-xl font-semibold hover:bg-green-700 transition">
+                class="w-full bg-green-600 hover:bg-green-700 text-white text-xl py-6 rounded-3xl font-semibold">
           Anfrage absenden
         </button>
+
       </form>
 
     </div>
   </div>
 </section>
 
-<section class="py-20 bg-green-600 text-white text-center">
-  <div class="tail-container px-6">
+<!-- CTA -->
+<section class="py-20 bg-green-600 text-white">
+  <div class="tail-container px-6 text-center">
+
     <h3 class="text-4xl font-bold mb-6">Noch Fragen?</h3>
+
     <a href="https://wa.me/491624012037"
-       class="inline-block bg-white text-green-700 px-10 py-5 rounded-3xl text-xl font-semibold">
-       WhatsApp schreiben
+       class="inline-flex items-center gap-3 bg-white text-green-700 px-10 py-5 rounded-3xl text-xl font-semibold">
+      WhatsApp schreiben
     </a>
+
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="bg-gray-900 text-gray-400 py-16 text-center">
   <div class="tail-container px-6">
-    <p>© 2026 hof-gartenservice.de – Ein regionales Projekt</p>
+    © 2026 hof-gartenservice.de – Ein regionales Projekt
   </div>
 </footer>
 
