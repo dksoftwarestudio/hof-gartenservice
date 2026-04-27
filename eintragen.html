@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Als Gartenservice eintragen – hof-gartenservice.de</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
   <style>
     .hero-bg {
       background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
@@ -15,7 +13,6 @@
       background-size: cover;
       background-position: center;
     }
-
     .tail-container {
       max-width: 1280px;
       margin-left: auto;
@@ -26,7 +23,6 @@
 
 <body class="bg-gray-50 font-sans">
 
-<!-- HEADER -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <div class="tail-container px-6 py-4">
 
@@ -79,10 +75,8 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero-bg h-screen flex items-center text-white">
   <div class="tail-container px-6 max-w-4xl">
-
     <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
       Als Gartenservice in Hof eintragen
     </h2>
@@ -103,25 +97,21 @@
         Zurück zur Startseite
       </a>
     </div>
-
   </div>
 </section>
 
-<!-- VORTEILE -->
 <section class="py-20 bg-white">
   <div class="tail-container px-6">
-
     <h3 class="text-4xl font-bold text-center mb-4">Warum sich ein Eintrag lohnt</h3>
     <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
       Keine große Massenplattform – nur gezielte lokale Anfragen aus Hof (Saale)
     </p>
-
+    
     <div class="grid md:grid-cols-3 gap-8">
-
       <div class="text-center">
-        <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🌿</div>
+        <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🎯</div>
         <h4 class="font-semibold text-xl mb-3">Lokale Sichtbarkeit</h4>
-        <p class="text-gray-600">Ihr Gartenservice wird gezielt Kunden aus Hof angezeigt.</p>
+        <p class="text-gray-600">Ihr Betrieb wird gezielt Kunden aus Hof und Umgebung angezeigt.</p>
       </div>
 
       <div class="text-center">
@@ -133,17 +123,14 @@
       <div class="text-center">
         <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">📍</div>
         <h4 class="font-semibold text-xl mb-3">Weniger Konkurrenz</h4>
-        <p class="text-gray-600">Regionale Plattform statt großer Portale.</p>
+        <p class="text-gray-600">Regionale Plattform statt bundesweiter Verzeichnisse.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- FORMULAR -->
 <section id="formular" class="py-20 bg-gray-100">
   <div class="tail-container px-6 max-w-3xl">
-
     <div class="bg-white rounded-3xl shadow-sm p-10 md:p-14">
 
       <h3 class="text-4xl font-bold text-center mb-3">Unternehmen eintragen</h3>
@@ -152,56 +139,177 @@
       </p>
 
       <form id="company-form" action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-8">
-
-        <input type="hidden" name="_subject" value="Neue Anfrage hof-gartenservice.de">
+        <input type="hidden" name="_subject" value="Neue Unternehmensanfrage über hof-gartenservice.de">
+        <input type="hidden" name="_language" value="de">
 
         <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Firmenname *</label>
+            <input type="text" name="Firmenname" required
+                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                   placeholder="z. B. Muster Gartenservice Hof">
+          </div>
 
-          <input type="text" name="Firmenname" required
-                 class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:ring-1 focus:ring-green-500"
-                 placeholder="Firmenname">
-
-          <input type="email" name="E-Mail" required
-                 class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:ring-1 focus:ring-green-500"
-                 placeholder="E-Mail">
-
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail-Adresse *</label>
+            <input type="email" name="E-Mail" required
+                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                   placeholder="ihre@email.de">
+          </div>
         </div>
 
-        <textarea name="Nachricht" rows="5"
-                  class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:ring-1 focus:ring-green-500"
-                  placeholder="Welche Leistungen bieten Sie an? (Rasenpflege, Heckenschnitt, Gartenbau usw.)"></textarea>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Telefonnummer</label>
+            <input type="tel" name="Telefon" 
+                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                   placeholder="+49 162 4012037">
+          </div>
 
-        <button type="submit"
-                class="w-full bg-green-600 hover:bg-green-700 text-white text-xl py-6 rounded-3xl font-semibold">
-          Anfrage absenden
-        </button>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Paket</label>
+            <select name="Paket" 
+                    class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 bg-white">
+              <option value="Standard">Standard-Eintrag</option>
+              <option value="Premium">Premium (hervorgehoben)</option>
+            </select>
+          </div>
+        </div>
 
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Google-Profil oder Website</label>
+          <input type="url" name="Google-Profil" 
+                 class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
+                 placeholder="https://...">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Kurze Beschreibung Ihres Betriebs</label>
+          <textarea name="Nachricht" rows="5"
+                    class="w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 resize-y"
+                    placeholder="Welche Leistungen bieten Sie an? (Rasenpflege, Heckenschnitt, Gartenpflege, Baumschnitt usw.)"></textarea>
+        </div>
+
+        <div class="pt-6">
+          <button type="submit"
+                  class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold text-xl py-6 rounded-3xl transition">
+            Anfrage absenden
+          </button>
+        </div>
+
+        <div class="text-center text-sm text-gray-500">
+          Oder direkt per WhatsApp schreiben: 
+          <a href="https://wa.me/491624012037?text=Hallo,%20ich%20m%C3%B6chte%20mein%20Unternehmen%20bei%20hof-gartenservice.de%20eintragen." 
+             target="_blank" class="text-emerald-600 font-medium hover:underline">
+            WhatsApp kontaktieren
+          </a>
+        </div>
       </form>
 
+      <div id="form-status" class="mt-6 text-center text-sm hidden"></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="py-20 bg-green-600 text-white">
   <div class="tail-container px-6 text-center">
-
     <h3 class="text-4xl font-bold mb-6">Noch Fragen?</h3>
+    <p class="text-xl max-w-xl mx-auto mb-10">
+      Wir beraten Sie gerne persönlich zu den Platzierungsmöglichkeiten auf hof-gartenservice.de
+    </p>
 
-    <a href="https://wa.me/491624012037"
-       class="inline-flex items-center gap-3 bg-white text-green-700 px-10 py-5 rounded-3xl text-xl font-semibold">
-      WhatsApp schreiben
+    <a href="https://wa.me/491624012037" target="_blank"
+       class="inline-flex items-center gap-3 bg-white text-green-700 px-10 py-5 rounded-3xl text-xl font-semibold hover:bg-green-50 transition">
+      <i class="fab fa-whatsapp text-2xl"></i>
+      Jetzt per WhatsApp fragen
     </a>
-
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 py-16 text-center">
+<footer class="bg-gray-900 text-gray-400 py-16">
   <div class="tail-container px-6">
-    © 2026 hof-gartenservice.de – Ein regionales Projekt
+    <div class="grid md:grid-cols-4 gap-10">
+
+      <div>
+        <a href="index.html" class="flex items-center gap-3 text-white mb-6">
+          <img src="logo-gartenservice.png"
+               alt="hof-gartenservice Logo"
+               class="w-9 h-9 rounded-2xl object-cover">
+          <span class="text-2xl font-bold">hof-gartenservice.de</span>
+        </a>
+        <p class="text-sm">Lokale Plattform für Gartenservice in Hof (Saale) und Umgebung.</p>
+      </div>
+
+      <div>
+        <h5 class="font-semibold text-white mb-4">Navigation</h5>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-white">Start</a></li>
+          <li><a href="index.html#firmen" class="hover:text-white">Gartenservice finden</a></li>
+          <li><a href="eintragen.html" class="hover:text-white">Firma eintragen</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-semibold text-white mb-4">Rechtliches</h5>
+        <ul class="space-y-2 text-sm">
+          <li><a href="impressum.html" class="hover:text-white">Impressum</a></li>
+          <li><a href="datenschutz.html" class="hover:text-white">Datenschutz</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-semibold text-white mb-4">Kontakt</h5>
+        <p class="text-sm">WhatsApp: <a href="https://wa.me/491624012037" class="text-green-400">+49 162 4012037</a></p>
+        <p class="text-sm mt-4">Made with ❤️ in Hof</p>
+      </div>
+
+    </div>
+
+    <div class="text-center text-xs mt-16 border-t border-gray-800 pt-8">
+      © 2026 hof-gartenservice.de – Ein regionales Projekt
+    </div>
   </div>
 </footer>
+
+<script>
+  tailwind.config = {
+    content: [],
+    theme: { extend: {} }
+  }
+
+  const form = document.getElementById('company-form');
+  const statusDiv = document.getElementById('form-status');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusDiv.classList.add('hidden');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          statusDiv.className = 'mt-6 text-center text-green-600 font-medium';
+          statusDiv.textContent = '✅ Vielen Dank! Wir melden uns schnellstmöglich bei Ihnen.';
+          statusDiv.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      } catch (error) {
+        statusDiv.className = 'mt-6 text-center text-red-600 font-medium';
+        statusDiv.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns per WhatsApp.';
+        statusDiv.classList.remove('hidden');
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
