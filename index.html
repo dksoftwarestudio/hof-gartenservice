@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hof-gartenservice.de | Gartenservice in Hof – lokal & einfach</title>
-  <meta name="description" content="Gartenservice in Hof finden – regionale Anbieter für Gartenpflege, Rasenmähen, Hecken schneiden und Außenbereiche. Kostenlos anfragen.">
+  <meta name="description" content="Gartenservice in Hof finden – regionale Anbieter für Gartenpflege, Rasenmähen, Hecken schneiden und Außenbereiche. Kostenlos und unverbindlich anfragen.">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
     .hero-bg {
-      background-image: linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)), url('rasen.jpg');
+      background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.35)),
+                        url('rasen.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -24,16 +25,15 @@
   </style>
 </head>
 
-<body class="bg-gray-50 font-sans">
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
-  <!-- Header -->
- <header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="bg-white shadow-sm sticky top-0 z-50">
   <div class="tail-container px-6 py-4">
 
     <div class="flex items-center justify-between gap-6">
 
       <a href="index.html" class="flex items-center gap-3 shrink-0">
-        <img src="logo-gartenservice.png" 
+        <img src="logo-gartenservice.png"
              alt="hof-gartenservice Logo"
              class="w-12 h-12 rounded-xl object-cover">
         <div>
@@ -50,14 +50,14 @@
       </nav>
 
       <div class="hidden md:flex items-center gap-4">
-        <a href="https://wa.me/491624012037" target="_blank" 
-           class="flex items-center gap-2 bg-emerald-500 text-white px-5 py-2.5 rounded-2xl font-medium hover:bg-emerald-600 transition">
+        <a href="https://wa.me/491624012037" target="_blank"
+           class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-2xl font-medium transition">
           <i class="fab fa-whatsapp text-xl"></i>
           <span>WhatsApp</span>
         </a>
 
-        <a href="#anfrage" 
-           class="bg-green-600 text-white px-6 py-2.5 rounded-2xl font-medium hover:bg-green-700 transition">
+        <a href="#anfrage"
+           class="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-2xl font-medium transition">
           Anfrage stellen
         </a>
       </div>
@@ -79,303 +79,366 @@
   </div>
 </header>
 
- <!-- Hero -->
-<section class="hero-bg min-h-screen flex items-center text-white">
-  <div class="tail-container px-6 max-w-4xl">
-    
-    <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-      Gartenservice in Hof –<br>
-      <span class="text-green-300">schnell, lokal und stressfrei</span>
-    </h2>
+<section class="hero-bg min-h-screen flex items-center text-white py-20">
+  <div class="tail-container px-6">
+    <div class="max-w-3xl">
+      <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+        Gartenservice in Hof –<br>
+        lokal & unkompliziert
+      </h1>
 
-    <p class="text-xl md:text-2xl mb-10 text-gray-100">
-      Lokale Gartenservices aus Hof und Umgebung melden sich bei Ihnen.<br>
-      Kostenlos • Unverbindlich • Direkter Kontakt
-    </p>
+      <p class="text-xl md:text-2xl mb-10 text-green-50">
+        hof-gartenservice.de verbindet Kunden mit Gartenservices aus Hof und Umgebung.<br>
+        <strong>Direkt • Unverbindlich • Kostenlos für Sie</strong>
+      </p>
 
-    <div class="flex flex-col sm:flex-row gap-4">
-      <a href="#anfrage" 
-         class="bg-green-500 hover:bg-green-600 text-white text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
-        Kostenlose Anfrage stellen
-      </a>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#anfrage"
+           class="bg-white hover:bg-green-50 text-green-700 text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
+          Kostenlose Anfrage stellen
+        </a>
 
-      <a href="#firmen" 
-         class="border-2 border-white hover:bg-white hover:text-green-700 text-white text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
-        Gartenservice ansehen
-      </a>
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-6 mt-10 text-sm text-gray-200">
-      
-      <div class="flex items-center gap-3">
-        <i class="fas fa-map-marker-alt text-xl"></i>
-        <span>Nur Anbieter aus Hof & Umgebung</span>
+        <a href="#leistungen"
+           class="border-2 border-white hover:bg-white hover:text-green-700 text-white text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
+          Leistungen ansehen
+        </a>
       </div>
 
-      <div class="flex items-center gap-3">
-        <i class="fas fa-euro-sign text-xl"></i>
-        <span>100 % kostenlos für Kunden</span>
+      <div class="grid sm:grid-cols-3 gap-3 mt-10 text-sm">
+        <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
+          Regional aus Hof
+        </div>
+        <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
+          Kostenlos & unverbindlich
+        </div>
+        <div class="bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
+          Direkter Kontakt
+        </div>
       </div>
-
     </div>
-
   </div>
 </section>
 
-  <!-- Warum -->
-  <section class="py-20 bg-white">
-    <div class="tail-container px-6">
-      <h3 class="text-4xl font-bold text-center mb-4">Warum hof-gartenservice.de?</h3>
-      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
-        Einfach, transparent und regional – so soll Vermittlung funktionieren.
-      </p>
+<section id="firmen" class="py-20 bg-white">
+  <div class="tail-container px-6">
 
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">⏱️</div>
-          <h4 class="font-semibold text-xl mb-3">Zeit sparen</h4>
-          <p class="text-gray-600">Nicht lange suchen – direkt regionale Anbieter erreichen.</p>
+    <h2 class="text-4xl font-bold text-center mb-4">
+      Gartenservice in Hof
+    </h2>
+
+    <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
+      Ausgewählte Anbieter aus Hof und Umgebung.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-lg transition">
+        <div class="relative h-52">
+          <img src="gartenservice.jpg"
+               alt="Gartenservice Hof"
+               class="w-full h-full object-cover">
+
+          <div class="absolute top-3 left-3 bg-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+            Empfohlener Anbieter
+          </div>
         </div>
 
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🌿</div>
-          <h4 class="font-semibold text-xl mb-3">Lokal</h4>
-          <p class="text-gray-600">Nur Gartenservices aus Hof und Umgebung.</p>
-        </div>
+        <div class="p-6">
+          <h4 class="font-bold text-xl mb-1">Gartenservice Hof</h4>
 
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">🔍</div>
-          <h4 class="font-semibold text-xl mb-3">Vergleichen</h4>
-          <p class="text-gray-600">Preise, Termine und Leistungen selbst vergleichen.</p>
-        </div>
+          <p class="text-sm text-green-600 mb-2">
+            Gartenpflege • Rasen • Hecken
+          </p>
 
-        <div class="text-center">
-          <div class="w-20 h-20 mx-auto bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6">✅</div>
-          <h4 class="font-semibold text-xl mb-3">Kostenlos</h4>
-          <p class="text-gray-600">Für Kunden kostenlos und unverbindlich.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="flex items-center gap-2 text-sm mb-4">
+            <span class="text-yellow-500">★ ★ ★ ★ ★</span>
+            <span class="text-zinc-600">Empfohlen</span>
+          </div>
 
-  <!-- So funktioniert es -->
-  <section class="py-20 bg-gray-100">
-    <div class="tail-container px-6">
-      <h3 class="text-4xl font-bold text-center mb-16">So funktioniert’s</h3>
+          <p class="text-zinc-600 text-sm mb-5">
+            Unterstützung bei Gartenpflege, Rasenmähen, Heckenschnitt und Außenbereichen.
+          </p>
 
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="bg-white p-8 rounded-3xl shadow-sm">
-          <div class="text-5xl font-bold text-green-200 mb-6">01</div>
-          <h4 class="font-semibold text-2xl mb-4">Anfrage stellen</h4>
-          <p class="text-gray-600">Beschreiben Sie kurz, welche Gartenarbeit erledigt werden soll.</p>
-        </div>
+          <div class="flex gap-3">
+            <a href="#anfrage"
+               class="flex-1 text-center bg-green-600 text-white py-2.5 rounded-xl text-sm font-medium hover:bg-green-700 transition">
+              Anfrage
+            </a>
 
-        <div class="bg-white p-8 rounded-3xl shadow-sm">
-          <div class="text-5xl font-bold text-green-200 mb-6">02</div>
-          <h4 class="font-semibold text-2xl mb-4">Anbieter melden sich</h4>
-          <p class="text-gray-600">Passende lokale Gartenservices können direkt reagieren.</p>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl shadow-sm">
-          <div class="text-5xl font-bold text-green-200 mb-6">03</div>
-          <h4 class="font-semibold text-2xl mb-4">Angebote vergleichen</h4>
-          <p class="text-gray-600">Sie vergleichen Preis, Termin und Leistung.</p>
-        </div>
-
-        <div class="bg-white p-8 rounded-3xl shadow-sm">
-          <div class="text-5xl font-bold text-green-200 mb-6">04</div>
-          <h4 class="font-semibold text-2xl mb-4">Gartenservice wählen</h4>
-          <p class="text-gray-600">Sie entscheiden selbst, welcher Anbieter passt.</p>
+            <a href="eintragen.html"
+               class="flex-1 text-center border border-zinc-300 py-2.5 rounded-xl text-sm font-medium text-zinc-700 hover:bg-zinc-100 transition">
+              Eintragen
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Anfrage Formular -->
-  <section id="anfrage" class="py-20 bg-white">
-    <div class="tail-container px-6">
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <h3 class="text-4xl font-bold mb-4">Kostenlose Anfrage stellen</h3>
-        <p class="text-gray-600 text-lg">
-          Beschreiben Sie kurz, welchen Gartenservice Sie benötigen.
+      <div class="bg-white rounded-3xl border-2 border-dashed border-zinc-300 flex flex-col items-center justify-center text-center p-8">
+        <div class="text-4xl mb-4">🌿</div>
+
+        <h4 class="font-semibold text-lg mb-2">
+          Hier könnte Ihre Firma stehen
+        </h4>
+
+        <p class="text-sm text-zinc-500 mb-6">
+          Präsentieren Sie Ihren Gartenservice Kunden aus Hof und Umgebung.
         </p>
+
+        <a href="eintragen.html"
+           class="bg-green-600 text-white px-6 py-2.5 rounded-xl text-sm font-medium hover:bg-green-700 transition">
+          Firma eintragen
+        </a>
       </div>
 
-      <form action="https://formspree.io/f/mjgpagzy"
-            method="POST"
-            class="max-w-3xl mx-auto bg-gray-50 border border-gray-200 rounded-3xl p-8 shadow-sm">
+      <div class="bg-white rounded-3xl border-2 border-dashed border-zinc-300 flex flex-col items-center justify-center text-center p-8">
+        <div class="text-4xl mb-4">🍃</div>
 
-        <input type="hidden" name="_subject" value="Neue Anfrage über hof-gartenservice.de">
-        <input type="hidden" name="_language" value="de">
+        <h4 class="font-semibold text-lg mb-2">
+          Hier könnte Ihre Firma stehen
+        </h4>
+
+        <p class="text-sm text-zinc-500 mb-6">
+          Erhalten Sie direkte Anfragen aus Ihrer Region.
+        </p>
+
+        <a href="eintragen.html"
+           class="bg-green-600 text-white px-6 py-2.5 rounded-xl text-sm font-medium hover:bg-green-700 transition">
+          Firma eintragen
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="leistungen" class="py-20 bg-[#F5F5F5]">
+  <div class="tail-container px-6">
+    <h2 class="text-4xl font-bold text-center mb-4">
+      Welche Gartenarbeiten vermitteln wir?
+    </h2>
+
+    <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-12">
+      Für Gartenpflege, Rasen, Hecken, Außenbereiche und regelmäßige Unterstützung.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-7 rounded-3xl shadow-sm border border-zinc-100">
+        <h3 class="font-semibold text-xl mb-2">Rasenmähen</h3>
+        <p class="text-sm text-zinc-600">Für regelmäßige oder einmalige Rasenpflege.</p>
+      </div>
+
+      <div class="bg-white p-7 rounded-3xl shadow-sm border border-zinc-100">
+        <h3 class="font-semibold text-xl mb-2">Hecken schneiden</h3>
+        <p class="text-sm text-zinc-600">Für gepflegte Hecken, Sträucher und Grundstücksgrenzen.</p>
+      </div>
+
+      <div class="bg-white p-7 rounded-3xl shadow-sm border border-zinc-100">
+        <h3 class="font-semibold text-xl mb-2">Gartenpflege</h3>
+        <p class="text-sm text-zinc-600">Für private Gärten, Wohnanlagen und Außenflächen.</p>
+      </div>
+
+      <div class="bg-white p-7 rounded-3xl shadow-sm border border-zinc-100">
+        <h3 class="font-semibold text-xl mb-2">Unkraut entfernen</h3>
+        <p class="text-sm text-zinc-600">Für Wege, Beete, Einfahrten und Außenbereiche.</p>
+      </div>
+
+      <div class="bg-white p-7 rounded-3xl shadow-sm border border-zinc-100">
+        <h3 class="font-semibold text-xl mb-2">Baumschnitt</h3>
+        <p class="text-sm text-zinc-600">Für kleinere Schnittarbeiten und Pflege im Garten.</p>
+      </div>
+
+      <div class="bg-white p-7 rounded-3xl shadow-sm border border-zinc-100">
+        <h3 class="font-semibold text-xl mb-2">Außenbereich reinigen</h3>
+        <p class="text-sm text-zinc-600">Für Hof, Terrasse, Gehwege und Grundstücksflächen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="tail-container px-6">
+    <h2 class="text-4xl font-bold text-center mb-4">
+      Warum über hof-gartenservice.de?
+    </h2>
+
+    <p class="text-center text-zinc-600 max-w-2xl mx-auto mb-16">
+      Statt lange zu suchen, senden Sie eine Anfrage – passende regionale Anbieter können sich direkt bei Ihnen melden.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-[#F8FAFC] p-8 rounded-3xl text-center">
+        <div class="text-5xl mb-4">📍</div>
+        <h4 class="font-semibold text-xl mb-2">Regional</h4>
+        <p class="text-zinc-600">Fokus auf Hof und Umgebung.</p>
+      </div>
+
+      <div class="bg-[#F8FAFC] p-8 rounded-3xl text-center">
+        <div class="text-5xl mb-4">⚡</div>
+        <h4 class="font-semibold text-xl mb-2">Einfach</h4>
+        <p class="text-zinc-600">Eine Anfrage statt viele einzelne Telefonate.</p>
+      </div>
+
+      <div class="bg-[#F8FAFC] p-8 rounded-3xl text-center">
+        <div class="text-5xl mb-4">🤝</div>
+        <h4 class="font-semibold text-xl mb-2">Direkt</h4>
+        <p class="text-zinc-600">Kein Callcenter und keine komplizierten Prozesse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="anfrage" class="py-20 bg-green-600 text-white">
+  <div class="tail-container px-6 max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-4xl font-bold mb-4">
+        Jetzt kostenlose Anfrage stellen
+      </h2>
+      <p class="text-green-100">
+        Beschreiben Sie kurz, welchen Gartenservice Sie benötigen.
+      </p>
+    </div>
+
+    <div class="bg-white text-zinc-800 rounded-3xl p-6 md:p-8 shadow-xl">
+      <form action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-5">
 
         <div class="grid md:grid-cols-2 gap-5">
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
-            <input type="text" name="Name" required placeholder="Ihr Name"
-                   class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
-          </div>
+          <input type="text" name="name" placeholder="Vor- und Nachname" required autocomplete="name"
+                 class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
 
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2">E-Mail</label>
-            <input type="email" name="E-Mail" required placeholder="ihre@email.de"
-                   class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Ort</label>
-            <input type="text" name="Ort" required value="Hof"
-                   class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
-          </div>
-
-          <div>
-            <label class="block text-sm font-semibold text-gray-700 mb-2">Art der Gartenarbeit</label>
-            <select name="Art der Gartenarbeit"
-                    class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500">
-              <option>Rasenmähen</option>
-              <option>Hecken schneiden</option>
-              <option>Gartenpflege</option>
-              <option>Unkraut entfernen</option>
-              <option>Baumschnitt</option>
-              <option>Außenbereich reinigen</option>
-              <option>Sonstiges</option>
-            </select>
-          </div>
+          <input type="tel" name="phone" placeholder="Telefonnummer" required inputmode="tel" autocomplete="tel"
+                 class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
         </div>
 
-        <div class="mt-5">
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Ihre Anfrage</label>
-          <textarea name="Anfrage" required rows="5"
-                    placeholder="Zum Beispiel: Rasen mähen, Hecke schneiden oder regelmäßige Gartenpflege..."
-                    class="w-full px-4 py-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-        </div>
+        <input type="email" name="email" placeholder="E-Mail (optional)" inputmode="email" autocomplete="email"
+               class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
 
-        <div class="flex flex-col sm:flex-row gap-4 mt-6">
-          <button type="submit"
-                  class="flex-1 bg-green-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-green-700 transition">
-            Anfrage senden
-          </button>
+        <input type="text" name="address" placeholder="PLZ / Ort / Straße (optional)" autocomplete="street-address"
+               class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
 
-          <a href="https://wa.me/491624012037"
-             target="_blank"
-             class="flex-1 text-center bg-green-500 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-green-600 transition">
-            WhatsApp
-          </a>
-        </div>
+        <select name="service" required aria-label="Welche Gartenarbeit brauchen Sie?"
+                class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 text-zinc-700 focus:outline-none focus:border-green-600">
+          <option value="" disabled selected>Welche Gartenarbeit brauchen Sie?</option>
+          <option value="Rasenmähen">Rasenmähen</option>
+          <option value="Hecken schneiden">Hecken schneiden</option>
+          <option value="Gartenpflege">Gartenpflege</option>
+          <option value="Unkraut entfernen">Unkraut entfernen</option>
+          <option value="Baumschnitt">Baumschnitt</option>
+          <option value="Außenbereich reinigen">Außenbereich reinigen</option>
+          <option value="Sonstiges">Sonstiges</option>
+        </select>
 
-        <p class="text-xs text-gray-500 text-center mt-5">
-          Kostenlos & unverbindlich · Ihre Anfrage wird an passende lokale Anbieter weitergeleitet.
-        </p>
+        <textarea name="message" rows="4" placeholder="Beschreiben Sie kurz, was gemacht werden soll."
+                  class="resize-none w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600"></textarea>
+
+        <button type="submit"
+                class="w-full bg-green-600 text-white py-5 rounded-3xl font-semibold text-xl hover:bg-green-700 transition">
+          Anfrage absenden
+        </button>
       </form>
-    </div>
-  </section>
 
-  <!-- Firmen -->
-  <section id="firmen" class="py-20 bg-gray-100">
-    <div class="tail-container px-6">
-      <h3 class="text-4xl font-bold text-center mb-4">Hervorgehobene Anbieter in Hof</h3>
-      <p class="text-center text-gray-600 mb-16">Zuverlässige Partner aus der Region</p>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-3xl overflow-hidden shadow-sm">
-          <div class="h-52 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1000&q=80')"></div>
-
-          <div class="p-8">
-            <h4 class="font-bold text-2xl">Gartenservice Hof</h4>
-            <p class="text-green-600 text-sm mb-2">Gartenpflege • Rasen • Hecken</p>
-            <p class="text-yellow-500 text-sm mb-4">★ Empfohlener Anbieter</p>
-
-            <p class="text-gray-600 text-sm mb-6">
-              Unterstützung bei Gartenpflege, Rasenmähen, Heckenschnitt und Außenbereichen in Hof und Umgebung.
-            </p>
-
-            <div class="flex gap-3">
-              <a href="#anfrage"
-                 class="flex-1 text-center bg-green-600 text-white py-3 rounded-xl font-medium hover:bg-green-700 transition">
-                Anfrage
-              </a>
-
-              <a href="eintragen.html"
-                 class="flex-1 text-center border border-gray-300 py-3 rounded-xl font-medium text-gray-700 hover:bg-gray-100 transition">
-                Eintragen
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Firma eintragen -->
-  <section class="py-20 bg-green-600 text-white">
-    <div class="tail-container px-6 text-center">
-      <h3 class="text-4xl font-bold mb-6">Sie sind Gartenservice in Hof?</h3>
-      <p class="text-xl max-w-2xl mx-auto mb-10">
-        Erhalten Sie direkte Kundenanfragen aus der Region – einfach und sichtbar.
+      <p class="text-center text-zinc-500 text-sm mt-6">
+        Unverbindlich • Kostenlos • Keine Abos
       </p>
-      <a href="eintragen.html"
-         class="inline-block bg-white text-green-700 px-12 py-5 rounded-3xl text-xl font-semibold hover:bg-green-50 transition">
-        Jetzt als Firma eintragen
-      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-gray-400 py-16">
-    <div class="tail-container px-6">
-      <div class="grid md:grid-cols-4 gap-10">
-        <div>
-          <div class="flex items-center gap-3 text-white mb-6">
-            <img src="logo-gartenservice.png"
-                 alt="hof-gartenservice Logo"
-                 class="w-9 h-9 rounded-2xl object-cover">
-            <span class="text-2xl font-bold">hof-gartenservice.de</span>
+<section class="py-20 bg-green-600 text-white">
+  <div class="tail-container px-6 text-center">
+    <h3 class="text-4xl font-bold mb-6">Sie sind Gartenservice in Hof?</h3>
+    <p class="text-xl max-w-2xl mx-auto mb-10">
+      Erhalten Sie direkte Kundenanfragen aus der Region – einfach und sichtbar.
+    </p>
+
+    <a href="eintragen.html"
+       class="inline-block bg-white text-green-700 px-12 py-5 rounded-3xl text-xl font-semibold hover:bg-green-50 transition">
+      Jetzt als Firma eintragen
+    </a>
+  </div>
+</section>
+
+<footer class="bg-zinc-900 text-zinc-400 py-16">
+  <div class="tail-container px-6">
+    <div class="grid md:grid-cols-5 gap-10">
+
+      <div>
+        <div class="flex items-center gap-3 text-white mb-6">
+          <img src="logo-gartenservice.png"
+               alt="hof-gartenservice Logo"
+               class="w-10 h-10 rounded-2xl object-cover">
+
+          <div class="leading-tight">
+            <span class="text-xl font-bold">hof-gartenservice.de</span>
+            <p class="text-xs text-zinc-400 -mt-1">Hof (Saale)</p>
           </div>
-          <p class="text-sm">Lokale Plattform für Gartenservice in Hof (Saale) und Umgebung.</p>
         </div>
 
-        <div>
-          <h5 class="font-semibold text-white mb-4">Navigation</h5>
-          <ul class="space-y-2 text-sm">
-            <li><a href="index.html" class="hover:text-white">Start</a></li>
-            <li><a href="#firmen" class="hover:text-white">Firmen finden</a></li>
-            <li><a href="eintragen.html" class="hover:text-white">Firma eintragen</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h5 class="font-semibold text-white mb-4">Rechtliches</h5>
-          <ul class="space-y-2 text-sm">
-            <li><a href="impressum.html" class="hover:text-white">Impressum</a></li>
-            <li><a href="datenschutz.html" class="hover:text-white">Datenschutz</a></li>
-          </ul>
-        </div>
-
-        <div>
-  <h5 class="font-semibold text-white mb-4">Kontakt</h5>
-  
-  <p class="text-sm mb-2">
-    WhatsApp: 
-    <a href="https://wa.me/491624012037" class="text-green-400 hover:text-green-300 transition">
-      +49 162 4012037
-    </a>
-  </p>
-  
-  <p class="text-sm mb-2">
-    E-Mail: 
-    <a href="mailto:info@hof-gartenservice.de" class="text-green-400 hover:text-green-300 transition">
-      info@hof-gartenservice.de
-    </a>
-  </p>
-  
-  <p class="text-sm mt-4 text-gray-400">Made with ❤️ in Hof</p>
-</div>
+        <p class="text-sm">
+          Lokale Vermittlungsplattform für Gartenservice in Hof (Saale).
+        </p>
       </div>
 
-      <div class="text-center text-xs mt-16 border-t border-gray-800 pt-8">
-        © 2026 hof-gartenservice.de – Ein regionales Projekt
+      <div>
+        <h5 class="font-semibold text-white mb-4">Navigation</h5>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#firmen" class="hover:text-white">Gartenservice finden</a></li>
+          <li><a href="#leistungen" class="hover:text-white">Leistungen</a></li>
+          <li><a href="eintragen.html" class="hover:text-white">Firma eintragen</a></li>
+        </ul>
       </div>
+
+      <div>
+        <h5 class="font-semibold text-white mb-4">Partner Seiten</h5>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="https://hof-reinigung.de"
+               target="_blank"
+               class="text-blue-400 hover:text-blue-300 transition">
+              hof-reinigung.de
+            </a>
+          </li>
+
+          <li>
+            <a href="https://hof-handwerker.de"
+               target="_blank"
+               class="text-orange-400 hover:text-orange-300 transition">
+              hof-handwerker.de
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-semibold text-white mb-4">Kontakt</h5>
+        <p class="text-sm mb-1">
+          WhatsApp:
+          <a href="https://wa.me/491624012037" class="text-green-300 hover:text-white">
+            +49 162 4012037
+          </a>
+        </p>
+        <p class="text-sm">
+          E-Mail:
+          <a href="mailto:info@hof-gartenservice.de" class="text-green-300 hover:text-white">
+            info@hof-gartenservice.de
+          </a>
+        </p>
+      </div>
+
+      <div>
+        <h5 class="font-semibold text-white mb-4">Rechtliches</h5>
+        <ul class="space-y-2 text-sm">
+          <li><a href="impressum.html" class="hover:text-white">Impressum</a></li>
+          <li><a href="datenschutz.html" class="hover:text-white">Datenschutz</a></li>
+        </ul>
+      </div>
+
     </div>
-  </footer>
+
+    <div class="text-center text-xs mt-16 pt-8 border-t border-zinc-800">
+      © 2026 hof-gartenservice.de
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
