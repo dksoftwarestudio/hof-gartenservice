@@ -22,6 +22,25 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
   </style>
 </head>
 
@@ -83,11 +102,11 @@
   <div class="tail-container px-6">
     <div class="max-w-3xl">
       <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-  Gartenservice in Hof –<br>
-  <span class="text-emerald-300">
-    lokal und unkompliziert
-  </span>
-</h1>
+        Gartenservice in Hof –<br>
+        <span class="text-emerald-300">
+          lokal und unkompliziert
+        </span>
+      </h1>
 
       <p class="text-xl md:text-2xl mb-10 text-green-50">
         Wir verbinden Sie mit lokalen Gartenbetrieben aus Hof und Umgebung.<br>
@@ -133,7 +152,7 @@
 
     <div class="grid md:grid-cols-3 gap-8">
 
-      <div class="bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-lg transition">
+      <div class="reveal bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:shadow-lg transition">
         <div class="relative h-52">
           <img src="gartenservice.jpg"
                alt="Gartenservice Hof"
@@ -174,7 +193,7 @@
         </div>
       </div>
 
-      <div class="bg-white rounded-3xl border-2 border-dashed border-zinc-300 flex flex-col items-center justify-center text-center p-8">
+      <div class="reveal bg-white rounded-3xl border-2 border-dashed border-zinc-300 flex flex-col items-center justify-center text-center p-8">
         <div class="text-4xl mb-4">🌿</div>
 
         <h4 class="font-semibold text-lg mb-2">
@@ -191,7 +210,7 @@
         </a>
       </div>
 
-      <div class="bg-white rounded-3xl border-2 border-dashed border-zinc-300 flex flex-col items-center justify-center text-center p-8">
+      <div class="reveal bg-white rounded-3xl border-2 border-dashed border-zinc-300 flex flex-col items-center justify-center text-center p-8">
         <div class="text-4xl mb-4">🍃</div>
 
         <h4 class="font-semibold text-lg mb-2">
@@ -225,32 +244,32 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
+      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
         <h3 class="font-semibold text-xl mb-2">Rasenmähen</h3>
         <p class="text-sm text-zinc-600">Für regelmäßige oder einmalige Rasenpflege.</p>
       </div>
 
-      <div class="bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
+      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
         <h3 class="font-semibold text-xl mb-2">Hecken schneiden</h3>
         <p class="text-sm text-zinc-600">Für gepflegte Hecken, Sträucher und Grundstücksgrenzen.</p>
       </div>
 
-      <div class="bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
+      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
         <h3 class="font-semibold text-xl mb-2">Gartenpflege</h3>
         <p class="text-sm text-zinc-600">Für private Gärten, Wohnanlagen und Außenflächen.</p>
       </div>
 
-      <div class="bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
+      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
         <h3 class="font-semibold text-xl mb-2">Unkraut entfernen</h3>
         <p class="text-sm text-zinc-600">Für Wege, Beete, Einfahrten und Außenbereiche.</p>
       </div>
 
-      <div class="bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
+      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
         <h3 class="font-semibold text-xl mb-2">Baumschnitt</h3>
         <p class="text-sm text-zinc-600">Für kleinere Schnittarbeiten und Pflege im Garten.</p>
       </div>
 
-      <div class="bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
+      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 transition hover:-translate-y-1 hover:shadow-md">
         <h3 class="font-semibold text-xl mb-2">Außenbereich reinigen</h3>
         <p class="text-sm text-zinc-600">Für Hof, Terrasse, Gehwege und Grundstücksflächen.</p>
       </div>
@@ -272,19 +291,19 @@
 
     <div class="grid md:grid-cols-3 gap-8">
 
-      <div class="bg-[#F8FAFC] p-8 rounded-3xl text-center transition hover:-translate-y-1 hover:shadow-sm">
+      <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center transition hover:-translate-y-1 hover:shadow-sm">
         <div class="text-5xl mb-4">📍</div>
         <h4 class="font-semibold text-xl mb-2">Regional</h4>
         <p class="text-zinc-600">Fokus auf Hof und Umgebung.</p>
       </div>
 
-      <div class="bg-[#F8FAFC] p-8 rounded-3xl text-center transition hover:-translate-y-1 hover:shadow-sm">
+      <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center transition hover:-translate-y-1 hover:shadow-sm">
         <div class="text-5xl mb-4">⚡</div>
         <h4 class="font-semibold text-xl mb-2">Einfach</h4>
         <p class="text-zinc-600">Eine Anfrage statt viele einzelne Telefonate.</p>
       </div>
 
-      <div class="bg-[#F8FAFC] p-8 rounded-3xl text-center transition hover:-translate-y-1 hover:shadow-sm">
+      <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center transition hover:-translate-y-1 hover:shadow-sm">
         <div class="text-5xl mb-4">🤝</div>
         <h4 class="font-semibold text-xl mb-2">Direkt</h4>
         <p class="text-zinc-600">Kein Callcenter und keine komplizierten Prozesse.</p>
@@ -446,6 +465,25 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    items.forEach(item => observer.observe(item));
+  });
+</script>
 
 </body>
 </html>
