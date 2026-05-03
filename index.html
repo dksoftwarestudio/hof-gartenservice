@@ -424,9 +424,10 @@
       <div>
         <h5 class="font-semibold text-white mb-4">Partner Seiten</h5>
         <ul class="space-y-2 text-sm">
+
           <li>
             <a href="https://hof-reinigung.de"
-               target="_blank"
+               target="_blank" rel="noopener noreferrer"
                class="text-blue-400 hover:text-blue-300 transition">
               hof-reinigung.de
             </a>
@@ -434,11 +435,20 @@
 
           <li>
             <a href="https://hof-handwerker.de"
-               target="_blank"
+               target="_blank" rel="noopener noreferrer"
                class="text-orange-400 hover:text-orange-300 transition">
               hof-handwerker.de
             </a>
           </li>
+
+          <li>
+            <a href="https://hahn-wasserfilter.de"
+               target="_blank" rel="noopener noreferrer"
+               class="text-cyan-400 hover:text-cyan-300 transition">
+              hahn-wasserfilter.de
+            </a>
+          </li>
+
         </ul>
       </div>
 
@@ -486,7 +496,7 @@
         }
       });
     }, {
-      threshold: 0.15
+      threshold: 0.05
     });
 
     items.forEach(item => observer.observe(item));
