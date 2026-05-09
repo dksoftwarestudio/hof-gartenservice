@@ -23,6 +23,26 @@
       margin-right: auto;
     }
   </style>
+  <style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
 </head>
 
 <body class="bg-gray-50 font-sans">
@@ -401,6 +421,24 @@ if (form && statusDiv) {
     }
   });
 }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const items = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08
+    });
+
+    items.forEach(item => observer.observe(item));
+  });
 </script>
 
 </body>
