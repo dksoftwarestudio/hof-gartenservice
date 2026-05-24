@@ -7,11 +7,10 @@
   <meta name="description" content="Als Gartenservice in Hof eintragen und lokale Kundenanfragen erhalten. Für Gartenpflege, Rasenmähen, Heckenschnitt, Baumschnitt und Außenbereiche.">
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <style>
     .hero-bg {
-      background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45)),
+      background-image: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.48)),
                         url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1400&q=80');
       background-size: cover;
       background-position: center;
@@ -22,281 +21,305 @@
       margin-left: auto;
       margin-right: auto;
     }
-  </style>
-  <style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
     .reveal {
-      opacity: 1;
-      transform: none;
-      transition: none;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-  }
-</style>
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-gray-50 font-sans">
+<body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="bg-white/95 shadow-sm sticky top-0 z-50 backdrop-blur">
   <div class="tail-container px-6 py-4">
-
     <div class="flex items-center justify-between gap-6">
-
-      <a href="index.html" class="flex items-center gap-3 shrink-0">
-        <img src="logo-gartenservice.png" 
+      <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="hof-gartenservice.de Startseite">
+        <img src="logo-gartenservice.png"
              alt="hof-gartenservice Logo"
              class="w-12 h-12 rounded-xl object-cover">
         <div>
-          <span class="text-2xl font-bold text-gray-800">hof-gartenservice.de</span>
-          <p class="text-xs text-gray-500 -mt-1">Hof (Saale)</p>
+          <span class="block text-xl sm:text-2xl font-bold text-gray-900 leading-tight">hof-gartenservice.de</span>
+          <p class="text-xs text-gray-500">Hof (Saale)</p>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
         <a href="index.html" class="hover:text-green-600 transition">Start</a>
-        <a href="index.html#firmen" class="hover:text-green-600 transition">Gartenservice finden</a>
-        <a href="eintragen.html" class="text-green-600 font-semibold">Als Firma eintragen</a>
+        <a href="index.html#firmen" class="hover:text-green-600 transition">Gartenservice</a>
+        <a href="index.html#leistungen" class="hover:text-green-600 transition">Leistungen</a>
+        <a href="eintragen.html" class="text-green-600 font-semibold">Firma eintragen</a>
         <a href="kontakt.html" class="hover:text-green-600 transition">Kontakt</a>
       </nav>
 
-      <div class="hidden md:flex items-center gap-4">
-        <a href="https://wa.me/491624012037" target="_blank" 
-           class="flex items-center gap-2 bg-emerald-500 text-white px-5 py-2.5 rounded-2xl font-medium hover:bg-emerald-600 transition">
-          <i class="fab fa-whatsapp text-xl"></i>
-          <span>WhatsApp</span>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://wa.me/491624012037" target="_blank" rel="noopener noreferrer"
+           class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-2xl font-medium transition">
+          WhatsApp
         </a>
 
-        <a href="index.html#anfrage" 
-           class="bg-green-600 text-white px-6 py-2.5 rounded-2xl font-medium hover:bg-green-700 transition">
-          Anfrage stellen
+        <a href="#formular"
+           class="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-2xl font-medium transition">
+          Eintragen
         </a>
       </div>
-
     </div>
 
     <div class="md:hidden grid grid-cols-2 gap-3 mt-4">
-      <a href="https://wa.me/491624012037" target="_blank"
+      <a href="https://wa.me/491624012037" target="_blank" rel="noopener noreferrer"
          class="text-center bg-emerald-500 text-white py-3 rounded-2xl font-medium">
         WhatsApp
       </a>
 
-      <a href="index.html#anfrage"
+      <a href="#formular"
          class="text-center bg-green-600 text-white py-3 rounded-2xl font-medium">
-        Anfrage
+        Eintragen
       </a>
     </div>
-
   </div>
 </header>
 
-<section class="hero-bg min-h-screen flex items-center text-white py-20">
-  <div class="tail-container px-6">
-    <div class="max-w-4xl">
-     <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-  Als Gartenservice in Hof 
-  <span class="text-emerald-300">eintragen</span>
-</h1>
+<main>
+  <section class="hero-bg min-h-[86vh] flex items-center text-white py-20">
+    <div class="tail-container px-6 w-full">
+      <div class="max-w-3xl">
+        <p class="inline-flex items-center gap-2 bg-white/14 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm font-semibold mb-6">
+          <span class="text-emerald-300" aria-hidden="true">•</span>
+          Für Betriebe aus Hof und Umgebung
+        </p>
 
-      <p class="text-xl md:text-2xl mb-10 text-green-50 max-w-2xl">
-        Erhalten Sie direkte Anfragen von Kunden aus Hof und Umgebung.<br>
-        <strong>Lokal • Einfach • Aktuell kostenlos</strong>
-      </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight mb-6">
+          Als Gartenservice in Hof
+          <span class="text-emerald-300">eintragen</span>
+        </h1>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#formular" 
-           class="bg-green-600 hover:bg-green-700 text-white text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
-          Jetzt kostenlos eintragen
-        </a>
+        <p class="text-lg md:text-2xl mb-9 text-green-50 max-w-2xl leading-relaxed">
+          Erhalten Sie direkte Anfragen von Kunden aus Hof und Umgebung. Der Basiseintrag ist aktuell kostenlos.
+        </p>
 
-        <a href="index.html" 
-           class="border-2 border-white hover:bg-white hover:text-green-700 text-white text-xl px-10 py-5 rounded-3xl font-semibold text-center transition">
-          Zurück zur Startseite
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-20 bg-white">
-  <div class="tail-container px-6">
-    <h2 class="text-4xl font-bold text-center mb-4">Warum eintragen?</h2>
-    <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-      Ihr Gartenservice wird für lokale Kunden aus Hof sichtbarer.
-    </p>
-    
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-50 p-8 rounded-3xl text-center">
-        <div class="text-4xl mb-4">📍</div>
-        <h3 class="font-semibold text-xl mb-2">Lokale Kunden</h3>
-        <p class="text-gray-600">Anfragen von Menschen aus Hof und Umgebung.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-3xl text-center">
-        <div class="text-4xl mb-4">📩</div>
-        <h3 class="font-semibold text-xl mb-2">Direkte Anfragen</h3>
-        <p class="text-gray-600">Kunden können Sie direkt über die Plattform finden.</p>
-      </div>
-
-      <div class="bg-gray-50 p-8 rounded-3xl text-center">
-        <div class="text-4xl mb-4">✅</div>
-        <h3 class="font-semibold text-xl mb-2">Aktuell kostenlos</h3>
-        <p class="text-gray-600">Der Basiseintrag ist aktuell kostenlos und unverbindlich.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-20 bg-gray-100">
-  <div class="tail-container px-6">
-    <h2 class="text-4xl font-bold text-center mb-12">So funktioniert’s</h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded-3xl shadow-sm">
-        <div class="text-5xl font-bold text-green-200 mb-6">01</div>
-        <h3 class="font-semibold text-xl mb-3">Eintragen</h3>
-        <p class="text-gray-600">Sie senden uns Ihre Firmendaten über das Formular.</p>
-      </div>
-
-      <div class="bg-white p-8 rounded-3xl shadow-sm">
-        <div class="text-5xl font-bold text-green-200 mb-6">02</div>
-        <h3 class="font-semibold text-xl mb-3">Prüfen</h3>
-        <p class="text-gray-600">Wir prüfen die Angaben und bereiten Ihren Eintrag vor.</p>
-      </div>
-
-      <div class="bg-white p-8 rounded-3xl shadow-sm">
-        <div class="text-5xl font-bold text-green-200 mb-6">03</div>
-        <h3 class="font-semibold text-xl mb-3">Sichtbar werden</h3>
-        <p class="text-gray-600">Ihr Unternehmen erscheint auf der Plattform für lokale Kunden.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-16 bg-green-600 text-white">
-  <div class="tail-container px-6 text-center">
-    <h2 class="text-3xl font-bold mb-4">Der Eintrag ist aktuell kostenlos</h2>
-    <p class="text-green-100 max-w-2xl mx-auto">
-      Der Basiseintrag kostet aktuell nichts. Später können optionale Premium-Platzierungen dazukommen.
-    </p>
-  </div>
-</section>
-
-<section id="formular" class="py-20 bg-gray-100">
-  <div class="tail-container px-6 max-w-3xl">
-    <div class="bg-white rounded-3xl shadow-sm p-10 md:p-14">
-
-      <h2 class="text-4xl font-bold text-center mb-3">Unternehmen eintragen</h2>
-      <p class="text-center text-gray-600 mb-12">
-        Füllen Sie das Formular aus – wir melden uns schnellstmöglich bei Ihnen.
-      </p>
-
-      <form id="company-form" action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-8">
-        <input type="hidden" name="_subject" value="Neue Unternehmensanfrage über hof-gartenservice.de">
-        <input type="hidden" name="_language" value="de">
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Firmenname *</label>
-            <input type="text" name="Firmenname" required autocomplete="organization"
-                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
-                   placeholder="z. B. Muster Gartenservice Hof">
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">E-Mail-Adresse *</label>
-            <input type="email" name="E-Mail" required autocomplete="email" inputmode="email"
-                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
-                   placeholder="ihre@email.de">
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Telefonnummer</label>
-            <input type="tel" name="Telefon" inputmode="tel" autocomplete="tel"
-                   class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
-                   placeholder="+49 162 4012037">
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Paket</label>
-            <select name="Paket" aria-label="Paket auswählen"
-                    class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 bg-white">
-              <option value="Standard">Standard-Eintrag</option>
-              <option value="Premium">Premium (hervorgehoben)</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Google-Profil oder Website</label>
-          <input type="url" name="Google-Profil" inputmode="url" autocomplete="url"
-                 class="w-full px-5 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
-                 placeholder="https://...">
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">Kurze Beschreibung Ihres Betriebs</label>
-          <textarea name="Nachricht" rows="5"
-                    class="resize-none w-full px-5 py-4 border border-gray-300 rounded-3xl focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500"
-                    placeholder="Welche Leistungen bieten Sie an? (Rasenpflege, Heckenschnitt, Gartenpflege, Baumschnitt usw.)"></textarea>
-        </div>
-
-        <div class="pt-6">
-          <button type="submit"
-                  class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold text-xl py-6 rounded-3xl transition">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#formular"
+             class="bg-white hover:bg-green-50 text-green-700 text-lg px-8 py-4 rounded-2xl font-semibold text-center transition">
             Kostenlos eintragen
-          </button>
+          </a>
 
-          <p class="text-center text-sm text-gray-500 mt-4">
-            Wir melden uns innerhalb von 24 Stunden.
-Keine versteckten Kosten.
+          <a href="index.html"
+             class="border-2 border-white hover:bg-white hover:text-green-700 text-white text-lg px-8 py-4 rounded-2xl font-semibold text-center transition">
+            Zur Startseite
+          </a>
+        </div>
+
+        <div class="flex flex-wrap sm:grid sm:grid-cols-3 gap-3 mt-10 text-sm">
+          <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/10">
+            Lokal in Hof
+          </div>
+          <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/10">
+            Basiseintrag kostenlos
+          </div>
+          <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/10">
+            Direkte Anfragen
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="tail-container px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-sm font-semibold text-green-700 mb-3">Warum eintragen?</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Mehr Sichtbarkeit für Ihren Betrieb</h2>
+        <p class="text-zinc-600">
+          Ihr Gartenservice wird für Menschen aus Hof und Umgebung besser auffindbar.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100 shadow-sm">
+          <div class="text-4xl mb-5" aria-hidden="true">📍</div>
+          <h3 class="font-semibold text-xl mb-2">Lokale Kunden</h3>
+          <p class="text-zinc-600">Anfragen von Menschen aus Hof und Umgebung.</p>
+        </div>
+
+        <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100 shadow-sm">
+          <div class="text-4xl mb-5" aria-hidden="true">📩</div>
+          <h3 class="font-semibold text-xl mb-2">Direkte Anfragen</h3>
+          <p class="text-zinc-600">Kunden können Sie über die Plattform einfacher finden.</p>
+        </div>
+
+        <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100 shadow-sm">
+          <div class="text-4xl mb-5" aria-hidden="true">✓</div>
+          <h3 class="font-semibold text-xl mb-2">Aktuell kostenlos</h3>
+          <p class="text-zinc-600">Der Basiseintrag ist aktuell kostenlos und unverbindlich.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-[#F5F5F5]">
+    <div class="tail-container px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-sm font-semibold text-green-700 mb-3">Ablauf</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">So funktioniert es</h2>
+        <p class="text-zinc-600">
+          Wenige Angaben reichen aus. Wir prüfen den Eintrag und melden uns bei Ihnen.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="reveal bg-white p-8 rounded-3xl border border-zinc-100 shadow-sm">
+          <div class="text-5xl font-bold text-green-200 mb-6">01</div>
+          <h3 class="font-semibold text-xl mb-3">Eintragen</h3>
+          <p class="text-zinc-600">Sie senden uns Ihre Firmendaten über das Formular.</p>
+        </div>
+
+        <div class="reveal bg-white p-8 rounded-3xl border border-zinc-100 shadow-sm">
+          <div class="text-5xl font-bold text-green-200 mb-6">02</div>
+          <h3 class="font-semibold text-xl mb-3">Prüfen</h3>
+          <p class="text-zinc-600">Wir prüfen die Angaben und bereiten Ihren Eintrag vor.</p>
+        </div>
+
+        <div class="reveal bg-white p-8 rounded-3xl border border-zinc-100 shadow-sm">
+          <div class="text-5xl font-bold text-green-200 mb-6">03</div>
+          <h3 class="font-semibold text-xl mb-3">Sichtbar werden</h3>
+          <p class="text-zinc-600">Ihr Betrieb erscheint auf der Plattform für lokale Kunden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-green-600 text-white">
+    <div class="tail-container px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Der Eintrag ist aktuell kostenlos</h2>
+      <p class="text-green-100 max-w-2xl mx-auto">
+        Der Basiseintrag kostet aktuell nichts. Später können optionale hervorgehobene Platzierungen dazukommen.
+      </p>
+    </div>
+  </section>
+
+  <section id="formular" class="py-20 bg-[#F5F5F5]">
+    <div class="tail-container px-6 max-w-3xl mx-auto">
+      <div class="bg-white rounded-3xl shadow-sm p-6 md:p-10 lg:p-14 border border-zinc-100">
+        <div class="text-center mb-12">
+          <p class="text-sm font-semibold text-green-700 mb-3">Firma eintragen</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-3">Unternehmen eintragen</h2>
+          <p class="text-zinc-600">
+            Füllen Sie das Formular aus. Wir melden uns zeitnah bei Ihnen.
           </p>
         </div>
 
-        <div class="text-center text-sm text-gray-500">
-          Oder direkt per WhatsApp schreiben: 
-          <a href="https://wa.me/491624012037?text=Hallo,%20ich%20m%C3%B6chte%20mein%20Unternehmen%20bei%20hof-gartenservice.de%20eintragen." 
-             target="_blank" class="text-emerald-600 font-medium hover:underline">
-            WhatsApp kontaktieren
-          </a>
-        </div>
-      </form>
+        <form id="company-form" action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-8">
+          <input type="hidden" name="_subject" value="Neue Unternehmensanfrage über hof-gartenservice.de">
+          <input type="hidden" name="_language" value="de">
 
-      <div id="form-status" class="mt-6 text-center text-sm hidden"></div>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-zinc-700 mb-2">Firmenname *</label>
+              <input type="text" name="Firmenname" required autocomplete="organization"
+                     class="w-full px-5 py-4 border border-zinc-200 bg-[#F8FAFC] rounded-2xl focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                     placeholder="z. B. Muster Gartenservice Hof">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-zinc-700 mb-2">E-Mail-Adresse *</label>
+              <input type="email" name="E-Mail" required autocomplete="email" inputmode="email"
+                     class="w-full px-5 py-4 border border-zinc-200 bg-[#F8FAFC] rounded-2xl focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                     placeholder="ihre@email.de">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-zinc-700 mb-2">Telefonnummer</label>
+              <input type="tel" name="Telefon" inputmode="tel" autocomplete="tel"
+                     class="w-full px-5 py-4 border border-zinc-200 bg-[#F8FAFC] rounded-2xl focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                     placeholder="+49 162 4012037">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-zinc-700 mb-2">Paket</label>
+              <select name="Paket" aria-label="Paket auswählen"
+                      class="w-full px-5 py-4 border border-zinc-200 bg-[#F8FAFC] rounded-2xl focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600">
+                <option value="Standard">Standard-Eintrag</option>
+                <option value="Hervorgehoben">Hervorgehobener Eintrag</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 mb-2">Google-Profil oder Website</label>
+            <input type="url" name="Google-Profil" inputmode="url" autocomplete="url"
+                   class="w-full px-5 py-4 border border-zinc-200 bg-[#F8FAFC] rounded-2xl focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                   placeholder="https://...">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-zinc-700 mb-2">Kurze Beschreibung Ihres Betriebs</label>
+            <textarea name="Nachricht" rows="5"
+                      class="resize-none w-full px-5 py-4 border border-zinc-200 bg-[#F8FAFC] rounded-3xl focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
+                      placeholder="Welche Leistungen bieten Sie an? (Rasenpflege, Heckenschnitt, Gartenpflege, Baumschnitt usw.)"></textarea>
+          </div>
+
+          <div class="pt-4">
+            <button type="submit"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold text-xl py-5 rounded-3xl transition">
+              Kostenlos eintragen
+            </button>
+
+            <p class="text-center text-sm text-zinc-500 mt-4">
+              Wir melden uns in der Regel zeitnah bei Ihnen.<br>
+              Keine versteckten Kosten.
+            </p>
+          </div>
+
+          <div class="text-center text-sm text-zinc-500">
+            Oder direkt per WhatsApp schreiben:
+            <a href="https://wa.me/491624012037?text=Hallo,%20ich%20m%C3%B6chte%20mein%20Unternehmen%20bei%20hof-gartenservice.de%20eintragen."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-emerald-600 font-medium hover:underline">
+              WhatsApp kontaktieren
+            </a>
+          </div>
+        </form>
+
+        <div id="form-status" class="mt-6 text-center text-sm hidden"></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-20 bg-green-600 text-white">
-  <div class="tail-container px-6 text-center">
-    <h2 class="text-4xl font-bold mb-6">Noch Fragen?</h2>
-    <p class="text-xl max-w-xl mx-auto mb-10">
-      Wir beraten Sie gerne persönlich zu den Platzierungsmöglichkeiten auf hof-gartenservice.de.
-    </p>
+  <section class="py-20 bg-green-600 text-white">
+    <div class="tail-container px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-5">Noch Fragen?</h2>
+      <p class="text-lg text-green-100 max-w-xl mx-auto mb-9">
+        Wir beraten Sie gerne persönlich zu den Platzierungsmöglichkeiten auf hof-gartenservice.de.
+      </p>
 
-    <a href="https://wa.me/491624012037" target="_blank"
-       class="inline-flex items-center gap-3 bg-white text-green-700 px-10 py-5 rounded-3xl text-xl font-semibold hover:bg-green-50 transition">
-      <i class="fab fa-whatsapp text-2xl"></i>
-      Jetzt per WhatsApp fragen
-    </a>
-  </div>
-</section>
+      <a href="https://wa.me/491624012037" target="_blank" rel="noopener noreferrer"
+         class="inline-flex bg-white text-green-700 px-8 py-4 rounded-3xl text-lg font-semibold hover:bg-green-50 transition">
+        Jetzt per WhatsApp fragen
+      </a>
+    </div>
+  </section>
+</main>
 
 <footer class="bg-zinc-900 text-zinc-400 py-16">
   <div class="tail-container px-6">
-    <div class="grid md:grid-cols-5 gap-10">
-
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
       <div>
         <div class="flex items-center gap-3 text-white mb-6">
           <img src="logo-gartenservice.png"
@@ -305,17 +328,17 @@ Keine versteckten Kosten.
 
           <div class="leading-tight">
             <span class="text-xl font-bold">hof-gartenservice.de</span>
-            <p class="text-xs text-zinc-400 -mt-1">Hof (Saale)</p>
+            <p class="text-xs text-zinc-400">Hof (Saale)</p>
           </div>
         </div>
 
-        <p class="text-sm">
+        <p class="text-sm leading-6">
           Lokale Vermittlungsplattform für Gartenservice in Hof (Saale).
         </p>
       </div>
 
       <div>
-        <h5 class="font-semibold text-white mb-4">Navigation</h5>
+        <h3 class="font-semibold text-white mb-4">Navigation</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="index.html#firmen" class="hover:text-white">Gartenservice finden</a></li>
           <li><a href="index.html#leistungen" class="hover:text-white">Leistungen</a></li>
@@ -324,9 +347,8 @@ Keine versteckten Kosten.
       </div>
 
       <div>
-        <h5 class="font-semibold text-white mb-4">Partner Seiten</h5>
+        <h3 class="font-semibold text-white mb-4">Partner Seiten</h3>
         <ul class="space-y-2 text-sm">
-
           <li>
             <a href="https://hof-reinigung.de"
                target="_blank" rel="noopener noreferrer"
@@ -350,12 +372,11 @@ Keine versteckten Kosten.
               hahn-wasserfilter.de
             </a>
           </li>
-
         </ul>
       </div>
 
       <div>
-        <h5 class="font-semibold text-white mb-4">Kontakt</h5>
+        <h3 class="font-semibold text-white mb-4">Kontakt</h3>
         <p class="text-sm mb-1">
           WhatsApp:
           <a href="https://wa.me/491624012037" class="text-green-300 hover:text-white">
@@ -371,13 +392,12 @@ Keine versteckten Kosten.
       </div>
 
       <div>
-        <h5 class="font-semibold text-white mb-4">Rechtliches</h5>
+        <h3 class="font-semibold text-white mb-4">Rechtliches</h3>
         <ul class="space-y-2 text-sm">
           <li><a href="impressum.html" class="hover:text-white">Impressum</a></li>
           <li><a href="datenschutz.html" class="hover:text-white">Datenschutz</a></li>
         </ul>
       </div>
-
     </div>
 
     <div class="text-center text-xs mt-16 pt-8 border-t border-zinc-800">
@@ -387,44 +407,13 @@ Keine versteckten Kosten.
 </footer>
 
 <script>
-const form = document.getElementById('company-form');
-const statusDiv = document.getElementById('form-status');
-
-if (form && statusDiv) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    statusDiv.className = 'mt-4 text-center text-zinc-500';
-    statusDiv.textContent = 'Senden...';
-    statusDiv.classList.remove('hidden');
-
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        statusDiv.className = 'mt-4 text-center text-green-600 font-medium';
-        statusDiv.textContent = '✅ Vielen Dank! Wir melden uns schnellstmöglich.';
-        form.reset();
-      } else {
-        throw new Error();
-      }
-
-    } catch (error) {
-      statusDiv.className = 'mt-4 text-center text-red-600 font-medium';
-      statusDiv.textContent = 'Fehler beim Senden. Bitte versuchen Sie es erneut.';
-    }
-  });
-}
-</script>
-<script>
   document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.reveal');
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(item => item.classList.add('visible'));
+      return;
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -434,11 +423,45 @@ if (form && statusDiv) {
         }
       });
     }, {
-      threshold: 0.08
+      threshold: 0.12
     });
 
     items.forEach(item => observer.observe(item));
   });
+
+  const form = document.getElementById('company-form');
+  const statusDiv = document.getElementById('form-status');
+
+  if (form && statusDiv) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      statusDiv.className = 'mt-4 text-center text-zinc-500';
+      statusDiv.textContent = 'Senden...';
+      statusDiv.classList.remove('hidden');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          statusDiv.className = 'mt-4 text-center text-green-600 font-medium';
+          statusDiv.textContent = 'Vielen Dank! Wir melden uns zeitnah bei Ihnen.';
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      } catch (error) {
+        statusDiv.className = 'mt-4 text-center text-red-600 font-medium';
+        statusDiv.textContent = 'Fehler beim Senden. Bitte versuchen Sie es erneut.';
+      }
+    });
+  }
 </script>
 
 </body>
