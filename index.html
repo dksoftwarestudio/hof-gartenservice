@@ -77,6 +77,7 @@
       <a href="index.html" class="flex items-center gap-3 shrink-0">
         <img src="logo-gartenservice.png"
              alt="hof-gartenservice Logo"
+             onerror="this.style.display='none'"
              class="w-12 h-12 rounded-xl object-cover">
         <div>
           <span class="text-2xl font-bold text-gray-800">hof-gartenservice.de</span>
@@ -226,40 +227,88 @@
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300">
-        <div class="text-3xl text-green-700 mb-5" aria-hidden="true">🌱</div>
-        <h3 class="font-semibold text-xl mb-2">Gartenpflege</h3>
-        <p class="text-zinc-600 text-sm leading-6">Regelmäßige Pflege, Beetpflege, Laubarbeiten und saisonale Unterstützung.</p>
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="aspect-video overflow-hidden image-zoom">
+          <img src="https://images.pexels.com/photos/13834298/pexels-photo-13834298.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+               alt="Gartenpflege am Blumenbeet"
+               loading="lazy"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs font-semibold uppercase tracking-wide text-green-700 mb-3">Pflege &amp; Saison</p>
+          <h3 class="font-semibold text-xl mb-2">Gartenpflege</h3>
+          <p class="text-zinc-600 text-sm leading-6">Regelmäßige Pflege, Beetpflege, Laubarbeiten und saisonale Unterstützung.</p>
+        </div>
       </div>
 
-      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300">
-        <div class="text-3xl text-green-700 mb-5" aria-hidden="true">✂️</div>
-        <h3 class="font-semibold text-xl mb-2">Heckenschnitt</h3>
-        <p class="text-zinc-600 text-sm leading-6">Hecken, Sträucher, Formschnitt und Entsorgung von Schnittgut nach Bedarf.</p>
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="aspect-video overflow-hidden image-zoom">
+          <img src="https://images.pexels.com/photos/24595771/pexels-photo-24595771.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+               alt="Heckenschnitt mit elektrischer Heckenschere"
+               loading="lazy"
+               class="w-full h-full object-cover object-left">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs font-semibold uppercase tracking-wide text-green-700 mb-3">Hecken &amp; Sträucher</p>
+          <h3 class="font-semibold text-xl mb-2">Heckenschnitt</h3>
+          <p class="text-zinc-600 text-sm leading-6">Hecken, Sträucher, Formschnitt und Entsorgung von Schnittgut nach Bedarf.</p>
+        </div>
       </div>
 
-      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300">
-        <div class="text-3xl text-green-700 mb-5" aria-hidden="true">🌿</div>
-        <h3 class="font-semibold text-xl mb-2">Rasenpflege</h3>
-        <p class="text-zinc-600 text-sm leading-6">Rasenmähen, Rasenkanten, Vertikutieren und Pflege von Grünflächen.</p>
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="aspect-video overflow-hidden image-zoom">
+          <img src="https://images.pexels.com/photos/6728933/pexels-photo-6728933.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+               alt="Rasenpflege mit Rasenmäher"
+               loading="lazy"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs font-semibold uppercase tracking-wide text-green-700 mb-3">Rasen &amp; Kanten</p>
+          <h3 class="font-semibold text-xl mb-2">Rasenpflege</h3>
+          <p class="text-zinc-600 text-sm leading-6">Rasenmähen, Rasenkanten, Vertikutieren und Pflege von Grünflächen.</p>
+        </div>
       </div>
 
-      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300">
-        <div class="text-3xl text-green-700 mb-5" aria-hidden="true">🌳</div>
-        <h3 class="font-semibold text-xl mb-2">Baumschnitt</h3>
-        <p class="text-zinc-600 text-sm leading-6">Anfragen für Baumschnitt, Rückschnitt und Pflegearbeiten im Garten.</p>
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="aspect-video overflow-hidden image-zoom">
+          <img src="https://images.pexels.com/photos/5231048/pexels-photo-5231048.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+               alt="Baumschnitt mit Astschere"
+               loading="lazy"
+               class="w-full h-full object-cover object-right">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs font-semibold uppercase tracking-wide text-green-700 mb-3">Bäume &amp; Rückschnitt</p>
+          <h3 class="font-semibold text-xl mb-2">Baumschnitt</h3>
+          <p class="text-zinc-600 text-sm leading-6">Anfragen für Baumschnitt, Rückschnitt und Pflegearbeiten im Garten.</p>
+        </div>
       </div>
 
-      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300">
-        <div class="text-3xl text-green-700 mb-5" aria-hidden="true">🧹</div>
-        <h3 class="font-semibold text-xl mb-2">Außenbereich</h3>
-        <p class="text-zinc-600 text-sm leading-6">Wege, Terrassen, Hofbereiche, Unkrautentfernung und Reinigung.</p>
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="aspect-video overflow-hidden image-zoom">
+          <img src="https://images.pexels.com/photos/20296972/pexels-photo-20296972.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+               alt="Reinigung von Hof und Gehweg mit Hochdruckreiniger"
+               loading="lazy"
+               class="w-full h-full object-cover">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs font-semibold uppercase tracking-wide text-green-700 mb-3">Hof &amp; Terrasse</p>
+          <h3 class="font-semibold text-xl mb-2">Außenbereich</h3>
+          <p class="text-zinc-600 text-sm leading-6">Wege, Terrassen, Hofbereiche, Unkrautentfernung und Reinigung.</p>
+        </div>
       </div>
 
-      <div class="reveal bg-white p-7 rounded-3xl border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300">
-        <div class="text-3xl text-green-700 mb-5" aria-hidden="true">📋</div>
-        <h3 class="font-semibold text-xl mb-2">Sonstiges</h3>
-        <p class="text-zinc-600 text-sm leading-6">Nicht sicher, wer zuständig ist? Senden Sie die Anfrage mit kurzer Beschreibung.</p>
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="aspect-video overflow-hidden image-zoom">
+          <img src="https://images.pexels.com/photos/6231726/pexels-photo-6231726.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900"
+               alt="Gartenwerkzeuge für verschiedene Arbeiten"
+               loading="lazy"
+               class="w-full h-full object-cover object-right">
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <p class="text-xs font-semibold uppercase tracking-wide text-green-700 mb-3">Individuelle Anfrage</p>
+          <h3 class="font-semibold text-xl mb-2">Sonstiges</h3>
+          <p class="text-zinc-600 text-sm leading-6">Nicht sicher, wer zuständig ist? Senden Sie die Anfrage mit kurzer Beschreibung.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -422,6 +471,7 @@
             <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white shadow-sm flex items-center justify-center">
               <img src="logo-gartenservice.png"
                    alt="hof-gartenservice Logo"
+                   onerror="this.style.display='none'"
                    class="w-10 h-10 rounded-xl object-cover">
             </div>
             <p class="text-sm font-semibold text-green-700">
@@ -726,6 +776,7 @@
         <div class="flex items-center gap-3 text-white mb-6">
           <img src="logo-gartenservice.png"
                alt="hof-gartenservice Logo"
+               onerror="this.style.display='none'"
                class="w-10 h-10 rounded-2xl object-cover">
 
           <div class="leading-tight">
