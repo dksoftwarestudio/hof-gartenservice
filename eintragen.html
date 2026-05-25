@@ -33,10 +33,25 @@
       transform: translateY(0);
     }
 
+    .soft-card {
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.12);
+      border-color: rgba(22, 163, 74, 0.22);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal {
         opacity: 1;
         transform: none;
+        transition: none;
+      }
+
+      .soft-card {
         transition: none;
       }
     }
@@ -51,6 +66,7 @@
       <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="hof-gartenservice.de Startseite">
         <img src="logo-gartenservice.png"
              alt="hof-gartenservice Logo"
+             onerror="this.style.display='none'"
              class="w-12 h-12 rounded-xl object-cover">
         <div>
           <span class="block text-xl sm:text-2xl font-bold text-gray-900 leading-tight">hof-gartenservice.de</span>
@@ -113,8 +129,8 @@
 
         <div class="flex flex-col sm:flex-row gap-4">
           <a href="#formular"
-             class="bg-white hover:bg-green-50 text-green-700 text-lg px-8 py-4 rounded-2xl font-semibold text-center transition">
-            Kostenlos eintragen
+             class="bg-emerald-300 hover:bg-emerald-200 text-green-950 text-lg px-9 py-4 rounded-2xl font-semibold text-center shadow-lg shadow-green-950/20 transition">
+            + Kostenlos eintragen
           </a>
 
           <a href="index.html"
@@ -125,13 +141,13 @@
 
         <div class="flex flex-wrap sm:grid sm:grid-cols-3 gap-3 mt-10 text-sm">
           <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/10">
-            Lokal in Hof
+            Lokale Sichtbarkeit in Hof
+          </div>
+          <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/10">
+            Keine Provision
           </div>
           <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/10">
             Basiseintrag kostenlos
-          </div>
-          <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3 border border-white/10">
-            Direkte Anfragen
           </div>
         </div>
       </div>
@@ -149,28 +165,60 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100 shadow-sm">
+        <div class="reveal soft-card bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100">
           <div class="text-4xl mb-5" aria-hidden="true">📍</div>
           <h3 class="font-semibold text-xl mb-2">Lokale Kunden</h3>
           <p class="text-zinc-600">Anfragen von Menschen aus Hof und Umgebung.</p>
         </div>
 
-        <div class="reveal bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100 shadow-sm">
+        <div class="reveal soft-card bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100">
           <div class="text-4xl mb-5" aria-hidden="true">📩</div>
           <h3 class="font-semibold text-xl mb-2">Direkte Anfragen</h3>
           <p class="text-zinc-600">Kunden können Sie über die Plattform einfacher finden.</p>
         </div>
 
-       <div class="reveal bg-gray-50 p-8 rounded-3xl text-center hover:-translate-y-1 hover:shadow-xl transition duration-300">
-        <div class="text-4xl mb-4">✅</div>
-        <h3 class="font-semibold text-xl mb-2">Aktuell kostenlos</h3>
-        <p class="text-gray-600">Der Basiseintrag ist aktuell kostenlos und unverbindlich.</p>
-      </div>
+        <div class="reveal soft-card bg-[#F8FAFC] p-8 rounded-3xl text-center border border-zinc-100">
+          <div class="text-4xl mb-5" aria-hidden="true">✓</div>
+          <h3 class="font-semibold text-xl mb-2">Aktuell kostenlos</h3>
+          <p class="text-zinc-600">Der Basiseintrag ist aktuell kostenlos und unverbindlich.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="py-20 bg-[#F5F5F5]">
+    <div class="tail-container px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-sm font-semibold text-green-700 mb-3">Was bringt es konkret?</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Mehr lokale Kontakte ohne Umwege</h2>
+        <p class="text-zinc-600">
+          Ihr Eintrag hilft Kunden aus Hof, Ihren Betrieb schneller zu finden und direkt anzufragen.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="reveal soft-card bg-white p-8 rounded-3xl border border-zinc-100">
+          <div class="text-4xl font-bold text-green-700 mb-3">Lokal</div>
+          <h3 class="font-semibold text-xl mb-2">Sichtbarkeit in Hof</h3>
+          <p class="text-zinc-600">Ihr Betrieb erscheint dort, wo Kunden gezielt nach Gartenservice in der Region suchen.</p>
+        </div>
+
+        <div class="reveal soft-card bg-white p-8 rounded-3xl border border-zinc-100">
+          <div class="text-4xl font-bold text-green-700 mb-3">0%</div>
+          <h3 class="font-semibold text-xl mb-2">Keine Provision</h3>
+          <p class="text-zinc-600">Kundenanfragen gehen direkt an Sie. Es gibt keine Vermittlungsprovision.</p>
+        </div>
+
+        <div class="reveal soft-card bg-white p-8 rounded-3xl border border-zinc-100">
+          <div class="text-4xl font-bold text-green-700 mb-3">0 EUR</div>
+          <h3 class="font-semibold text-xl mb-2">Basiseintrag</h3>
+          <p class="text-zinc-600">Der einfache Firmeneintrag ist aktuell kostenlos und ohne versteckte Gebühren.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
     <div class="tail-container px-6">
       <div class="max-w-3xl mx-auto text-center mb-12">
         <p class="text-sm font-semibold text-green-700 mb-3">Ablauf</p>
@@ -211,6 +259,36 @@
     </div>
   </section>
 
+  <section class="py-20 bg-white">
+    <div class="tail-container px-6">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-sm font-semibold text-green-700 mb-3">Beispiele</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">So kann Ihr Eintrag wirken</h2>
+        <p class="text-zinc-600">
+          Lokale Anbieter werden sichtbarer, wenn Kunden gezielt nach Gartenservice in Hof suchen.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="reveal soft-card bg-[#F8FAFC] p-8 rounded-3xl border border-zinc-100">
+          <p class="text-zinc-700 leading-7 mb-6">
+            "Gartenpflege Frisch ist direkt mit Leistungen, Telefon und E-Mail sichtbar. Kunden können ohne Umweg Kontakt aufnehmen."
+          </p>
+          <div class="font-semibold text-zinc-900">Gartenpflege Frisch</div>
+          <div class="text-sm text-green-700">Gartenpflege in Hof</div>
+        </div>
+
+        <div class="reveal soft-card bg-[#F8FAFC] p-8 rounded-3xl border border-zinc-100">
+          <p class="text-zinc-700 leading-7 mb-6">
+            "Hausdorf Objektpflege zeigt sich für Anfragen rund um Außenanlagen, Grünpflege und Objektbetreuung in der Region."
+          </p>
+          <div class="font-semibold text-zinc-900">Hausdorf Objektpflege</div>
+          <div class="text-sm text-green-700">Objektpflege in Hof und Umgebung</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="formular" class="py-20 bg-[#F5F5F5]">
     <div class="tail-container px-6 max-w-3xl mx-auto">
       <div class="bg-white rounded-3xl shadow-sm p-6 md:p-10 lg:p-14 border border-zinc-100">
@@ -225,6 +303,7 @@
         <form id="company-form" action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-8">
           <input type="hidden" name="_subject" value="Neue Unternehmensanfrage über hof-gartenservice.de">
           <input type="hidden" name="_language" value="de">
+          <input type="hidden" name="source" value="hof-gartenservice.de">
 
           <div class="grid md:grid-cols-2 gap-6">
             <div>
@@ -276,8 +355,8 @@
 
           <div class="pt-4">
             <button type="submit"
-                    class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold text-xl py-5 rounded-3xl transition">
-              Kostenlos eintragen
+                    class="w-full bg-green-700 hover:bg-green-800 text-white font-semibold text-xl py-5 rounded-3xl shadow-lg shadow-green-900/20 transition">
+              + Kostenlos eintragen
             </button>
 
             <p class="text-center text-sm text-zinc-500 mt-4">
@@ -298,6 +377,38 @@
         </form>
 
         <div id="form-status" class="mt-6 text-center text-sm hidden"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="tail-container px-6 max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-sm font-semibold text-green-700 mb-3">FAQ</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Häufige Fragen</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="reveal bg-[#F8FAFC] rounded-2xl border border-zinc-100 p-6">
+          <summary class="cursor-pointer font-semibold text-lg text-zinc-900">Wie schnell wird mein Eintrag freigeschaltet?</summary>
+          <p class="text-zinc-600 mt-3 leading-7">
+            In der Regel prüfen wir neue Einträge zeitnah und melden uns, falls noch Angaben fehlen.
+          </p>
+        </details>
+
+        <details class="reveal bg-[#F8FAFC] rounded-2xl border border-zinc-100 p-6">
+          <summary class="cursor-pointer font-semibold text-lg text-zinc-900">Was kostet ein Eintrag?</summary>
+          <p class="text-zinc-600 mt-3 leading-7">
+            Der Basiseintrag ist aktuell kostenlos. Optionale hervorgehobene Platzierungen können später dazukommen.
+          </p>
+        </details>
+
+        <details class="reveal bg-[#F8FAFC] rounded-2xl border border-zinc-100 p-6">
+          <summary class="cursor-pointer font-semibold text-lg text-zinc-900">Kann ich meinen Eintrag später ändern?</summary>
+          <p class="text-zinc-600 mt-3 leading-7">
+            Ja. Senden Sie uns einfach neue Kontaktdaten, Leistungen oder Bilder, und wir aktualisieren den Eintrag.
+          </p>
+        </details>
       </div>
     </div>
   </section>
@@ -324,6 +435,7 @@
         <div class="flex items-center gap-3 text-white mb-6">
           <img src="logo-gartenservice.png"
                alt="hof-gartenservice Logo"
+               onerror="this.style.display='none'"
                class="w-10 h-10 rounded-2xl object-cover">
 
           <div class="leading-tight">
