@@ -34,10 +34,34 @@
       transform: translateY(0);
     }
 
+    .soft-card {
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.12);
+      border-color: rgba(22, 163, 74, 0.22);
+    }
+
+    .image-zoom img {
+      transition: transform 0.3s ease;
+    }
+
+    .soft-card:hover .image-zoom img {
+      transform: scale(1.04);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal {
         opacity: 1;
         transform: none;
+        transition: none;
+      }
+
+      .soft-card,
+      .image-zoom img {
         transition: none;
       }
     }
@@ -123,13 +147,13 @@
 
       <div class="flex flex-wrap sm:grid sm:grid-cols-3 gap-3 mt-14 text-sm">
         <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
-          Regional aus Hof
+          Lokale Anbieter aus der Region
         </div>
         <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
-          Kostenlos &amp; unverbindlich
+          Schnelle und direkte Anfrage
         </div>
         <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
-          Keine Registrierung nötig
+          100% kostenlos &amp; unverbindlich
         </div>
       </div>
     </div>
@@ -252,10 +276,10 @@
       Ausgewählte Anbieter aus Hof und Umgebung. Kontaktieren Sie die Anbieter direkt oder stellen Sie eine Anfrage.
     </p>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-      <div class="reveal bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col h-full">
-        <div class="relative h-52">
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="relative aspect-video overflow-hidden image-zoom">
           <img src="gartenservice.jpg"
                alt="Gartenpflege Frisch in Hof"
                class="w-full h-full object-cover">
@@ -275,13 +299,14 @@
           </p>
 
           <div class="flex items-center gap-2 text-sm mb-5">
+            <span class="text-amber-500" aria-hidden="true">★★★★★</span>
             <span class="text-green-600 font-medium">
-              ✓ Partner aus der Region
+              Regional geprüft
             </span>
           </div>
 
-          <p class="text-zinc-600 text-sm leading-7 mb-6">
-            Gartenpflege in Hof: Rasenpflege, Unkrautentfernung, Laub- und Schnittgutbeseitigung, Hecken- und Strauchschnitt, Pflanzarbeiten, Beetpflege sowie Wege- und Terrassenpflege.
+          <p class="text-zinc-600 text-sm leading-7 mb-6 min-h-[112px]">
+            Gartenpflege in Hof: Rasenpflege, Unkrautentfernung, Laub- und Schnittgutbeseitigung, Hecken- und Strauchschnitt.
           </p>
 
           <div class="space-y-3 text-sm mb-6">
@@ -321,8 +346,8 @@
         </div>
       </div>
 
-      <div class="reveal bg-white rounded-3xl overflow-hidden border border-zinc-100 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col h-full">
-        <div class="relative h-52">
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
+        <div class="relative aspect-video overflow-hidden image-zoom">
           <img src="IMG_2940.jpeg"
                alt="Hausdorf Objektpflege mit System"
                class="w-full h-full object-cover">
@@ -342,12 +367,13 @@
           </p>
 
           <div class="flex items-center gap-2 text-sm mb-5">
+            <span class="text-amber-500" aria-hidden="true">★★★★★</span>
             <span class="text-green-600 font-medium">
-              ✓ Partner aus der Region
+              Regional geprüft
             </span>
           </div>
 
-          <p class="text-zinc-600 text-sm leading-7 mb-6">
+          <p class="text-zinc-600 text-sm leading-7 mb-6 min-h-[112px]">
             Zuverlässige Garten- und Objektpflege in Hof und Umgebung. Pflege von Grünanlagen, Außenbereichen, Wegen und regelmäßige Betreuung für Privat- und Gewerbeobjekte.
           </p>
 
@@ -390,8 +416,8 @@
         </div>
       </div>
 
-      <div class="reveal bg-white rounded-3xl overflow-hidden border border-dashed border-green-200 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col h-full">
-        <div class="relative h-52 bg-gradient-to-br from-green-50 via-white to-emerald-50 flex items-center justify-center">
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-dashed border-green-200 flex flex-col h-full">
+        <div class="relative aspect-video bg-gradient-to-br from-green-50 via-white to-emerald-50 flex items-center justify-center">
           <div class="text-center px-6">
             <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white shadow-sm flex items-center justify-center">
               <img src="logo-gartenservice.png"
@@ -447,8 +473,8 @@
         </div>
       </div>
 
-      <div class="reveal bg-white rounded-3xl overflow-hidden border border-dashed border-green-200 shadow-sm hover:-translate-y-1 hover:shadow-xl transition duration-300 flex flex-col h-full">
-        <div class="relative h-52 bg-gradient-to-br from-zinc-50 via-white to-green-50 flex items-center justify-center">
+      <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-dashed border-green-200 flex flex-col h-full">
+        <div class="relative aspect-video bg-gradient-to-br from-zinc-50 via-white to-green-50 flex items-center justify-center">
           <div class="text-center px-6">
             <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-green-600 text-white flex items-center justify-center text-3xl font-bold">
               +
@@ -579,28 +605,52 @@
       </p>
     </div>
 
-    <div class="reveal bg-white text-zinc-800 rounded-3xl p-6 md:p-8 shadow-xl">
-      <form action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-5">
+    <div class="reveal bg-white text-zinc-800 rounded-3xl p-7 md:p-10 shadow-xl shadow-green-900/10 border border-white/60">
+      <form action="https://formspree.io/f/mjgpagzy" method="POST" class="space-y-6">
         <input type="hidden" name="_redirect" value="https://hof-gartenservice.de/danke.html">
         <input type="hidden" name="source" value="hof-gartenservice.de">
 
         <div class="grid md:grid-cols-2 gap-5">
-          <input type="text" name="name" placeholder="Vor- und Nachname" required autocomplete="name"
-                 class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
+          <label class="block">
+            <span class="sr-only">Vor- und Nachname</span>
+            <span class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600">
+              <span aria-hidden="true">👤</span>
+              <input type="text" name="name" placeholder="Vor- und Nachname" required autocomplete="name"
+                     class="w-full bg-transparent focus:outline-none">
+            </span>
+          </label>
 
-          <input type="tel" name="phone" placeholder="Telefonnummer" required inputmode="tel" autocomplete="tel"
-                 class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
+          <label class="block">
+            <span class="sr-only">Telefonnummer</span>
+            <span class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600">
+              <span aria-hidden="true">📞</span>
+              <input type="tel" name="phone" placeholder="Telefonnummer" required inputmode="tel" autocomplete="tel"
+                     class="w-full bg-transparent focus:outline-none">
+            </span>
+          </label>
         </div>
 
-        <input type="email" name="email" placeholder="E-Mail (optional)" inputmode="email" autocomplete="email"
-               class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
+        <label class="block">
+          <span class="sr-only">E-Mail</span>
+          <span class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600">
+            <span aria-hidden="true">✉️</span>
+            <input type="email" name="email" placeholder="E-Mail (optional)" inputmode="email" autocomplete="email"
+                   class="w-full bg-transparent focus:outline-none">
+          </span>
+        </label>
 
-        <input type="text" name="address" placeholder="PLZ / Ort / Straße (optional)" autocomplete="street-address"
-               class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600">
+        <label class="block">
+          <span class="sr-only">Adresse</span>
+          <span class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus-within:border-green-600 focus-within:ring-1 focus-within:ring-green-600">
+            <span aria-hidden="true">🏡</span>
+            <input type="text" name="address" placeholder="PLZ / Ort / Straße (optional)" autocomplete="street-address"
+                   class="w-full bg-transparent focus:outline-none">
+          </span>
+        </label>
 
         <label for="service" class="sr-only">Welche Gartenarbeit brauchen Sie?</label>
         <select id="service" name="service" required
-                class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 text-zinc-700 focus:outline-none focus:border-green-600">
+                class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 text-zinc-700 focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600">
           <option value="" disabled selected>Welche Gartenarbeit brauchen Sie?</option>
           <option value="Rasenmähen">Rasenmähen</option>
           <option value="Hecken schneiden">Hecken schneiden</option>
@@ -614,7 +664,7 @@
 
         <label for="urgency" class="sr-only">Wann soll die Arbeit stattfinden?</label>
         <select id="urgency" name="urgency" required
-                class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 text-zinc-700 focus:outline-none focus:border-green-600">
+                class="w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 text-zinc-700 focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600">
           <option value="" disabled selected>Wann soll die Arbeit stattfinden?</option>
           <option value="So schnell wie möglich">So schnell wie möglich</option>
           <option value="Diese Woche">Diese Woche</option>
@@ -624,10 +674,10 @@
         </select>
 
         <textarea name="message" rows="4" placeholder="Beschreiben Sie kurz, was gemacht werden soll."
-                  class="resize-none w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600"></textarea>
+                  class="resize-none w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"></textarea>
 
         <button type="submit"
-                class="w-full bg-green-600 text-white py-5 rounded-3xl font-semibold text-xl hover:bg-green-700 transition">
+                class="w-full bg-green-700 text-white py-5 rounded-3xl font-semibold text-xl hover:bg-green-800 shadow-lg shadow-green-900/20 transition">
           Anfrage absenden
         </button>
       </form>
