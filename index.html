@@ -4,7 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hof-gartenservice.de | Gartenservice in Hof finden</title>
-  <meta name="description" content="Gartenservice in Hof finden - kostenlose Anfrage für Gartenpflege, Rasenmähen, Heckenschnitt, Baumschnitt, Beetpflege und Außenbereiche. Anbieter aus Hof und Umgebung erhalten.">
+  <meta name="description" content="Gartenservice in Hof finden - kostenlose Anfrage für Gartenpflege, Rasenmähen, Heckenschnitt, Baumschnitt, Beetpflege und Außenbereiche. Passende Anbieter aus Hof und Umgebung erreichen.">
+  <link rel="canonical" href="https://hof-gartenservice.de/">
+  <meta property="og:title" content="Gartenservice in Hof finden | hof-gartenservice.de">
+  <meta property="og:description" content="Kostenlose Anfrage für Gartenpflege, Rasenmähen, Heckenschnitt, Baumschnitt und Außenbereiche in Hof und Umgebung stellen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hof-gartenservice.de/">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -70,29 +75,29 @@
 
 <body class="bg-[#F5F5F5] text-zinc-800 font-sans">
 
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="bg-white/95 shadow-sm sticky top-0 z-50 backdrop-blur">
   <div class="tail-container px-6 py-4">
-
     <div class="flex items-center justify-between gap-6">
-      <a href="index.html" class="flex items-center gap-3 shrink-0">
+      <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="hof-gartenservice.de Startseite">
         <img src="logo-gartenservice.png"
              alt="hof-gartenservice Logo"
              onerror="this.style.display='none'"
              class="w-12 h-12 rounded-xl object-cover">
         <div>
-          <span class="text-2xl font-bold text-gray-800">hof-gartenservice.de</span>
-          <p class="text-xs text-gray-500 -mt-1">Hof (Saale)</p>
+          <span class="block text-xl sm:text-2xl font-bold text-gray-900 leading-tight">hof-gartenservice.de</span>
+          <p class="text-xs text-gray-500">Hof (Saale)</p>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="index.html" class="hover:text-green-600 transition">Start</a>
         <a href="#leistungen" class="hover:text-green-600 transition">Leistungen</a>
         <a href="#firmen" class="text-green-600 font-semibold">Gartenservice</a>
-        <a href="eintragen.html" class="hover:text-green-600 transition">Als Firma eintragen</a>
+        <a href="eintragen.html" class="hover:text-green-600 transition">Firma eintragen</a>
         <a href="kontakt.html" class="hover:text-green-600 transition">Kontakt</a>
       </nav>
 
-      <div class="hidden md:flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-3">
         <a href="https://wa.me/491624012037" target="_blank" rel="noopener noreferrer"
            class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-2xl font-medium transition">
           WhatsApp
@@ -103,20 +108,43 @@
           Anfrage stellen
         </a>
       </div>
+
+      <button type="button"
+              id="mobile-menu-button"
+              class="md:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-zinc-200 bg-white text-zinc-800 shadow-sm transition hover:bg-zinc-50"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              aria-label="Menü öffnen">
+        <span class="sr-only">Menü öffnen</span>
+        <span class="flex flex-col gap-1.5" aria-hidden="true">
+          <span class="block h-0.5 w-5 rounded bg-current transition"></span>
+          <span class="block h-0.5 w-5 rounded bg-current transition"></span>
+          <span class="block h-0.5 w-5 rounded bg-current transition"></span>
+        </span>
+      </button>
     </div>
 
-    <div class="md:hidden grid grid-cols-2 gap-3 mt-4">
-      <a href="https://wa.me/491624012037" target="_blank" rel="noopener noreferrer"
-         class="text-center bg-emerald-500 text-white py-3 rounded-2xl font-medium">
-        WhatsApp
-      </a>
+    <div id="mobile-menu" class="hidden md:hidden pt-4">
+      <nav class="rounded-3xl border border-zinc-100 bg-white p-3 shadow-lg shadow-zinc-900/5 text-sm font-medium">
+        <a href="index.html" class="block rounded-2xl px-4 py-3 text-zinc-800 hover:bg-green-50 hover:text-green-700">Start</a>
+        <a href="#leistungen" class="block rounded-2xl px-4 py-3 text-zinc-800 hover:bg-green-50 hover:text-green-700">Leistungen</a>
+        <a href="#firmen" class="block rounded-2xl px-4 py-3 text-green-700 bg-green-50 font-semibold">Gartenservice</a>
+        <a href="eintragen.html" class="block rounded-2xl px-4 py-3 text-zinc-800 hover:bg-green-50 hover:text-green-700">Firma eintragen</a>
+        <a href="kontakt.html" class="block rounded-2xl px-4 py-3 text-zinc-800 hover:bg-green-50 hover:text-green-700">Kontakt</a>
 
-      <a href="#anfrage"
-         class="text-center bg-green-600 text-white py-3 rounded-2xl font-medium">
-        Anfrage
-      </a>
+        <div class="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-zinc-100">
+          <a href="https://wa.me/491624012037" target="_blank" rel="noopener noreferrer"
+             class="text-center bg-emerald-500 text-white py-3 rounded-2xl font-medium hover:bg-emerald-600 transition">
+            WhatsApp
+          </a>
+
+          <a href="#anfrage"
+             class="text-center bg-green-600 text-white py-3 rounded-2xl font-medium hover:bg-green-700 transition">
+            Anfrage
+          </a>
+        </div>
+      </nav>
     </div>
-
   </div>
 </header>
 
@@ -151,10 +179,10 @@
           Lokale Anbieter aus der Region
         </div>
         <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
-          Schnelle und direkte Anfrage
+          Einfache Anfrage
         </div>
         <div class="inline-flex sm:block bg-white/15 backdrop-blur-sm rounded-2xl px-4 py-3">
-          100% kostenlos &amp; unverbindlich
+          Kostenlos &amp; unverbindlich
         </div>
       </div>
     </div>
@@ -189,7 +217,7 @@
         </div>
         <h3 class="font-semibold text-xl mb-3">Anbieter prüfen</h3>
         <p class="text-zinc-600">
-          Ihre Anfrage wird an passende Anbieter aus Hof und Umgebung weitergeleitet.
+          Ihre Anfrage kann an passende Anbieter aus Hof und Umgebung weitergeleitet werden.
         </p>
       </div>
 
@@ -222,7 +250,7 @@
         Für viele Arbeiten rund um Garten, Hof und Außenbereich
       </h2>
       <p class="text-zinc-600">
-        Beschreiben Sie kurz Ihren Bedarf. Wir leiten die Anfrage passend weiter oder stellen den direkten Kontakt her.
+        Beschreiben Sie kurz Ihren Bedarf. Wir können die Anfrage passend weiterleiten oder den direkten Kontakt herstellen.
       </p>
     </div>
 
@@ -272,6 +300,7 @@
       <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
         <div class="aspect-video overflow-hidden image-zoom">
           <img src="baumschnitt.jpg"
+               alt="Baumschnitt und Rückschnitt im Garten"
                loading="lazy"
                class="w-full h-full object-cover object-right">
         </div>
@@ -285,6 +314,7 @@
       <div class="reveal soft-card bg-white rounded-3xl overflow-hidden border border-zinc-100 flex flex-col h-full">
         <div class="aspect-video overflow-hidden image-zoom">
           <img src="unkrautentfernung.jpg"
+               alt="Unkrautentfernung im Außenbereich"
                loading="lazy"
                class="w-full h-full object-cover">
         </div>
@@ -492,7 +522,7 @@
           </p>
 
           <p class="text-zinc-600 text-sm leading-7 mb-6 min-h-[112px]">
-            Hier können künftig zusätzliche Anbieter aus Hof und Umgebung erscheinen. Stellen Sie schon jetzt eine Anfrage und erreichen Sie passende Betriebe direkt.
+            Hier können künftig zusätzliche Anbieter aus Hof und Umgebung erscheinen. Stellen Sie schon jetzt eine Anfrage, damit passende Anbieter direkt erreicht werden können.
           </p>
 
           <div class="space-y-3 text-sm mb-6 min-h-[72px]">
@@ -762,6 +792,14 @@
         <textarea name="message" rows="4" placeholder="Beschreiben Sie kurz, was gemacht werden soll."
                   class="resize-none w-full px-5 py-4 rounded-2xl bg-[#F8FAFC] border border-zinc-200 focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"></textarea>
 
+        <label class="flex items-start gap-3 text-sm leading-6 text-zinc-600">
+          <input type="checkbox" name="privacy" required
+                 class="mt-1 h-4 w-4 rounded border-zinc-300 text-green-600 focus:ring-green-500">
+          <span>
+            Ich habe die <a href="datenschutz.html" class="text-green-700 underline">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben einverstanden.
+          </span>
+        </label>
+
         <button type="submit"
                 class="w-full bg-green-700 text-white py-5 rounded-3xl font-semibold text-xl hover:bg-green-800 shadow-lg shadow-green-900/20 transition">
           Anfrage absenden
@@ -769,7 +807,7 @@
       </form>
 
       <p class="text-center text-zinc-500 text-sm mt-4">
-        Ihre Anfrage wird an passende Anbieter aus Hof weitergeleitet.<br>
+        Ihre Anfrage kann an passende Anbieter aus Hof und Umgebung weitergeleitet werden.<br>
         Unverbindlich • Kostenlos • Keine Abos
       </p>
     </div>
@@ -898,7 +936,48 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuButton && mobileMenu) {
+      const iconLines = menuButton.querySelectorAll('span[aria-hidden="true"] span');
+
+      const setMenuOpen = (isOpen) => {
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+        mobileMenu.classList.toggle('hidden', !isOpen);
+
+        if (iconLines.length === 3) {
+          iconLines[0].classList.toggle('translate-y-2', isOpen);
+          iconLines[0].classList.toggle('rotate-45', isOpen);
+          iconLines[1].classList.toggle('opacity-0', isOpen);
+          iconLines[2].classList.toggle('-translate-y-2', isOpen);
+          iconLines[2].classList.toggle('-rotate-45', isOpen);
+        }
+      };
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+        setMenuOpen(!isOpen);
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenuOpen(false));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          setMenuOpen(false);
+        }
+      });
+    }
+
     const items = document.querySelectorAll('.reveal');
+
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(item => item.classList.add('visible'));
+      return;
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
