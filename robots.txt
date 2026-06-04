@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /danke.html
+
+Sitemap: https://hof-gartenservice.de/sitemap.xml
